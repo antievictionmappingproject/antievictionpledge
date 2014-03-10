@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+	<title>Anti-Eviction Pledge</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="description" content="TK" />
+	<meta name="keywords" content="TK" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/columns.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css" media="screen" />
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <!--needed?-->
+	<script src="/javascripts/search.js"></script>
+	<script>
+	var appConfig = {
+		'apiUrlBase': '<%- apiUrlBase %>'
+	};
+	</script>
+</head>
+<body>
+
+	<div id="header">
+		<h1>SF Anti-Eviction Pledge</h1>
+		<h2>Stop Eviction Now</h2>
+
+	</div>
+	<div class="colmask rightmenu">
+		<div class="colleft">
+			<div class="col1">
+				<!-- Column 1 start -->
+				<h2>Map search goes here</h2>
+				<div id="map-container">
+					<div id="address-search-container">
+						<input id="address-search" type="search" placeholder="search for address...">
+					</div>
+					<div id="map"></div>
+					<div id="results"></div>
+				</div>
+			</div>
+			<div class="col2">
+				<!-- Column 2 start -->
+				<h2>Make the Pledge</h2>
+				<p>Eventually we will know what goes here</p>
+				<!-- Column 2 end -->
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<p>link to github?</p>
+	</div>
+	<script type="text/javascript">
+	var map = new L.Map("map", {
+		center: [37.755, -122.44],
+		minZoom: 11,
+		zoom: 12
+	})
+	.addLayer(new L.TileLayer("http://{s}.tile.cloudmade.com/1a1b06b230af4efdbb989ea99e9841af/59870/256/{z}/{x}/{y}.png"));
+	</script>
+
+</body>
+</html>
