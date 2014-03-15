@@ -1,0 +1,152 @@
+/* line 1, ../sass/ellis.scss */
+#mapper {
+  height: 500px;
+  margin: 20px;
+}
+
+/* line 8, ../sass/ellis.scss */
+.wrap {
+  width: 1050px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+/* line 14, ../sass/ellis.scss */
+.main {
+  height: 100%;
+  width: 788px;
+  float: left;
+  background: #ffffff;
+  margin: 0px 1px;
+}
+
+/* line 24, ../sass/ellis.scss */
+.search {
+  font-family: Verdana,Geneva,sans-serif;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/* line 31, ../sass/ellis.scss */
+.right_bar {
+  width: 235px;
+  height: 100%;
+  background: #fff;
+  float: right;
+  padding: 10px;
+  padding-top: 80px;
+}
+/* line 37, ../sass/ellis.scss */
+.right_bar p {
+  font-family: Verdana,Geneva,sans-serif;
+  font-size: 16px;
+}
+/* line 41, ../sass/ellis.scss */
+.right_bar a {
+  cursor: pointer;
+  background: #ddd;
+  color: #003170;
+  padding: 4px;
+  border: 1px solid #006FFF;
+  border-radius: 5px;
+  margin-left: 15px;
+}
+/* line 52, ../sass/ellis.scss */
+.right_bar input[type=text] {
+  margin-left: 5px;
+}
+/* line 55, ../sass/ellis.scss */
+.right_bar .expl {
+  font-size: 10px;
+  margin-top: 2px;
+}
+/* line 59, ../sass/ellis.scss */
+.right_bar .chk_label {
+  font-size: 12px;
+  margin-top: 5px;
+}
+/* line 63, ../sass/ellis.scss */
+.right_bar .label {
+  margin: 10px 0px 2px 0px;
+  font-size: 14px;
+}
+
+/* line 68, ../sass/ellis.scss */
+input[type=text] {
+  font-size: 16px;
+  border: 1px solid #006FFF;
+  padding: 2px;
+}
+
+/* line 73, ../sass/ellis.scss */
+.main_menu {
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid #333;
+}
+
+/* line 80, ../sass/ellis.scss */
+.link_txt {
+  margin-left: 10px;
+}
+
+/* line 84, ../sass/ellis.scss */
+.footer {
+  clear: both;
+  height: 50px;
+  border-top: 1px solid #333;
+  width: 100%;
+}
+
+/* line 91, ../sass/ellis.scss */
+.info_address {
+  font-size: 16px;
+  font-weight: bold;
+  color: #cc0000;
+}
+
+/* line 97, ../sass/ellis.scss */
+.petition {
+  margin: 8px;
+  border: 1px solid #bbb;
+  padding: 12px;
+}
+
+/* line 104, ../sass/ellis.scss */
+#feedback {
+  display: none;
+}
+
+/* line 108, ../sass/ellis.scss */
+.header {
+  font-size: 16px;
+  font-weight: bold;
+  color: #cc0000;
+}
+
+/* line 114, ../sass/ellis.scss */
+.twitter-share-button {
+  margin-top: 15px;
+}
+
+/* line 118, ../sass/ellis.scss */
+.fb-share-button {
+  margin: 0px 5px;
+}
+
+/* line 123, ../sass/ellis.scss */
+.social_btns img {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* line 129, ../sass/ellis.scss */
+div.info_window {
+  width: 500px;
+}
+
+/* line 134, ../sass/ellis.scss */
+td, th {
+  padding-left: 13px;
+}

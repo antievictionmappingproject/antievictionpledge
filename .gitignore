@@ -16,3 +16,5 @@ build
 
 node_modules
 *.output
+
+public/.sass-cache/*

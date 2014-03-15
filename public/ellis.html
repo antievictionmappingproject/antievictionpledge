@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ellis Pledge</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/javascripts/ellis.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+    <link rel="stylesheet" href="./stylesheets/ellis.css"/>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+</head>
+<body>
+<div class="wrap">
+    <div id="main_menu" class="main_menu"></div>
+    <div class="right_bar">
+        <div class="petition" id="petition">
+            <p>I pledge not to rent or buy any unit that has seen an eviction as a result of the Ellis Act. </p>
+            <p class="label">First Name:</p>
+            <input type="text" id="pt_firstname" class="pt_txt" placeholder="First Name"/>
+            <p class="label">Last Name:</p>
+            <input type="text" id="pt_lastname" class="pt_txt" placeholder="Last Name"/>
+            <p class="label">Address:</p>
+            <input type="text" id="pt_address" class="pt_txt" placeholder="Address"/>
+            <p class="label">Email:</p>
+            <input type="text" id="pt_email" class="pt_txt" placeholder="Email"/>
+            <p class="expl">(we will never share your email without your permission)</p>
+            <p class="label">Why is this important to you?</p>
+            <textarea id="pt_reason" class="pt_txtarea" cols="22" rows="5"></textarea>
+            <p class="chk_label"><input type="checkbox" name="use" value="usable" checked="true"/>You may use my name to build housing justice.</p>
+            <p><a id="pet_link" class="pt_link">I Pledge</a> </p>
+        </div>
+        <div class="petition" id="feedback">
+            <p class="header">Pledge Successful!</p>
+            <p>Please share your commitment to housing justice:</p>
+            <p class="social_btns"><img id="fb_btn" src="images/fb_btn.png" width="48" height="48"><img id="tw_btn" src="images/tw_btn.png" width="48" height="48"></p>
+        </div>
+    </div>
+    <div class="main">
+        <p class="search"><input id="address" type="text" placeholder="Enter Address"/><a class="link_txt" id="find_btn">Find</a></p>
+        <div id='mapper'></div>
+    </div>
+    <div class="footer"/>
+</div>
+</body>
+</html>
