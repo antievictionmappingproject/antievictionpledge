@@ -8,6 +8,7 @@
 var map;
 var marker;
 var infoWindow;
+var endpoint = "192.168.1.194:8080";
 
 $(document).ready(function() {
     //initialize map
@@ -44,66 +45,73 @@ $(document).ready(function() {
 });
 
 function findAndZoom() {
+    var geocoder = new google.maps.Geocoder();
     var address = $("#address")[0].value;
-    $.ajax({
-        url: "http://nominatim.openstreetmap.org/search?q="+address+",+san+francisco,+ca&format=json",
-        type: 'GET',
-        success: function(results) {
-            var pt = [results[0].lat, results[0].lon];
-            map.setView(pt, 16);
-            marker = L.marker(pt).addTo(map);
-        },
-        failure:function() {
-            alert("Geocode was not successful");
-        }
-    });
-//    geocoder.geocode( { 'address': address, 'componentRestrictions':{'locality': 'San+Francisco'}}, function(results, status) {
-//        if (status == google.maps.GeocoderStatus.OK) {
-//            map.setCenter(results[0].geometry.location);
-//            map.setZoom(16);
-//            if (marker) {
-//                marker.setMap(null);
-//            }
-//            marker = new google.maps.Marker({
-//                map: map,
-//                position: results[0].geometry.location
-//            });
-//        } else {
-//            alert("Geocode was not successful for the following reason: " + status);
+//    $.ajax({
+//        url: "http://nominatim.openstreetmap.org/search?q="+address+",+san+francisco,+ca&format=json",
+//        type: 'GET',
+//        success: function(results) {
+//            var pt = [results[0].lat, results[0].lon];
+//            map.setView(pt, 16);
+//            marker = L.marker(pt).addTo(map);
+//        },
+//        failure:function() {
+//            alert("Geocode was not successful");
 //        }
 //    });
+    geocoder.geocode( { 'address': address, 'componentRestrictions':{'locality': 'San+Francisco'}}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            var pt = [results[0].geometry.location.k, results[0].geometry.location.A];
+            map.setView(pt, 16);
+            marker = L.marker(pt).addTo(map);
+            var add = results[0].address_components;
+            var reqStr ="num="+ encodeURI(add[0].short_name)+"&st="+encodeURI(add[1].short_name);
+            var addressTxt = add[0].short_name + " " + add[1].short_name;
+            fetchEllisInfo(reqStr, addressTxt, function(result) {
+                openInfoWindow(result, addressTxt);
+            });
+        } else {
+            alert("Geocode was not successful for the following reason: " + status);
+        }
+    });
 
-    fetchEllisInfo(address, function(result) {
-        openInfoWindow(result);
+
+}
+
+function fetchEllisInfo(addressQuery, addressTxt, callback) {
+    $.ajax({
+        url: "http://"+endpoint+"/properties?"+addressQuery,
+        type: 'GET',
+        success: function(result) {
+            callback(result, addressTxt);
+        }
     });
 }
 
-//this has fake delay. We'll need to manage callback order, when we've got everything together. 
-function fetchEllisInfo(address, callback) {
-    setTimeout(function() {
-        var result;
-        if (address.toUpperCase() == "558 CAPP") {
-            result = JSON.stringify({address: address, evictions:[{date: "1/10/2013", units: 2, landlord: 'Evil Landlords, LLC', protectedTenants: 0}]});
-        } else  if (address.toUpperCase() == "132 HANCOCK") {
-            result = JSON.stringify({address: address, evictions:[{date: "1/10/2013", units: 2, landlord: 'Evil Landlords, LLC', protectedTenants: 0},
-                {date: "12/14/2011", units: 2, landlord: 'Flippers, Inc.', protectedTenants: 1}]});
-        }  else {
-            result = JSON.stringify({address: address, evictions:[]});
-        }
-        callback.call(this, result);
-    }, 2000);
-}
+//    setTimeout(function() {
+//        var result;
+//        if (address.toUpperCase() == "558 CAPP") {
+//            result = JSON.stringify({address: address, evictions:[{date: "1/10/2013", units: 2, landlord: 'Evil Landlords, LLC', protectedTenants: 0}]});
+//        } else  if (address.toUpperCase() == "132 HANCOCK") {
+//            result = JSON.stringify({address: address, evictions:[{date: "1/10/2013", units: 2, landlord: 'Evil Landlords, LLC', protectedTenants: 0},
+//                {date: "12/14/2011", units: 2, landlord: 'Flippers, Inc.', protectedTenants: 1}]});
+//        }  else {
+//            result = JSON.stringify({address: address, evictions:[]});
+//        }
+//        callback.call(this, result);
+//    }, 2000);
 
-function openInfoWindow(result) {
-    var obj = JSON.parse(result);
+function openInfoWindow(result, addressTxt) {
+    var obj = result;
     var text;
     if (obj.evictions.length > 0) {
-        text = "<div class='info_window'><p class='info_address'>"+ obj.address.toUpperCase()+"</p><hr/><p>Ellis Act Eviction(s) at this Address:</p>";
+        text = "<div class='info_window'><p class='info_address'>"+ addressTxt.toUpperCase()+"</p><hr/><p>Ellis Act Eviction(s) at this Address:</p>";
         text += '<table><tr><th>Date:</th><th>Landlord Name:</th><th>Units</th><th>Protected Tenants:</th></tr>';
         for (var i = 0; i < obj.evictions.length; i++) {
             var ev = obj.evictions[i];
-            text += "<tr><td>"+ev.date + "</td><td>" + ev.landlord
-                + "</td><td>" + ev.units + "</td><td>" + ev.protectedTenants + "</td></tr>";
+            var d = new Date(ev.date);
+            text += "<tr><td>"+ d.toLocaleDateString() + "</td><td>" + ev.landlord
+                + "</td><td>" + ev.units + "</td><td>" +"N/A" /*+ ev.protectedTenants */+ "</td></tr>";
         }
         text += "</table></div>";
     } else {
