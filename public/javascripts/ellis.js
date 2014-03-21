@@ -8,16 +8,9 @@
 var map;
 var marker;
 var infoWindow;
-var endpoint = "192.168.1.194:8080";
+var endpoint = "displacement-server-env-rtmfzur43y.elasticbeanstalk.com";
 
 $(document).ready(function() {
-    //initialize map
-//    var mapOptions = {
-//        center: new google.maps.LatLng(37.760, -122.435),
-//        zoom: 12,
-//        mapTypeId: google.maps.MapTypeId.ROADMAP
-//    };
-//    var x = document.getElementById("mapper");
     map = L.map("mapper").setView([37.760, -122.435], 12);
     L.tileLayer('http://{s}.tile.cloudmade.com/1a1b06b230af4efdbb989ea99e9841af/59870/256/{z}/{x}/{y}.png', {
         maxZoom: 18,
@@ -74,8 +67,6 @@ function findAndZoom() {
             alert("Geocode was not successful for the following reason: " + status);
         }
     });
-
-
 }
 
 function fetchEllisInfo(addressQuery, addressTxt, callback) {
@@ -88,23 +79,10 @@ function fetchEllisInfo(addressQuery, addressTxt, callback) {
     });
 }
 
-//    setTimeout(function() {
-//        var result;
-//        if (address.toUpperCase() == "558 CAPP") {
-//            result = JSON.stringify({address: address, evictions:[{date: "1/10/2013", units: 2, landlord: 'Evil Landlords, LLC', protectedTenants: 0}]});
-//        } else  if (address.toUpperCase() == "132 HANCOCK") {
-//            result = JSON.stringify({address: address, evictions:[{date: "1/10/2013", units: 2, landlord: 'Evil Landlords, LLC', protectedTenants: 0},
-//                {date: "12/14/2011", units: 2, landlord: 'Flippers, Inc.', protectedTenants: 1}]});
-//        }  else {
-//            result = JSON.stringify({address: address, evictions:[]});
-//        }
-//        callback.call(this, result);
-//    }, 2000);
-
 function openInfoWindow(result, addressTxt) {
     var obj = result;
     var text;
-    if (obj.evictions.length > 0) {
+    if (obj.evictions && obj.evictions.length > 0) {
         text = "<div class='info_window'><p class='info_address'>"+ addressTxt.toUpperCase()+"</p><hr/><p>Ellis Act Eviction(s) at this Address:</p>";
         text += '<table><tr><th>Date:</th><th>Landlord Name:</th><th>Units</th><th>Protected Tenants:</th></tr>';
         for (var i = 0; i < obj.evictions.length; i++) {
@@ -115,11 +93,7 @@ function openInfoWindow(result, addressTxt) {
         }
         text += "</table></div>";
     } else {
-        text = "<div class='info_window'><p class='info_address'>"+ obj.address.toUpperCase()+"</p><hr/><p>No Ellis Act Evictions on record for this address</p></div>";
+        text = "<div class='info_window'><p class='info_address'>"+ addressTxt.toUpperCase()+"</p><hr/><p>No Ellis Act Evictions on record for this address</p></div>";
     }
-//    infoWindow = new google.maps.InfoWindow({
-//        content: text
-//    });
-
     marker.bindPopup(text, {maxWidth:500}).openPopup();
 }
