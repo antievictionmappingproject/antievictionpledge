@@ -1,115 +1,382 @@
-#mapper {
-  height: 500px;
-  //width: 750px;
-  //border: 1px dashed #C0C0C0;
-  margin: 20px;
+// VARIABLES //
+
+$color-darkblue: #0D2839;
+$color-darkestblue: #12212B;
+$color-lightblue: #588B9B;
+$color-offwhite: #f2f0e0;
+$color-red: #cc0029;
+$font-display: 'Oswald', sans-serif;
+$font-h2: 'Lusitana', serif;
+$font-sans: 'Open Sans', sans-serif;
+
+
+// MIXINS //
+
+@mixin boxshadow($shadow) {
+   -moz-box-shadow: $shadow;
+   -webkit-box-shadow: $shadow;
+   box-shadow: inset $shadow;
 }
 
-.wrap {
-  width:1050px;
-  margin:0 auto;
-  background: #fff;
+@mixin ctabuttonstyle {
+  background: $color-lightblue;
+  color: $color-darkblue;
+  font-family: $font-display;
+  font-weight: 400;
+  letter-spacing: .075em;
+  padding: 1em 2em;
+  text-decoration: none;
+  text-shadow: 0px 1px 1px rgba(255,255,255,0.2);
 }
 
-.main {
-  height:100%;
-  width: 788px;
-  float: left;
-  background: #ffffff;
-//margin-right: 210px;
-//  border: 1px solid #63A0F0;
-  margin: 0px 1px;
-}
-
-.search {
-  font-family: Verdana,Geneva,sans-serif;
-  font-size: 16px;
-  margin: 10px;
-  cursor: pointer;
-}
-
-.right_bar {
-  width: 235px;
-  height: 100%;
-  //margin: 5px;
-  background: #fff;
-  float: right;
-  p {
-    font-family: Verdana,Geneva,sans-serif;
-    font-size: 16px;
-  }
+@mixin whitelinks($color) {
   a {
-    cursor: pointer;
-    background: #ddd;
-    color: #003170;
-    padding: 4px;
-    border: 1px solid #006FFF;
-    border-radius: 5px;
-    margin-left: 15px;
-  }
-  padding: 10px;
-  padding-top: 80px;
-  input[type=text] {
-    margin-left: 5px;
-  }
-  .expl {
-    font-size: 10px;
-    margin-top: 2px;
-  }
-  .chk_label {
-    font-size: 12px;
-    margin-top: 5px;
-  }
-  .label {
-    margin: 10px 0px 2px 0px;
-    font-size: 14px;
-  }
+    color: $color-offwhite;
+    text-decoration: none;
+
+    &:hover {
+      color: $color;
+      @include selectanimation(all .2s ease-in);
+    }
+  } 
 }
-input[type=text] {
+
+@mixin roundedcorner($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin selectanimation($animation) {
+  -webkit-transition: $animation;
+  -moz-transition: $animation;
+  -ms-transition: $animation;
+  -o-transition: $animation;
+}
+
+@mixin submitbuttonstyle {
+  background: $color-lightblue;
+  color: $color-darkblue;
+  font-family: $font-display;
+  font-size: .8em;
+  font-weight: 400;
+  letter-spacing: .075em;
+  padding: .6em 2em;
+  text-decoration: none;
+  text-shadow: 0px 1px 1px rgba(255,255,255,0.2);
+}
+
+
+// STYLE //
+
+#address {
+  width: 90%;
+}
+
+body {
+  font-family: $font-sans;
   font-size: 16px;
-  border: 1px solid #006FFF;
-  padding: 2px;
-}
-.main_menu {
-  //background: #F77E7E;
-  height: 80px;
-  width: 100%;
-  border-bottom: 1px solid #333;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
 
-.link_txt {
-  margin-left: 10px;
-}
-
-.footer {
-  clear: both;
-  height: 50px;
-  border-top:  1px solid #333;
-  width: 100%;
-}
-
-.info_address {
-  font-size: 16px;
-  font-weight: bold;
-  color: #cc0000;
-}
-
-.petition {
-  margin: 8px;
-  border: 1px solid #bbb;
-  padding: 12px;
-  //background: #eee;
+div.info_window {
+  width: 500px;
+  //height: 220px;
 }
 
 #feedback {
   display: none;
 }
 
-.header {
-  font-size: 16px;
-  font-weight: bold;
-  color: #cc0000;
+#find_btn {
+  color: $color-offwhite;
+  font-family: $font-display;
+  letter-spacing: .1em;
+  text-transform:uppercase;
+
+  &:hover {
+    color: $color-darkestblue;
+    @include selectanimation(all 0.30s ease-in-out);
+  }
 }
+
+.footer {
+  background: $color-darkblue;
+  border-top: 1px solid $color-darkestblue;
+  clear: both;
+  color: $color-lightblue;
+  font-size: .75em;
+  padding: 1em 0; 
+  text-align: center;
+  width: 100%;
+  @include whitelinks($color-lightblue);
+}
+
+h2 {
+  color: $color-lightblue;
+  font-family: $font-h2;
+  font-size: 1.8em;
+  letter-spacing: .05em;
+  line-height: 1;
+  text-shadow: 1px 1px 2px lighten($color-darkblue, 10%);
+}
+
+h2.dark {
+  color: $color-darkblue;
+  text-shadow: 1px 1px 2px lighten($color-lightblue, 4%);
+}
+
+img {
+  float: left;
+}
+
+input[type=text], textarea {
+  font-size: .8em;
+  font-style: italic;
+  border: 1px solid #DDDDDD;
+  margin: 0;
+  padding: .5em;
+  width: 96%;
+}
+
+input:focus, textarea:focus {
+  border: 1px solid #fff;
+  outline: none;
+  // @include boxshadow(0 0 5px $color-darkblue);
+  // @include selectanimation(all 0.40s ease-in-out);
+}
+
+#intro {
+  background: $color-darkblue;
+  // background-image:url('../images/');
+  clear: both;
+  overflow: hidden;
+
+  h1 {
+  color: $color-offwhite;
+  font-family: $font-display;
+  font-size: 4em;
+  font-weight: 400;
+  letter-spacing: .075em;
+  margin-bottom: 0;
+  text-shadow: 4px 4px 0px $color-red;
+  }
+
+  .introBody {
+  color: #b6ced4;
+  font-family: $font-sans;
+  font-size: 1.3em;  
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 1.6em 0 3em 0;
+  }
+
+  .CTA {      //Should be centered with paragraph text//
+    @include ctabuttonstyle;
+    @include roundedcorner(0.7em);
+  }
+
+  .CTA:hover {
+    color: $color-offwhite;
+    background: $color-red;
+    text-shadow: 2px 2px 0px darken($color-red, 8%);
+    @include selectanimation(all 0.30s ease-in-out);
+  }
+}
+
+#learnMore {
+  background: $color-lightblue;
+}
+
+.link_txt {
+  margin-left: 10px;
+}
+
+.luggageIcon  {
+  float: left;
+  margin-right: 3em;
+}
+
+.main {
+  height:100%;
+  background: #333;
+}
+
+.main_menu {
+  background: $color-darkestblue;
+  height: 6em;
+  width: 100%;
+  border-bottom: 1px solid #06131c;
+}
+
+#mapper {
+  height: 500px;
+  margin: 20px;
+  float: left;
+}
+
+nav {
+  float: right;
+  @include whitelinks($color-lightblue);
+
+  ul {
+    list-style: none;
+    margin: 1.95em 0 2em 0;
+
+    li {
+    float: left;
+    font-family: $font-sans;
+    margin-left: 2em;
+    padding: .3em .1em; 
+    display: block;
+    }
+  }
+}
+
+.petition {
+  background: rgba(242,240,224,0.6);
+  border: 2px solid $color-darkblue;
+  color: $color-darkblue;
+  margin: 0;
+  padding: 2em;
+  @include roundedcorner(0.7em);
+}
+
+#pledges {
+  background: $color-darkblue;
+  float: left;
+  width: 100%
+}
+
+.pledgeColumn {
+  float: left;
+  width: 28%;
+  padding: 0 3em 0 0;
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    color: $color-offwhite;
+    font-size: .8em;
+    font-weight: 300;
+  }
+
+  p {
+    margin: 1em 0;
+    padding: 0;
+  }
+}
+
+.resources, .aboutus {
+  color: $color-darkestblue;
+  float: left; 
+  width: 50%;
+  @include whitelinks($color-darkblue);
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin: .4em 0;
+  }
+}
+
+.right_bar {
+  width: 30%;
+  height: 100%;
+  float: right;
+
+  a {   // Should be centered in the div //
+    cursor: pointer;
+    @include submitbuttonstyle;
+    @include roundedcorner(0.7em);
+  }
+
+  a:hover {   // Weird 1px border around top of button //
+    color: $color-offwhite;
+    background: $color-darkblue;
+    text-shadow: 2px 2px 0px darken($color-darkblue, 8%);
+    @include selectanimation(all 0.30s ease-in-out);
+  }
+
+  .expl {
+    font-size: .6em;
+    margin: .6em 0 2em 0;
+  }
+  .chk_label {
+    font-size: .6em;
+    margin: .6em 0 4em 0;
+  }
+  .label {
+    margin: 1.2em 0px .2em 0px;
+    font-size: .9em;
+  }
+
+  p.standUp {
+    color: $color-darkblue;
+    font-family: $font-display;
+    font-size: 2.5em;
+    font-weight: 600;
+    letter-spacing: .04em;
+    margin: 0;
+    padding: 0;
+    text-shadow: 3px 3px 0px $color-lightblue;
+    text-transform:uppercase;
+  }
+
+  p.pledgeText {
+    font-family: $font-display;
+    font-size: 1.5em;
+    margin: .5em 0 1.25em 0;
+    padding: 0;
+  }
+
+  span {
+    font-size: .6em;
+  }
+}
+
+.search {
+  background: rgb(204, 0, 0); /* The Fallback */
+  background: rgba(204, 0, 0, 0.8); 
+  width: 60%;
+  margin: 0;
+  padding: 1em;
+  cursor: pointer;
+  float: left;
+}
+
+strong {
+  text-transform:uppercase;
+  font-size: .9em;
+}
+
+td, th {
+  padding-left: 13px;
+}
+
+.wrap {
+  width:1050px;
+  margin: auto;
+  padding: 5em 0;
+  overflow: hidden;
+}
+
+.wrapNoMargin {
+  margin: auto;
+  overflow: hidden;
+  padding: 0;
+  width:1050px;
+}
+
+
+//SOCIAL//
 
 .twitter-share-button {
   margin-top: 15px;
@@ -126,11 +393,5 @@ input[type=text] {
   }
 }
 
-div.info_window {
-  width: 500px;
-  //height: 220px;
-}
 
-td, th {
-  padding-left: 13px;
-}
+

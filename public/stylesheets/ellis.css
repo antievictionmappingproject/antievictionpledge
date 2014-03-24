@@ -1,152 +1,415 @@
-/* line 1, ../sass/ellis.scss */
-#mapper {
-  height: 500px;
-  margin: 20px;
+/* line 72, ../sass/ellis.scss */
+#address {
+  width: 90%;
 }
 
-/* line 8, ../sass/ellis.scss */
-.wrap {
-  width: 1050px;
-  margin: 0 auto;
-  background: #fff;
-}
-
-/* line 14, ../sass/ellis.scss */
-.main {
-  height: 100%;
-  width: 788px;
-  float: left;
-  background: #ffffff;
-  margin: 0px 1px;
-}
-
-/* line 24, ../sass/ellis.scss */
-.search {
-  font-family: Verdana,Geneva,sans-serif;
+/* line 76, ../sass/ellis.scss */
+body {
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
-  margin: 10px;
-  cursor: pointer;
-}
-
-/* line 31, ../sass/ellis.scss */
-.right_bar {
-  width: 235px;
-  height: 100%;
-  background: #fff;
-  float: right;
-  padding: 10px;
-  padding-top: 80px;
-}
-/* line 37, ../sass/ellis.scss */
-.right_bar p {
-  font-family: Verdana,Geneva,sans-serif;
-  font-size: 16px;
-}
-/* line 41, ../sass/ellis.scss */
-.right_bar a {
-  cursor: pointer;
-  background: #ddd;
-  color: #003170;
-  padding: 4px;
-  border: 1px solid #006FFF;
-  border-radius: 5px;
-  margin-left: 15px;
-}
-/* line 52, ../sass/ellis.scss */
-.right_bar input[type=text] {
-  margin-left: 5px;
-}
-/* line 55, ../sass/ellis.scss */
-.right_bar .expl {
-  font-size: 10px;
-  margin-top: 2px;
-}
-/* line 59, ../sass/ellis.scss */
-.right_bar .chk_label {
-  font-size: 12px;
-  margin-top: 5px;
-}
-/* line 63, ../sass/ellis.scss */
-.right_bar .label {
-  margin: 10px 0px 2px 0px;
-  font-size: 14px;
-}
-
-/* line 68, ../sass/ellis.scss */
-input[type=text] {
-  font-size: 16px;
-  border: 1px solid #006FFF;
-  padding: 2px;
-}
-
-/* line 73, ../sass/ellis.scss */
-.main_menu {
-  height: 80px;
-  width: 100%;
-  border-bottom: 1px solid #333;
-}
-
-/* line 80, ../sass/ellis.scss */
-.link_txt {
-  margin-left: 10px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
 
 /* line 84, ../sass/ellis.scss */
-.footer {
-  clear: both;
-  height: 50px;
-  border-top: 1px solid #333;
-  width: 100%;
-}
-
-/* line 91, ../sass/ellis.scss */
-.info_address {
-  font-size: 16px;
-  font-weight: bold;
-  color: #cc0000;
-}
-
-/* line 97, ../sass/ellis.scss */
-.petition {
-  margin: 8px;
-  border: 1px solid #bbb;
-  padding: 12px;
-}
-
-/* line 104, ../sass/ellis.scss */
-#feedback {
-  display: none;
-}
-
-/* line 108, ../sass/ellis.scss */
-.header {
-  font-size: 16px;
-  font-weight: bold;
-  color: #cc0000;
-}
-
-/* line 114, ../sass/ellis.scss */
-.twitter-share-button {
-  margin-top: 15px;
-}
-
-/* line 118, ../sass/ellis.scss */
-.fb-share-button {
-  margin: 0px 5px;
-}
-
-/* line 123, ../sass/ellis.scss */
-.social_btns img {
-  margin-left: 5px;
-  cursor: pointer;
-}
-
-/* line 129, ../sass/ellis.scss */
 div.info_window {
   width: 500px;
 }
 
-/* line 134, ../sass/ellis.scss */
+/* line 89, ../sass/ellis.scss */
+#feedback {
+  display: none;
+}
+
+/* line 93, ../sass/ellis.scss */
+#find_btn {
+  color: #f2f0e0;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+/* line 99, ../sass/ellis.scss */
+#find_btn:hover {
+  color: #12212b;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+/* line 105, ../sass/ellis.scss */
+.footer {
+  background: #0d2839;
+  border-top: 1px solid #12212b;
+  clear: both;
+  color: #588b9b;
+  font-size: .75em;
+  padding: 1em 0;
+  text-align: center;
+  width: 100%;
+}
+/* line 33, ../sass/ellis.scss */
+.footer a {
+  color: #f2f0e0;
+  text-decoration: none;
+}
+/* line 37, ../sass/ellis.scss */
+.footer a:hover {
+  color: #588b9b;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+}
+
+/* line 117, ../sass/ellis.scss */
+h2 {
+  color: #588b9b;
+  font-family: "Lusitana", serif;
+  font-size: 1.8em;
+  letter-spacing: .05em;
+  line-height: 1;
+  text-shadow: 1px 1px 2px #164563;
+}
+
+/* line 126, ../sass/ellis.scss */
+h2.dark {
+  color: #0d2839;
+  text-shadow: 1px 1px 2px #6295a6;
+}
+
+/* line 131, ../sass/ellis.scss */
+img {
+  float: left;
+}
+
+/* line 135, ../sass/ellis.scss */
+input[type=text], textarea {
+  font-size: .8em;
+  font-style: italic;
+  border: 1px solid #DDDDDD;
+  margin: 0;
+  padding: .5em;
+  width: 96%;
+}
+
+/* line 144, ../sass/ellis.scss */
+input:focus, textarea:focus {
+  border: 1px solid #fff;
+  outline: none;
+}
+
+/* line 151, ../sass/ellis.scss */
+#intro {
+  background: #0d2839;
+  clear: both;
+  overflow: hidden;
+}
+/* line 157, ../sass/ellis.scss */
+#intro h1 {
+  color: #f2f0e0;
+  font-family: "Oswald", sans-serif;
+  font-size: 4em;
+  font-weight: 400;
+  letter-spacing: .075em;
+  margin-bottom: 0;
+  text-shadow: 4px 4px 0px #cc0029;
+}
+/* line 167, ../sass/ellis.scss */
+#intro .introBody {
+  color: #b6ced4;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.3em;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 1.6em 0 3em 0;
+}
+/* line 176, ../sass/ellis.scss */
+#intro .CTA {
+  background: #588b9b;
+  color: #0d2839;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  letter-spacing: .075em;
+  padding: 1em 2em;
+  text-decoration: none;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.2);
+  -webkit-border-radius: 0.7em;
+  -moz-border-radius: 0.7em;
+  border-radius: 0.7em;
+}
+/* line 181, ../sass/ellis.scss */
+#intro .CTA:hover {
+  color: #f2f0e0;
+  background: #cc0029;
+  text-shadow: 2px 2px 0px #a30021;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+/* line 189, ../sass/ellis.scss */
+#learnMore {
+  background: #588b9b;
+}
+
+/* line 193, ../sass/ellis.scss */
+.link_txt {
+  margin-left: 10px;
+}
+
+/* line 197, ../sass/ellis.scss */
+.luggageIcon {
+  float: left;
+  margin-right: 3em;
+}
+
+/* line 202, ../sass/ellis.scss */
+.main {
+  height: 100%;
+  background: #333;
+}
+
+/* line 207, ../sass/ellis.scss */
+.main_menu {
+  background: #12212b;
+  height: 6em;
+  width: 100%;
+  border-bottom: 1px solid #06131c;
+}
+
+/* line 214, ../sass/ellis.scss */
+#mapper {
+  height: 500px;
+  margin: 20px;
+  float: left;
+}
+
+/* line 220, ../sass/ellis.scss */
+nav {
+  float: right;
+}
+/* line 33, ../sass/ellis.scss */
+nav a {
+  color: #f2f0e0;
+  text-decoration: none;
+}
+/* line 37, ../sass/ellis.scss */
+nav a:hover {
+  color: #588b9b;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+}
+/* line 224, ../sass/ellis.scss */
+nav ul {
+  list-style: none;
+  margin: 1.95em 0 2em 0;
+}
+/* line 228, ../sass/ellis.scss */
+nav ul li {
+  float: left;
+  font-family: "Open Sans", sans-serif;
+  margin-left: 2em;
+  padding: .3em .1em;
+  display: block;
+}
+
+/* line 238, ../sass/ellis.scss */
+.petition {
+  background: rgba(242, 240, 224, 0.6);
+  border: 2px solid #0d2839;
+  color: #0d2839;
+  margin: 0;
+  padding: 2em;
+  -webkit-border-radius: 0.7em;
+  -moz-border-radius: 0.7em;
+  border-radius: 0.7em;
+}
+
+/* line 247, ../sass/ellis.scss */
+#pledges {
+  background: #0d2839;
+  float: left;
+  width: 100%;
+}
+
+/* line 253, ../sass/ellis.scss */
+.pledgeColumn {
+  float: left;
+  width: 28%;
+  padding: 0 3em 0 0;
+}
+/* line 258, ../sass/ellis.scss */
+.pledgeColumn ul {
+  list-style: none;
+}
+/* line 262, ../sass/ellis.scss */
+.pledgeColumn li {
+  color: #f2f0e0;
+  font-size: .8em;
+  font-weight: 300;
+}
+/* line 268, ../sass/ellis.scss */
+.pledgeColumn p {
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* line 274, ../sass/ellis.scss */
+.resources, .aboutus {
+  color: #12212b;
+  float: left;
+  width: 50%;
+}
+/* line 33, ../sass/ellis.scss */
+.resources a, .aboutus a {
+  color: #f2f0e0;
+  text-decoration: none;
+}
+/* line 37, ../sass/ellis.scss */
+.resources a:hover, .aboutus a:hover {
+  color: #0d2839;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+}
+/* line 280, ../sass/ellis.scss */
+.resources ul, .aboutus ul {
+  list-style: none;
+  padding: 0;
+}
+/* line 285, ../sass/ellis.scss */
+.resources li, .aboutus li {
+  margin: .4em 0;
+}
+
+/* line 290, ../sass/ellis.scss */
+.right_bar {
+  width: 30%;
+  height: 100%;
+  float: right;
+}
+/* line 295, ../sass/ellis.scss */
+.right_bar a {
+  cursor: pointer;
+  background: #588b9b;
+  color: #0d2839;
+  font-family: "Oswald", sans-serif;
+  font-size: .8em;
+  font-weight: 400;
+  letter-spacing: .075em;
+  padding: .6em 2em;
+  text-decoration: none;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.2);
+  -webkit-border-radius: 0.7em;
+  -moz-border-radius: 0.7em;
+  border-radius: 0.7em;
+}
+/* line 301, ../sass/ellis.scss */
+.right_bar a:hover {
+  color: #f2f0e0;
+  background: #0d2839;
+  text-shadow: 2px 2px 0px #051118;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+/* line 308, ../sass/ellis.scss */
+.right_bar .expl {
+  font-size: .6em;
+  margin: .6em 0 2em 0;
+}
+/* line 312, ../sass/ellis.scss */
+.right_bar .chk_label {
+  font-size: .6em;
+  margin: .6em 0 4em 0;
+}
+/* line 316, ../sass/ellis.scss */
+.right_bar .label {
+  margin: 1.2em 0px .2em 0px;
+  font-size: .9em;
+}
+/* line 321, ../sass/ellis.scss */
+.right_bar p.standUp {
+  color: #0d2839;
+  font-family: "Oswald", sans-serif;
+  font-size: 2.5em;
+  font-weight: 600;
+  letter-spacing: .04em;
+  margin: 0;
+  padding: 0;
+  text-shadow: 3px 3px 0px #588b9b;
+  text-transform: uppercase;
+}
+/* line 333, ../sass/ellis.scss */
+.right_bar p.pledgeText {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5em;
+  margin: .5em 0 1.25em 0;
+  padding: 0;
+}
+/* line 340, ../sass/ellis.scss */
+.right_bar span {
+  font-size: .6em;
+}
+
+/* line 345, ../sass/ellis.scss */
+.search {
+  background: #cc0000;
+  /* The Fallback */
+  background: rgba(204, 0, 0, 0.8);
+  width: 60%;
+  margin: 0;
+  padding: 1em;
+  cursor: pointer;
+  float: left;
+}
+
+/* line 355, ../sass/ellis.scss */
+strong {
+  text-transform: uppercase;
+  font-size: .9em;
+}
+
+/* line 360, ../sass/ellis.scss */
 td, th {
   padding-left: 13px;
+}
+
+/* line 364, ../sass/ellis.scss */
+.wrap {
+  width: 1050px;
+  margin: auto;
+  padding: 5em 0;
+  overflow: hidden;
+}
+
+/* line 371, ../sass/ellis.scss */
+.wrapNoMargin {
+  margin: auto;
+  overflow: hidden;
+  padding: 0;
+  width: 1050px;
+}
+
+/* line 381, ../sass/ellis.scss */
+.twitter-share-button {
+  margin-top: 15px;
+}
+
+/* line 385, ../sass/ellis.scss */
+.fb-share-button {
+  margin: 0px 5px;
+}
+
+/* line 390, ../sass/ellis.scss */
+.social_btns img {
+  margin-left: 5px;
+  cursor: pointer;
 }
