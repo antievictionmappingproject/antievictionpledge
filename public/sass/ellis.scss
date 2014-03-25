@@ -9,9 +9,7 @@ $font-display: 'Oswald', sans-serif;
 $font-h2: 'Lusitana', serif;
 $font-sans: 'Open Sans', sans-serif;
 
-
 // MIXINS //
-
 @mixin boxshadow($shadow) {
    -moz-box-shadow: $shadow;
    -webkit-box-shadow: $shadow;
@@ -188,6 +186,7 @@ input:focus, textarea:focus {
 
 #learnMore {
   background: $color-lightblue;
+  wrap: left;
 }
 
 .link_txt {
@@ -213,8 +212,11 @@ input:focus, textarea:focus {
 
 #mapper {
   height: 500px;
-  margin: 20px;
+  width: 60%;
+  margin: 0px 20px;
   float: left;
+  //background: rgba(204, 0, 0, 0.8);
+  //padding: 1em;
 }
 
 nav {

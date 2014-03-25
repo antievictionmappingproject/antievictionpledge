@@ -20,9 +20,9 @@
             <a href="#"><img src="http://placehold.it/150x80" alt="Eviction Pledge logo"></a>
                 <nav> 
                     <ul>
-                        <a href="#"><li>Pledge</li></a>
-                        <a href="#"><li>See Who Has Pledged</li></a>
-                        <a href="#"><li>Learn More</li></a>
+                        <a href="#" id="searchPledgelink"><li>Pledge</li></a>
+                        <a href="#" id="pledgeslink"><li>See Who Has Pledged</li></a>
+                        <a href="#" id="learnMorelink"><li>Learn More</li></a>
                     </ul>
                 </nav>
         </div>
@@ -48,9 +48,10 @@
                 <p class="search"><input id="address" type="text" placeholder="Enter Address"/><a class="link_txt" id="find_btn">Find</a></p>
             </div>
 
-            <!-- <div id='mapper'></div> -->
+             <div id='mapper'></div>
 
             <div id="searchPledge">
+
                 <div class="right_bar">
                     <div class="petition" id="petition">
                         <p class="standUp">Take a Stand</p>
@@ -64,7 +65,7 @@
                         <p class="expl">We'll never share your email without asking!</p>
                         <p class="label">Why is this important to you?</p>
                         <textarea id="pt_reason" class="pt_txtarea" cols="22" rows="5"></textarea>
-                        <p class="chk_label"><input type="checkbox" name="use" value="usable" checked="true"/>Show my name in the pledge list</p>
+                        <p class="chk_label"><input type="checkbox" id="pt_usable" name="use" value="usable" checked="true"/>Show my name in the pledge list</p>
                         <p><a id="pet_link" class="pt_link" role="button">I Support Housing Justice</a></p>
                     </div>
                     <div class="petition" id="feedback">
@@ -145,7 +146,6 @@
             </div>
         </div>       
     </div>
-
     <div class="footer">
         <div class="wrapNoMargin">
             <p>&#169; 2014 // Presented by the <a href="http://www.antievictionmappingproject.net/">Anti-Eviction Mapping Project</a></p>

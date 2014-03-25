@@ -18,3 +18,4 @@ node_modules
 *.output
 
 public/.sass-cache/*
+public/.idea/

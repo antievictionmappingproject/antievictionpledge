@@ -28,6 +28,7 @@ $(document).ready(function() {
     });
 
     $('#pet_link').click(function(){
+        submitPledge();
         $('#petition').hide(100);
         $('#feedback').show(100);
     });
@@ -35,7 +36,32 @@ $(document).ready(function() {
     $('#tw_btn').click(function() {
         window.open("https://twitter.com/intent/tweet?text=I+Pledged+not+to+rent+or+buy+Ellis-Acted+buildings.+You+can+too&url=http://www.antievictionmappingproject.net/ellis.html&via=antievictionmap", '1369959514879','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');
     });
+
+
+    $('#searchPledgelink').click(function() {
+        scrollTo($('#searchPledge'), 250);
+        return false;
+    });
+
+    $('#pledgeslink').click(function(){
+        scrollTo($('#pledges'), 350);
+        return false;
+    });
+
+    $('#learnMorelink').click(function(){
+        scrollTo($('.resources'), 450); //why will scrolling to learnMore not work?
+        return false;
+    });
+
 });
+
+function scrollTo(element, time) {
+    if (time == null) {
+        time = 500;
+    }
+    var tt = element.offset().top;
+    $("html, body").animate({ scrollTop:  tt}, time);
+}
 
 function findAndZoom() {
     var geocoder = new google.maps.Geocoder();
@@ -75,6 +101,24 @@ function fetchEllisInfo(addressQuery, addressTxt, callback) {
         type: 'GET',
         success: function(result) {
             callback(result, addressTxt);
+        }
+    });
+}
+
+function submitPledge() {
+    var data = {
+        firstName: $('#pt_firstname').val(),
+        lastName: $('#pt_lastname').val(),
+        email: $('#pt_email').val(),
+        reason: $('#pt_reason').val(),
+        anonymous: !($('#pt_usable').val())
+    };
+    $.ajax({
+        url: "http://"+endpoint+"/pledges",
+        data: data,
+        type: 'POST',
+        success: function(result) {
+            console.log(result);
         }
     });
 }
