@@ -185,7 +185,7 @@ input:focus, textarea:focus {
 #mapper {
   height: 500px;
   width: 60%;
-  margin: 0px 20px;
+  margin: 20px;
   float: left;
 }
 
