@@ -208,6 +208,8 @@ input:focus, textarea:focus {
   height: 6em;
   width: 100%;
   border-bottom: 1px solid #06131c;
+  position: fixed;
+  z-index: 99;
 }
 
 #mapper {
@@ -215,6 +217,7 @@ input:focus, textarea:focus {
   width: 60%;
   margin: 20px;
   float: left;
+  z-index: 5;
   //background: rgba(204, 0, 0, 0.8);
   //padding: 1em;
 }
@@ -263,13 +266,17 @@ nav {
 
   li {
     color: $color-offwhite;
-    font-size: .8em;
+    font-size: 1em;
     font-weight: 300;
+    margin: 5px;
   }
 
   p {
     margin: 1em 0;
     padding: 0;
+  }
+  .name {
+    font-weight: bold;
   }
 }
 
@@ -375,6 +382,10 @@ td, th {
   overflow: hidden;
   padding: 0;
   width:1050px;
+}
+
+.scrollarea {
+  overflow: scroll;
 }
 
 

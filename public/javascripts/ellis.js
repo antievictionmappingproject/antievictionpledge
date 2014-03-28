@@ -53,31 +53,20 @@ $(document).ready(function() {
         return false;
     });
 
+    retrievePledges();
 });
 
 function scrollTo(element, time) {
     if (time == null) {
         time = 500;
     }
-    var tt = element.offset().top;
+    var tt = element.offset().top - $('#main_menu').height();
     $("html, body").animate({ scrollTop:  tt}, time);
 }
 
 function findAndZoom() {
     var geocoder = new google.maps.Geocoder();
     var address = $("#address")[0].value;
-//    $.ajax({
-//        url: "http://nominatim.openstreetmap.org/search?q="+address+",+san+francisco,+ca&format=json",
-//        type: 'GET',
-//        success: function(results) {
-//            var pt = [results[0].lat, results[0].lon];
-//            map.setView(pt, 16);
-//            marker = L.marker(pt).addTo(map);
-//        },
-//        failure:function() {
-//            alert("Geocode was not successful");
-//        }
-//    });
     geocoder.geocode( { 'address': address, 'componentRestrictions':{'locality': 'San+Francisco'}}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             var pt = [results[0].geometry.location.k, results[0].geometry.location.A];
@@ -106,12 +95,13 @@ function fetchEllisInfo(addressQuery, addressTxt, callback) {
 }
 
 function submitPledge() {
+    console.log($('#pt_usable').is(':checked'));
     var data = {
         firstName: $('#pt_firstname').val(),
         lastName: $('#pt_lastname').val(),
         email: $('#pt_email').val(),
         reason: $('#pt_reason').val(),
-        anonymous: !($('#pt_usable').val())
+        anonymous: !($('#pt_usable').is(':checked'))
     };
     $.ajax({
         url: "http://"+endpoint+"/pledges",
@@ -140,4 +130,27 @@ function openInfoWindow(result, addressTxt) {
         text = "<div class='info_window'><p class='info_address'>"+ addressTxt.toUpperCase()+"</p><hr/><p>No Ellis Act Evictions on record for this address</p></div>";
     }
     marker.bindPopup(text, {maxWidth:500}).openPopup();
+}
+
+function retrievePledges() {
+    $('.pledgeColumn').empty();
+
+    $.ajax({
+        url: "http://"+endpoint+"/pledges",
+        type: 'GET',
+        success: function(result) {
+            var j = 0
+            var sel = $('#pledgeColumn_'+j)
+            var list = sel.append('<ul/>');
+            for (var i = 0; i < result.length; i++){
+                if (i % 10 == 0){
+                    j++;
+                    sel = $('#pledgeColumn_'+j);
+                    list = sel.append('<ul/>');
+                }
+                var blob = '<li><span class="name">'+result[i].name+'</span> <span class="reason">' + result[i].reason + '</span></li>';
+                list.append(blob);
+            }
+        }
+    });
 }
