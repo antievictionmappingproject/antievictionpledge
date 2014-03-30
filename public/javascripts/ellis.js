@@ -43,6 +43,11 @@ $(document).ready(function() {
         return false;
     });
 
+    $('.CTA').click(function() {
+        scrollTo($('#searchPledge'), 250);
+        return false;
+    });
+
     $('#pledgeslink').click(function(){
         scrollTo($('#pledges'), 350);
         return false;

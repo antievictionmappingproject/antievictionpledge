@@ -1,4 +1,4 @@
-/* line 72, ../sass/ellis.scss */
+/* line 73, ../sass/ellis.scss */
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
@@ -7,24 +7,24 @@ body {
   padding: 0;
 }
 
-/* line 80, ../sass/ellis.scss */
+/* line 81, ../sass/ellis.scss */
 div.info_window {
   width: 500px;
 }
 
-/* line 85, ../sass/ellis.scss */
+/* line 86, ../sass/ellis.scss */
 #feedback {
   display: none;
 }
 
-/* line 89, ../sass/ellis.scss */
+/* line 90, ../sass/ellis.scss */
 #find_btn {
   color: #f2f0e0;
   font-family: "Oswald", sans-serif;
   letter-spacing: .1em;
   text-transform: uppercase;
 }
-/* line 95, ../sass/ellis.scss */
+/* line 96, ../sass/ellis.scss */
 #find_btn:hover {
   color: #12212b;
   -webkit-transition: all 0.3s ease-in-out;
@@ -33,7 +33,7 @@ div.info_window {
   -o-transition: all 0.3s ease-in-out;
 }
 
-/* line 101, ../sass/ellis.scss */
+/* line 102, ../sass/ellis.scss */
 .footer {
   background: #0d2839;
   border-top: 1px solid #12212b;
@@ -44,12 +44,12 @@ div.info_window {
   text-align: center;
   width: 100%;
 }
-/* line 33, ../sass/ellis.scss */
+/* line 34, ../sass/ellis.scss */
 .footer a {
   color: #f2f0e0;
   text-decoration: none;
 }
-/* line 37, ../sass/ellis.scss */
+/* line 38, ../sass/ellis.scss */
 .footer a:hover {
   color: #588b9b;
   -webkit-transition: all 0.2s ease-in;
@@ -58,7 +58,7 @@ div.info_window {
   -o-transition: all 0.2s ease-in;
 }
 
-/* line 113, ../sass/ellis.scss */
+/* line 114, ../sass/ellis.scss */
 h2 {
   color: #588b9b;
   font-family: "Lusitana", serif;
@@ -68,18 +68,18 @@ h2 {
   text-shadow: 1px 1px 2px #164563;
 }
 
-/* line 122, ../sass/ellis.scss */
+/* line 123, ../sass/ellis.scss */
 h2.dark {
   color: #0d2839;
   text-shadow: 1px 1px 2px #6295a6;
 }
 
-/* line 127, ../sass/ellis.scss */
+/* line 128, ../sass/ellis.scss */
 img {
   float: left;
 }
 
-/* line 131, ../sass/ellis.scss */
+/* line 132, ../sass/ellis.scss */
 input[type=text], textarea {
   font-size: .8em;
   font-style: italic;
@@ -89,19 +89,19 @@ input[type=text], textarea {
   width: 96%;
 }
 
-/* line 140, ../sass/ellis.scss */
+/* line 141, ../sass/ellis.scss */
 input:focus, textarea:focus {
   border: 1px solid #fff;
   outline: none;
 }
 
-/* line 147, ../sass/ellis.scss */
+/* line 148, ../sass/ellis.scss */
 #intro {
   background: #0d2839;
   clear: both;
   overflow: hidden;
 }
-/* line 153, ../sass/ellis.scss */
+/* line 154, ../sass/ellis.scss */
 #intro h1 {
   color: #f2f0e0;
   font-family: "Oswald", sans-serif;
@@ -111,7 +111,7 @@ input:focus, textarea:focus {
   margin-bottom: 0;
   text-shadow: 4px 4px 0px #cc0029;
 }
-/* line 163, ../sass/ellis.scss */
+/* line 164, ../sass/ellis.scss */
 #intro .introBody {
   color: #b6ced4;
   font-family: "Open Sans", sans-serif;
@@ -120,7 +120,7 @@ input:focus, textarea:focus {
   line-height: 1.5;
   margin: 1.6em 0 3em 0;
 }
-/* line 172, ../sass/ellis.scss */
+/* line 173, ../sass/ellis.scss */
 #intro .CTA {
   background: #588b9b;
   color: #0d2839;
@@ -134,7 +134,7 @@ input:focus, textarea:focus {
   -moz-border-radius: 0.7em;
   border-radius: 0.7em;
 }
-/* line 177, ../sass/ellis.scss */
+/* line 178, ../sass/ellis.scss */
 #intro .CTA:hover {
   color: #f2f0e0;
   background: #cc0029;
@@ -145,30 +145,30 @@ input:focus, textarea:focus {
   -o-transition: all 0.3s ease-in-out;
 }
 
-/* line 185, ../sass/ellis.scss */
+/* line 186, ../sass/ellis.scss */
 #learnMore {
   background: #588b9b;
   wrap: left;
 }
 
-/* line 190, ../sass/ellis.scss */
+/* line 191, ../sass/ellis.scss */
 .link_txt {
   margin-left: 10px;
 }
 
-/* line 194, ../sass/ellis.scss */
+/* line 195, ../sass/ellis.scss */
 .luggageIcon {
   float: left;
   margin-right: 3em;
 }
 
-/* line 199, ../sass/ellis.scss */
+/* line 200, ../sass/ellis.scss */
 .main {
-  height: 700px;
+  height: 800px;
   background: #333;
 }
 
-/* line 204, ../sass/ellis.scss */
+/* line 205, ../sass/ellis.scss */
 .main_menu {
   background: #12212b;
   height: 6em;
@@ -178,25 +178,26 @@ input:focus, textarea:focus {
   z-index: 99;
 }
 
-/* line 213, ../sass/ellis.scss */
+/* line 214, ../sass/ellis.scss */
 #mapper {
-  height: 700px;
+  height: 800px;
   width: 100%;
+  max-width: 1050px;
   float: left;
   z-index: 5;
   position: absolute;
 }
 
-/* line 224, ../sass/ellis.scss */
+/* line 226, ../sass/ellis.scss */
 nav {
   float: right;
 }
-/* line 33, ../sass/ellis.scss */
+/* line 34, ../sass/ellis.scss */
 nav a {
   color: #f2f0e0;
   text-decoration: none;
 }
-/* line 37, ../sass/ellis.scss */
+/* line 38, ../sass/ellis.scss */
 nav a:hover {
   color: #588b9b;
   -webkit-transition: all 0.2s ease-in;
@@ -204,12 +205,12 @@ nav a:hover {
   -ms-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
 }
-/* line 228, ../sass/ellis.scss */
+/* line 230, ../sass/ellis.scss */
 nav ul {
   list-style: none;
   margin: 1.95em 0 2em 0;
 }
-/* line 232, ../sass/ellis.scss */
+/* line 234, ../sass/ellis.scss */
 nav ul li {
   float: left;
   font-family: "Open Sans", sans-serif;
@@ -218,7 +219,7 @@ nav ul li {
   display: block;
 }
 
-/* line 242, ../sass/ellis.scss */
+/* line 244, ../sass/ellis.scss */
 .petition {
   background: rgba(242, 240, 224, 0.9);
   border: 2px solid #0d2839;
@@ -235,52 +236,52 @@ nav ul li {
   max-width: 310px;
 }
 
-/* line 257, ../sass/ellis.scss */
+/* line 259, ../sass/ellis.scss */
 #pledges {
   background: #0d2839;
   float: left;
   width: 100%;
 }
 
-/* line 263, ../sass/ellis.scss */
+/* line 265, ../sass/ellis.scss */
 .pledgeColumn {
   float: left;
   width: 28%;
   padding: 0 3em 0 0;
 }
-/* line 268, ../sass/ellis.scss */
+/* line 270, ../sass/ellis.scss */
 .pledgeColumn ul {
   list-style: none;
 }
-/* line 272, ../sass/ellis.scss */
+/* line 274, ../sass/ellis.scss */
 .pledgeColumn li {
   color: #f2f0e0;
   font-size: 1em;
   font-weight: 300;
   margin: 5px;
 }
-/* line 279, ../sass/ellis.scss */
+/* line 281, ../sass/ellis.scss */
 .pledgeColumn p {
   margin: 1em 0;
   padding: 0;
 }
-/* line 283, ../sass/ellis.scss */
+/* line 285, ../sass/ellis.scss */
 .pledgeColumn .name {
   font-weight: bold;
 }
 
-/* line 288, ../sass/ellis.scss */
+/* line 290, ../sass/ellis.scss */
 .resources, .aboutus {
   color: #12212b;
   float: left;
   width: 50%;
 }
-/* line 33, ../sass/ellis.scss */
+/* line 34, ../sass/ellis.scss */
 .resources a, .aboutus a {
   color: #f2f0e0;
   text-decoration: none;
 }
-/* line 37, ../sass/ellis.scss */
+/* line 38, ../sass/ellis.scss */
 .resources a:hover, .aboutus a:hover {
   color: #0d2839;
   -webkit-transition: all 0.2s ease-in;
@@ -288,17 +289,17 @@ nav ul li {
   -ms-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
 }
-/* line 294, ../sass/ellis.scss */
+/* line 296, ../sass/ellis.scss */
 .resources ul, .aboutus ul {
   list-style: none;
   padding: 0;
 }
-/* line 299, ../sass/ellis.scss */
+/* line 301, ../sass/ellis.scss */
 .resources li, .aboutus li {
   margin: .4em 0;
 }
 
-/* line 304, ../sass/ellis.scss */
+/* line 306, ../sass/ellis.scss */
 .right_bar {
   width: 30%;
   max-width: 310px;
@@ -306,7 +307,7 @@ nav ul li {
   float: right;
   right: 15px;
 }
-/* line 311, ../sass/ellis.scss */
+/* line 313, ../sass/ellis.scss */
 .right_bar a {
   cursor: pointer;
   background: #588b9b;
@@ -322,7 +323,7 @@ nav ul li {
   -moz-border-radius: 0.7em;
   border-radius: 0.7em;
 }
-/* line 317, ../sass/ellis.scss */
+/* line 319, ../sass/ellis.scss */
 .right_bar a:hover {
   color: #f2f0e0;
   background: #0d2839;
@@ -332,22 +333,22 @@ nav ul li {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
 }
-/* line 324, ../sass/ellis.scss */
+/* line 326, ../sass/ellis.scss */
 .right_bar .expl {
   font-size: .6em;
   margin: .6em 0 2em 0;
 }
-/* line 328, ../sass/ellis.scss */
+/* line 330, ../sass/ellis.scss */
 .right_bar .chk_label {
   font-size: .6em;
   margin: .6em 0 4em 0;
 }
-/* line 332, ../sass/ellis.scss */
+/* line 334, ../sass/ellis.scss */
 .right_bar .label {
   margin: 1.2em 0px .2em 0px;
   font-size: .9em;
 }
-/* line 337, ../sass/ellis.scss */
+/* line 339, ../sass/ellis.scss */
 .right_bar p.standUp {
   color: #0d2839;
   font-family: "Oswald", sans-serif;
@@ -359,19 +360,19 @@ nav ul li {
   text-shadow: 3px 3px 0px #588b9b;
   text-transform: uppercase;
 }
-/* line 349, ../sass/ellis.scss */
+/* line 351, ../sass/ellis.scss */
 .right_bar p.pledgeText {
   font-family: "Oswald", sans-serif;
   font-size: 1.5em;
   margin: .5em 0 1.25em 0;
   padding: 0;
 }
-/* line 356, ../sass/ellis.scss */
+/* line 358, ../sass/ellis.scss */
 .right_bar span {
   font-size: .6em;
 }
 
-/* line 361, ../sass/ellis.scss */
+/* line 363, ../sass/ellis.scss */
 .search {
   background: #cc0000;
   /* The Fallback */
@@ -383,12 +384,12 @@ nav ul li {
   cursor: pointer;
   float: left;
 }
-/* line 370, ../sass/ellis.scss */
+/* line 372, ../sass/ellis.scss */
 .search #address {
   width: 80%;
 }
 
-/* line 375, ../sass/ellis.scss */
+/* line 377, ../sass/ellis.scss */
 #search {
   width: 70%;
   max-width: 550px;
@@ -396,18 +397,18 @@ nav ul li {
   position: absolute;
 }
 
-/* line 383, ../sass/ellis.scss */
+/* line 385, ../sass/ellis.scss */
 strong {
   text-transform: uppercase;
   font-size: .9em;
 }
 
-/* line 388, ../sass/ellis.scss */
+/* line 390, ../sass/ellis.scss */
 td, th {
   padding-left: 13px;
 }
 
-/* line 392, ../sass/ellis.scss */
+/* line 394, ../sass/ellis.scss */
 .wrap {
   width: 1050px;
   margin: auto;
@@ -415,7 +416,7 @@ td, th {
   overflow: hidden;
 }
 
-/* line 399, ../sass/ellis.scss */
+/* line 401, ../sass/ellis.scss */
 .wrapNoMargin {
   margin: auto;
   overflow: hidden;
@@ -423,18 +424,25 @@ td, th {
   width: 1050px;
 }
 
-/* line 406, ../sass/ellis.scss */
+/* line 408, ../sass/ellis.scss */
 .scrollarea {
   overflow: scroll;
 }
 
-/* line 421, ../sass/ellis.scss */
+/* line 423, ../sass/ellis.scss */
 .social_btns {
   padding-bottom: 10px;
   height: 48px;
 }
-/* line 424, ../sass/ellis.scss */
+/* line 426, ../sass/ellis.scss */
 .social_btns img {
   margin: 5px;
   cursor: pointer;
+}
+
+@media all and (max-width: 800px) {
+  /* line 433, ../sass/ellis.scss */
+  .luggageIcon {
+    display: none;
+  }
 }

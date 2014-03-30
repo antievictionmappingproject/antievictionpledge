@@ -9,6 +9,7 @@ $font-display: 'Oswald', sans-serif;
 $font-h2: 'Lusitana', serif;
 $font-sans: 'Open Sans', sans-serif;
 $petition-height: 700px;
+$map-height: 800px;
 $max-petition-width: 310px;
 
 // MIXINS //
@@ -197,7 +198,7 @@ input:focus, textarea:focus {
 }
 
 .main {
-  height: $petition-height;
+  height: $map-height;
   background: #333;
 }
 
@@ -211,8 +212,9 @@ input:focus, textarea:focus {
 }
 
 #mapper {
-  height: $petition-height;
+  height: $map-height;
   width: 100%;
+  max-width: 1050px;
   //margin: 10%;
   float: left;
   z-index: 5;
@@ -427,6 +429,10 @@ td, th {
 
   }
 }
-
+@media all and (max-width: 800px) {
+  .luggageIcon {
+    display: none;
+  }
+}
 
 
