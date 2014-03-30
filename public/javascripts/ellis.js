@@ -113,6 +113,7 @@ function submitPledge() {
         type: 'POST',
         success: function(result) {
             console.log(result);
+            retrievePledges();
         }
     });
 }

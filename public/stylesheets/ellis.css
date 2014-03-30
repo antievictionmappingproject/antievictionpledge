@@ -1,9 +1,4 @@
-/* line 70, ../sass/ellis.scss */
-#address {
-  width: 90%;
-}
-
-/* line 74, ../sass/ellis.scss */
+/* line 72, ../sass/ellis.scss */
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
@@ -12,24 +7,24 @@ body {
   padding: 0;
 }
 
-/* line 82, ../sass/ellis.scss */
+/* line 80, ../sass/ellis.scss */
 div.info_window {
   width: 500px;
 }
 
-/* line 87, ../sass/ellis.scss */
+/* line 85, ../sass/ellis.scss */
 #feedback {
   display: none;
 }
 
-/* line 91, ../sass/ellis.scss */
+/* line 89, ../sass/ellis.scss */
 #find_btn {
   color: #f2f0e0;
   font-family: "Oswald", sans-serif;
   letter-spacing: .1em;
   text-transform: uppercase;
 }
-/* line 97, ../sass/ellis.scss */
+/* line 95, ../sass/ellis.scss */
 #find_btn:hover {
   color: #12212b;
   -webkit-transition: all 0.3s ease-in-out;
@@ -38,7 +33,7 @@ div.info_window {
   -o-transition: all 0.3s ease-in-out;
 }
 
-/* line 103, ../sass/ellis.scss */
+/* line 101, ../sass/ellis.scss */
 .footer {
   background: #0d2839;
   border-top: 1px solid #12212b;
@@ -49,12 +44,12 @@ div.info_window {
   text-align: center;
   width: 100%;
 }
-/* line 31, ../sass/ellis.scss */
+/* line 33, ../sass/ellis.scss */
 .footer a {
   color: #f2f0e0;
   text-decoration: none;
 }
-/* line 35, ../sass/ellis.scss */
+/* line 37, ../sass/ellis.scss */
 .footer a:hover {
   color: #588b9b;
   -webkit-transition: all 0.2s ease-in;
@@ -63,7 +58,7 @@ div.info_window {
   -o-transition: all 0.2s ease-in;
 }
 
-/* line 115, ../sass/ellis.scss */
+/* line 113, ../sass/ellis.scss */
 h2 {
   color: #588b9b;
   font-family: "Lusitana", serif;
@@ -73,18 +68,18 @@ h2 {
   text-shadow: 1px 1px 2px #164563;
 }
 
-/* line 124, ../sass/ellis.scss */
+/* line 122, ../sass/ellis.scss */
 h2.dark {
   color: #0d2839;
   text-shadow: 1px 1px 2px #6295a6;
 }
 
-/* line 129, ../sass/ellis.scss */
+/* line 127, ../sass/ellis.scss */
 img {
   float: left;
 }
 
-/* line 133, ../sass/ellis.scss */
+/* line 131, ../sass/ellis.scss */
 input[type=text], textarea {
   font-size: .8em;
   font-style: italic;
@@ -94,19 +89,19 @@ input[type=text], textarea {
   width: 96%;
 }
 
-/* line 142, ../sass/ellis.scss */
+/* line 140, ../sass/ellis.scss */
 input:focus, textarea:focus {
   border: 1px solid #fff;
   outline: none;
 }
 
-/* line 149, ../sass/ellis.scss */
+/* line 147, ../sass/ellis.scss */
 #intro {
   background: #0d2839;
   clear: both;
   overflow: hidden;
 }
-/* line 155, ../sass/ellis.scss */
+/* line 153, ../sass/ellis.scss */
 #intro h1 {
   color: #f2f0e0;
   font-family: "Oswald", sans-serif;
@@ -116,7 +111,7 @@ input:focus, textarea:focus {
   margin-bottom: 0;
   text-shadow: 4px 4px 0px #cc0029;
 }
-/* line 165, ../sass/ellis.scss */
+/* line 163, ../sass/ellis.scss */
 #intro .introBody {
   color: #b6ced4;
   font-family: "Open Sans", sans-serif;
@@ -125,7 +120,7 @@ input:focus, textarea:focus {
   line-height: 1.5;
   margin: 1.6em 0 3em 0;
 }
-/* line 174, ../sass/ellis.scss */
+/* line 172, ../sass/ellis.scss */
 #intro .CTA {
   background: #588b9b;
   color: #0d2839;
@@ -139,7 +134,7 @@ input:focus, textarea:focus {
   -moz-border-radius: 0.7em;
   border-radius: 0.7em;
 }
-/* line 179, ../sass/ellis.scss */
+/* line 177, ../sass/ellis.scss */
 #intro .CTA:hover {
   color: #f2f0e0;
   background: #cc0029;
@@ -150,30 +145,30 @@ input:focus, textarea:focus {
   -o-transition: all 0.3s ease-in-out;
 }
 
-/* line 187, ../sass/ellis.scss */
+/* line 185, ../sass/ellis.scss */
 #learnMore {
   background: #588b9b;
   wrap: left;
 }
 
-/* line 192, ../sass/ellis.scss */
+/* line 190, ../sass/ellis.scss */
 .link_txt {
   margin-left: 10px;
 }
 
-/* line 196, ../sass/ellis.scss */
+/* line 194, ../sass/ellis.scss */
 .luggageIcon {
   float: left;
   margin-right: 3em;
 }
 
-/* line 201, ../sass/ellis.scss */
+/* line 199, ../sass/ellis.scss */
 .main {
-  height: 100%;
+  height: 700px;
   background: #333;
 }
 
-/* line 206, ../sass/ellis.scss */
+/* line 204, ../sass/ellis.scss */
 .main_menu {
   background: #12212b;
   height: 6em;
@@ -183,25 +178,25 @@ input:focus, textarea:focus {
   z-index: 99;
 }
 
-/* line 215, ../sass/ellis.scss */
+/* line 213, ../sass/ellis.scss */
 #mapper {
-  height: 500px;
-  width: 60%;
-  margin: 20px;
+  height: 700px;
+  width: 100%;
   float: left;
   z-index: 5;
+  position: absolute;
 }
 
-/* line 225, ../sass/ellis.scss */
+/* line 224, ../sass/ellis.scss */
 nav {
   float: right;
 }
-/* line 31, ../sass/ellis.scss */
+/* line 33, ../sass/ellis.scss */
 nav a {
   color: #f2f0e0;
   text-decoration: none;
 }
-/* line 35, ../sass/ellis.scss */
+/* line 37, ../sass/ellis.scss */
 nav a:hover {
   color: #588b9b;
   -webkit-transition: all 0.2s ease-in;
@@ -209,12 +204,12 @@ nav a:hover {
   -ms-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
 }
-/* line 229, ../sass/ellis.scss */
+/* line 228, ../sass/ellis.scss */
 nav ul {
   list-style: none;
   margin: 1.95em 0 2em 0;
 }
-/* line 233, ../sass/ellis.scss */
+/* line 232, ../sass/ellis.scss */
 nav ul li {
   float: left;
   font-family: "Open Sans", sans-serif;
@@ -223,64 +218,69 @@ nav ul li {
   display: block;
 }
 
-/* line 243, ../sass/ellis.scss */
+/* line 242, ../sass/ellis.scss */
 .petition {
-  background: rgba(242, 240, 224, 0.6);
+  background: rgba(242, 240, 224, 0.9);
   border: 2px solid #0d2839;
   color: #0d2839;
   margin: 0;
+  margin-top: 5px;
   padding: 2em;
   -webkit-border-radius: 0.7em;
   -moz-border-radius: 0.7em;
   border-radius: 0.7em;
+  z-index: 8;
+  position: absolute;
+  height: 700px;
+  max-width: 310px;
 }
 
-/* line 252, ../sass/ellis.scss */
+/* line 257, ../sass/ellis.scss */
 #pledges {
   background: #0d2839;
   float: left;
   width: 100%;
 }
 
-/* line 258, ../sass/ellis.scss */
+/* line 263, ../sass/ellis.scss */
 .pledgeColumn {
   float: left;
   width: 28%;
   padding: 0 3em 0 0;
 }
-/* line 263, ../sass/ellis.scss */
+/* line 268, ../sass/ellis.scss */
 .pledgeColumn ul {
   list-style: none;
 }
-/* line 267, ../sass/ellis.scss */
+/* line 272, ../sass/ellis.scss */
 .pledgeColumn li {
   color: #f2f0e0;
   font-size: 1em;
   font-weight: 300;
   margin: 5px;
 }
-/* line 274, ../sass/ellis.scss */
+/* line 279, ../sass/ellis.scss */
 .pledgeColumn p {
   margin: 1em 0;
   padding: 0;
 }
-/* line 278, ../sass/ellis.scss */
+/* line 283, ../sass/ellis.scss */
 .pledgeColumn .name {
   font-weight: bold;
 }
 
-/* line 283, ../sass/ellis.scss */
+/* line 288, ../sass/ellis.scss */
 .resources, .aboutus {
   color: #12212b;
   float: left;
   width: 50%;
 }
-/* line 31, ../sass/ellis.scss */
+/* line 33, ../sass/ellis.scss */
 .resources a, .aboutus a {
   color: #f2f0e0;
   text-decoration: none;
 }
-/* line 35, ../sass/ellis.scss */
+/* line 37, ../sass/ellis.scss */
 .resources a:hover, .aboutus a:hover {
   color: #0d2839;
   -webkit-transition: all 0.2s ease-in;
@@ -288,23 +288,25 @@ nav ul li {
   -ms-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
 }
-/* line 289, ../sass/ellis.scss */
+/* line 294, ../sass/ellis.scss */
 .resources ul, .aboutus ul {
   list-style: none;
   padding: 0;
 }
-/* line 294, ../sass/ellis.scss */
+/* line 299, ../sass/ellis.scss */
 .resources li, .aboutus li {
   margin: .4em 0;
 }
 
-/* line 299, ../sass/ellis.scss */
+/* line 304, ../sass/ellis.scss */
 .right_bar {
   width: 30%;
+  max-width: 310px;
   height: 100%;
   float: right;
+  right: 15px;
 }
-/* line 304, ../sass/ellis.scss */
+/* line 311, ../sass/ellis.scss */
 .right_bar a {
   cursor: pointer;
   background: #588b9b;
@@ -320,7 +322,7 @@ nav ul li {
   -moz-border-radius: 0.7em;
   border-radius: 0.7em;
 }
-/* line 310, ../sass/ellis.scss */
+/* line 317, ../sass/ellis.scss */
 .right_bar a:hover {
   color: #f2f0e0;
   background: #0d2839;
@@ -330,22 +332,22 @@ nav ul li {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
 }
-/* line 317, ../sass/ellis.scss */
+/* line 324, ../sass/ellis.scss */
 .right_bar .expl {
   font-size: .6em;
   margin: .6em 0 2em 0;
 }
-/* line 321, ../sass/ellis.scss */
+/* line 328, ../sass/ellis.scss */
 .right_bar .chk_label {
   font-size: .6em;
   margin: .6em 0 4em 0;
 }
-/* line 325, ../sass/ellis.scss */
+/* line 332, ../sass/ellis.scss */
 .right_bar .label {
   margin: 1.2em 0px .2em 0px;
   font-size: .9em;
 }
-/* line 330, ../sass/ellis.scss */
+/* line 337, ../sass/ellis.scss */
 .right_bar p.standUp {
   color: #0d2839;
   font-family: "Oswald", sans-serif;
@@ -357,42 +359,55 @@ nav ul li {
   text-shadow: 3px 3px 0px #588b9b;
   text-transform: uppercase;
 }
-/* line 342, ../sass/ellis.scss */
+/* line 349, ../sass/ellis.scss */
 .right_bar p.pledgeText {
   font-family: "Oswald", sans-serif;
   font-size: 1.5em;
   margin: .5em 0 1.25em 0;
   padding: 0;
 }
-/* line 349, ../sass/ellis.scss */
+/* line 356, ../sass/ellis.scss */
 .right_bar span {
   font-size: .6em;
 }
 
-/* line 354, ../sass/ellis.scss */
+/* line 361, ../sass/ellis.scss */
 .search {
   background: #cc0000;
   /* The Fallback */
   background: rgba(204, 0, 0, 0.8);
-  width: 60%;
-  margin: 0;
+  width: 90%;
+  max-width: 480px;
+  margin: 5px 0px 0px 50px;
   padding: 1em;
   cursor: pointer;
   float: left;
 }
+/* line 370, ../sass/ellis.scss */
+.search #address {
+  width: 80%;
+}
 
-/* line 364, ../sass/ellis.scss */
+/* line 375, ../sass/ellis.scss */
+#search {
+  width: 70%;
+  max-width: 550px;
+  z-index: 8;
+  position: absolute;
+}
+
+/* line 383, ../sass/ellis.scss */
 strong {
   text-transform: uppercase;
   font-size: .9em;
 }
 
-/* line 369, ../sass/ellis.scss */
+/* line 388, ../sass/ellis.scss */
 td, th {
   padding-left: 13px;
 }
 
-/* line 373, ../sass/ellis.scss */
+/* line 392, ../sass/ellis.scss */
 .wrap {
   width: 1050px;
   margin: auto;
@@ -400,7 +415,7 @@ td, th {
   overflow: hidden;
 }
 
-/* line 380, ../sass/ellis.scss */
+/* line 399, ../sass/ellis.scss */
 .wrapNoMargin {
   margin: auto;
   overflow: hidden;
@@ -408,23 +423,18 @@ td, th {
   width: 1050px;
 }
 
-/* line 387, ../sass/ellis.scss */
+/* line 406, ../sass/ellis.scss */
 .scrollarea {
   overflow: scroll;
 }
 
-/* line 394, ../sass/ellis.scss */
-.twitter-share-button {
-  margin-top: 15px;
+/* line 421, ../sass/ellis.scss */
+.social_btns {
+  padding-bottom: 10px;
+  height: 48px;
 }
-
-/* line 398, ../sass/ellis.scss */
-.fb-share-button {
-  margin: 0px 5px;
-}
-
-/* line 403, ../sass/ellis.scss */
+/* line 424, ../sass/ellis.scss */
 .social_btns img {
-  margin-left: 5px;
+  margin: 5px;
   cursor: pointer;
 }

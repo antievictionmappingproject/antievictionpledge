@@ -8,6 +8,8 @@ $color-red: #cc0029;
 $font-display: 'Oswald', sans-serif;
 $font-h2: 'Lusitana', serif;
 $font-sans: 'Open Sans', sans-serif;
+$petition-height: 700px;
+$max-petition-width: 310px;
 
 // MIXINS //
 @mixin boxshadow($shadow) {
@@ -66,10 +68,6 @@ $font-sans: 'Open Sans', sans-serif;
 
 
 // STYLE //
-
-#address {
-  width: 90%;
-}
 
 body {
   font-family: $font-sans;
@@ -199,7 +197,7 @@ input:focus, textarea:focus {
 }
 
 .main {
-  height:100%;
+  height: $petition-height;
   background: #333;
 }
 
@@ -213,11 +211,12 @@ input:focus, textarea:focus {
 }
 
 #mapper {
-  height: 500px;
-  width: 60%;
-  margin: 20px;
+  height: $petition-height;
+  width: 100%;
+  //margin: 10%;
   float: left;
   z-index: 5;
+  position: absolute;
   //background: rgba(204, 0, 0, 0.8);
   //padding: 1em;
 }
@@ -241,13 +240,19 @@ nav {
 }
 
 .petition {
-  background: rgba(242,240,224,0.6);
+  background: rgba(242,240,224,0.9);
   border: 2px solid $color-darkblue;
   color: $color-darkblue;
   margin: 0;
+  margin-top: 5px;
   padding: 2em;
   @include roundedcorner(0.7em);
+  z-index: 8;
+  position: absolute;
+  height: $petition-height;
+  max-width: $max-petition-width;
 }
+
 
 #pledges {
   background: $color-darkblue;
@@ -298,8 +303,10 @@ nav {
 
 .right_bar {
   width: 30%;
+  max-width: 310px;
   height: 100%;
   float: right;
+  right: 15px;
 
   a {   // Should be centered in the div //
     cursor: pointer;
@@ -354,11 +361,23 @@ nav {
 .search {
   background: rgb(204, 0, 0); /* The Fallback */
   background: rgba(204, 0, 0, 0.8); 
-  width: 60%;
-  margin: 0;
+  width: 90%;
+  max-width: 480px;
+  margin: 5px 0px 0px 50px;
   padding: 1em;
   cursor: pointer;
   float: left;
+  #address {
+    width: 80%;
+  }
+
+}
+#search {
+  width: 70%;
+  max-width: 550px;
+  z-index: 8;
+  position: absolute;
+
 }
 
 strong {
@@ -391,18 +410,21 @@ td, th {
 
 //SOCIAL//
 
-.twitter-share-button {
-  margin-top: 15px;
-}
-
-.fb-share-button {
-  margin: 0px 5px;
-}
+//.twitter-share-button {
+//  margin-top: 15px;
+//}
+//
+//.fb-share-button {
+//  margin: 0px 5px;
+//}
 
 .social_btns {
+  padding-bottom: 10px;
+  height: 48px;
   img {
-    margin-left: 5px;
+    margin: 5px;
     cursor: pointer;
+
   }
 }
 
