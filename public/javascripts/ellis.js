@@ -127,15 +127,24 @@ function openInfoWindow(result, addressTxt) {
     var obj = result;
     var text;
     if (obj.evictions && obj.evictions.length > 0) {
-        text = "<div class='info_window'><p class='info_address'>"+ addressTxt.toUpperCase()+"</p><hr/><p>Ellis Act Eviction(s) at this Address:</p>";
-        text += '<table><tr><th>Date:</th><th>Landlord Name:</th><th>Units</th><th>Protected Tenants:</th></tr>';
+        var subtext = "<div class='info_table'><table>";
+        var max_units = 0;
+        var protected = 0;
         for (var i = 0; i < obj.evictions.length; i++) {
             var ev = obj.evictions[i];
             var d = new Date(ev.date);
-            text += "<tr><td>"+ d.toLocaleDateString() + "</td><td>" + ev.landlord
-                + "</td><td>" + ev.units + "</td><td>" +"N/A" /*+ ev.protectedTenants */+ "</td></tr>";
+            max_units = Math.max(max_units, ev.units);
+            protected = Math.max(protected, ev.protected);
+            subtext += "<tr><td class='ev_date'>"+ d.toLocaleDateString() + "</td><td class='ev_landlords'>" + ev.landlord
+                + "</td></tr></div>";
         }
-        text += "</table></div>";
+        subtext += "</table></div>";
+        text = "<div class='info_window'><p class='info_address'>"+ addressTxt.toUpperCase()+"</p>";
+        text += "<div class='header_nums'>" +
+                 "<div class='total_col'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>Ellis Act Evictions</div></div>";
+        text +=  "<div class='total_col'><div class='circle_num bluebg'>"+ max_units +"</div><div class='ig_text blue'>Affected Units</div></div>";
+        text +=  "<div class='total_col'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior/Disabled Tenants</div></div></div>";
+        text += subtext;
     } else {
         text = "<div class='info_window'><p class='info_address'>"+ addressTxt.toUpperCase()+"</p><hr/><p>No Ellis Act Evictions on record for this address</p></div>";
     }

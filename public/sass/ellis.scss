@@ -76,6 +76,7 @@ body {
   line-height: 1.5;
   margin: 0;
   padding: 0;
+  background: $color-darkblue;
 }
 
 div.info_window {
@@ -146,10 +147,11 @@ input:focus, textarea:focus {
 }
 
 #intro {
-  background: $color-darkblue;
   // background-image:url('../images/');
   clear: both;
   overflow: hidden;
+  margin-left: 5%;
+  margin-right: 5%;
 
   h1 {
   color: $color-offwhite;
@@ -195,6 +197,10 @@ input:focus, textarea:focus {
 .luggageIcon  {
   float: left;
   margin-right: 3em;
+}
+
+.blurb {
+  //float:right;
 }
 
 .main {
@@ -409,6 +415,71 @@ td, th {
   overflow: scroll;
 }
 
+.circle_num {
+  border-radius: 50%;
+  color: white;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  //padding: .5em;
+  text-align: center;
+  font-size: 24px;
+    margin: 0px auto;
+}
+
+.ig_text {
+  font-size: 12px;
+  text-align: center;
+  margin: 10px auto 15px auto;
+  font-weight: bold;
+}
+
+.bluebg {
+  background-color: $color-darkblue;
+}
+
+.redbg {
+  background-color: $color-red;
+}
+
+.lightbluebg {
+  background-color: $color-lightblue;
+}
+
+.total_col {
+  width: 30%;
+  margin-right: 3%;
+  float: left;
+  .red {
+    color: $color-red;
+  }
+
+  .blue {
+    color: $color-darkblue;
+  }
+
+  .lightblue {
+    color: $color-lightblue;
+  }
+}
+
+.ev_date {
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.info_address {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+td {
+  padding-bottom: 15px;
+}
+
+.header_nums {
+  margin-bottom: 10px;
+}
 
 //SOCIAL//
 
