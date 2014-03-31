@@ -139,7 +139,11 @@ function openInfoWindow(result, addressTxt) {
                 + "</td></tr></div>";
         }
         subtext += "</table></div>";
-        text = "<div class='info_window'><p class='info_address'>"+ addressTxt.toUpperCase()+"</p>";
+        text = "<div class='info_window'><div class='info_address'>"+ addressTxt.toUpperCase()+"</div>";
+        if (true) {//(obj.url != null)
+            text += "<div class='dirty_dozen'><p class='dd_hdr' id='dd_hdr'>A Dirty Dozen Eviction<span class='dd_lrn'>Learn More</span></p></div>";
+
+        }
         text += "<div class='header_nums'>" +
                  "<div class='total_col'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>Ellis Act Evictions</div></div>";
         text +=  "<div class='total_col'><div class='circle_num bluebg'>"+ max_units +"</div><div class='ig_text blue'>Affected Units</div></div>";

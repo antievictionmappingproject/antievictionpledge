@@ -423,15 +423,14 @@ td, th {
   line-height: 38px;
   //padding: .5em;
   text-align: center;
-  font-size: 24px;
+  font-size: 18px;
     margin: 0px auto;
 }
 
 .ig_text {
-  font-size: 12px;
+  font-size: 18px;
   text-align: center;
   margin: 10px auto 15px auto;
-  font-weight: bold;
 }
 
 .bluebg {
@@ -469,8 +468,15 @@ td, th {
 }
 
 .info_address {
-  font-size: 14px;
-  font-weight: bold;
+  font-family: $font-display;
+  font-size: 18px;
+  float: left;
+  margin-top: 10px;
+}
+
+.info_table {
+  font-family: $font-sans;
+  font-size: 12px;
 }
 
 td {
@@ -478,8 +484,40 @@ td {
 }
 
 .header_nums {
+  font-family: $font-display;
   margin-bottom: 10px;
 }
+
+.dirty_dozen {
+  width: 255px;
+  height: 45px;
+  border-radius: 0px 0px 5px 5px;
+  background-color: $color-red;
+  margin-left: 35%;
+  margin-top: -14px;
+  margin-bottom: 15px;
+  padding: 1px 10px 5px 5px;
+}
+
+.dd_hdr {
+  font-family: $font-display;
+  font-size: 16px;
+  color: white;
+  margin-top: 12px;
+}
+
+#dd_hdr {
+  margin-top: 12px;
+  margin-left: 5px
+}
+
+.dd_lrn {
+  font-family: $font-sans;
+  font-size: 10px;
+  color: black;
+  margin-left: 6px;
+}
+
 
 //SOCIAL//
 
