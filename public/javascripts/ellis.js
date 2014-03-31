@@ -139,7 +139,7 @@ function openInfoWindow(result, addressTxt) {
                 + "</td></tr></div>";
         }
         subtext += "</table></div>";
-        text = "<div class='info_window'><div class='info_address'>"+ addressTxt.toUpperCase()+"</div>";
+        text = "<div class='info_window'><div class='info_address'>"+ addressTxt+"</div>";
         if (true) {//(obj.url != null)
             text += "<div class='dirty_dozen'><p class='dd_hdr' id='dd_hdr'>A Dirty Dozen Eviction<span class='dd_lrn'>Learn More</span></p></div>";
 
@@ -150,7 +150,7 @@ function openInfoWindow(result, addressTxt) {
         text +=  "<div class='total_col'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior/Disabled Tenants</div></div></div>";
         text += subtext;
     } else {
-        text = "<div class='info_window'><p class='info_address'>"+ addressTxt.toUpperCase()+"</p><hr/><p>No Ellis Act Evictions on record for this address</p></div>";
+        text = "<div class='info_window'><p class='info_address'>"+ addressTxt+"</p><hr/><p>No Ellis Act Evictions on record for this address</p></div>";
     }
     marker.bindPopup(text, {maxWidth:500}).openPopup();
 }
