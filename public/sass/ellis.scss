@@ -424,13 +424,15 @@ td, th {
   //padding: .5em;
   text-align: center;
   font-size: 18px;
-    margin: 0px auto;
+  margin: 15px 5px 0px 5px;
+  float: left;
 }
 
 .ig_text {
   font-size: 18px;
-  text-align: center;
-  margin: 10px auto 15px auto;
+  line-height: 22px;
+  text-align: left;
+  margin: 12px 5px 15px 10px;
 }
 
 .bluebg {
@@ -446,8 +448,8 @@ td, th {
 }
 
 .total_col {
-  width: 30%;
-  margin-right: 3%;
+  width: 33%;
+  //margin-right: 1%;
   float: left;
   .red {
     color: $color-red;
@@ -477,6 +479,7 @@ td, th {
 .info_table {
   font-family: $font-sans;
   font-size: 12px;
+  clear: both;
 }
 
 td {

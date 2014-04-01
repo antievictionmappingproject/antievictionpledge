@@ -146,8 +146,8 @@ function openInfoWindow(result, addressTxt) {
         }
         text += "<div class='header_nums'>" +
                  "<div class='total_col'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>Ellis Act Evictions</div></div>";
-        text +=  "<div class='total_col'><div class='circle_num bluebg'>"+ max_units +"</div><div class='ig_text blue'>Affected Units</div></div>";
-        text +=  "<div class='total_col'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior/Disabled Tenants</div></div></div>";
+        text +=  "<div class='total_col' style='width:30%'><div class='circle_num bluebg'>"+ max_units +"</div><div class='ig_text blue'>Affected Units</div></div>";
+        text +=  "<div class='total_col' style='width:36%'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior or Disabled Tenants</div></div></div>";
         text += subtext;
     } else {
         text = "<div class='info_window'><p class='info_address'>"+ addressTxt+"</p><hr/><p>No Ellis Act Evictions on record for this address</p></div>";
