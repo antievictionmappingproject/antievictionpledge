@@ -49,7 +49,7 @@ $(document).ready(function() {
     });
 
     $('#pledgeslink').click(function(){
-        scrollTo($('#pledges'), 350);
+        scrollTo($('#pledge_total'), 350);
         return false;
     });
 
