@@ -432,6 +432,11 @@ td, th {
 }
 
 /* line 418, ../sass/ellis.scss */
+.pledger {
+  list-style: none;
+}
+
+/* line 422, ../sass/ellis.scss */
 .circle_num {
   border-radius: 50%;
   color: white;
@@ -444,7 +449,7 @@ td, th {
   float: left;
 }
 
-/* line 431, ../sass/ellis.scss */
+/* line 435, ../sass/ellis.scss */
 .ig_text {
   font-size: 18px;
   line-height: 22px;
@@ -452,46 +457,46 @@ td, th {
   margin: 12px 5px 15px 10px;
 }
 
-/* line 438, ../sass/ellis.scss */
+/* line 442, ../sass/ellis.scss */
 .bluebg {
   background-color: #0d2839;
 }
 
-/* line 442, ../sass/ellis.scss */
+/* line 446, ../sass/ellis.scss */
 .redbg {
   background-color: #cc0029;
 }
 
-/* line 446, ../sass/ellis.scss */
+/* line 450, ../sass/ellis.scss */
 .lightbluebg {
   background-color: #588b9b;
 }
 
-/* line 450, ../sass/ellis.scss */
+/* line 454, ../sass/ellis.scss */
 .total_col {
   width: 33%;
   float: left;
 }
-/* line 454, ../sass/ellis.scss */
+/* line 458, ../sass/ellis.scss */
 .total_col .red {
   color: #cc0029;
 }
-/* line 458, ../sass/ellis.scss */
+/* line 462, ../sass/ellis.scss */
 .total_col .blue {
   color: #0d2839;
 }
-/* line 462, ../sass/ellis.scss */
+/* line 466, ../sass/ellis.scss */
 .total_col .lightblue {
   color: #588b9b;
 }
 
-/* line 467, ../sass/ellis.scss */
+/* line 471, ../sass/ellis.scss */
 .ev_date {
   font-weight: bold;
   vertical-align: top;
 }
 
-/* line 472, ../sass/ellis.scss */
+/* line 476, ../sass/ellis.scss */
 .info_address {
   font-family: "Oswald", sans-serif;
   font-size: 18px;
@@ -499,25 +504,25 @@ td, th {
   margin-top: 10px;
 }
 
-/* line 479, ../sass/ellis.scss */
+/* line 483, ../sass/ellis.scss */
 .info_table {
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
   clear: both;
 }
 
-/* line 485, ../sass/ellis.scss */
+/* line 489, ../sass/ellis.scss */
 td {
   padding-bottom: 15px;
 }
 
-/* line 489, ../sass/ellis.scss */
+/* line 493, ../sass/ellis.scss */
 .header_nums {
   font-family: "Oswald", sans-serif;
   margin-bottom: 10px;
 }
 
-/* line 494, ../sass/ellis.scss */
+/* line 498, ../sass/ellis.scss */
 .dirty_dozen {
   width: 255px;
   height: 45px;
@@ -529,7 +534,7 @@ td {
   padding: 1px 10px 5px 5px;
 }
 
-/* line 505, ../sass/ellis.scss */
+/* line 509, ../sass/ellis.scss */
 .dd_hdr {
   font-family: "Oswald", sans-serif;
   font-size: 16px;
@@ -537,13 +542,13 @@ td {
   margin-top: 12px;
 }
 
-/* line 512, ../sass/ellis.scss */
+/* line 516, ../sass/ellis.scss */
 #dd_hdr {
   margin-top: 12px;
   margin-left: 5px;
 }
 
-/* line 517, ../sass/ellis.scss */
+/* line 521, ../sass/ellis.scss */
 .dd_lrn {
   font-family: "Open Sans", sans-serif;
   font-size: 10px;
@@ -551,19 +556,19 @@ td {
   margin-left: 6px;
 }
 
-/* line 535, ../sass/ellis.scss */
+/* line 539, ../sass/ellis.scss */
 .social_btns {
   padding-bottom: 10px;
   height: 48px;
 }
-/* line 538, ../sass/ellis.scss */
+/* line 542, ../sass/ellis.scss */
 .social_btns img {
   margin: 5px;
   cursor: pointer;
 }
 
 @media all and (max-width: 800px) {
-  /* line 545, ../sass/ellis.scss */
+  /* line 549, ../sass/ellis.scss */
   .luggageIcon {
     display: none;
   }

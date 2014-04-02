@@ -171,9 +171,17 @@ function retrievePledges() {
                     sel = $('#pledgeColumn_'+j);
                     list = sel.append('<ul/>');
                 }
-                var blob = '<li><span class="name">'+result[i].name+'</span> <span class="reason">' + result[i].reason + '</span></li>';
+                var blob = '<li class="pledger"><span class="name">'+result[i].name+'</span> <span class="reason">' + result[i].reason + '</span></li>';
                 list.append(blob);
             }
         }
     });
+
+    $.ajax({
+        url: "http://"+endpoint+"/pledges/total",
+        type: 'GET',
+        success: function(result) {
+            $('#pledge_total').text(result+" people have pledged");
+        }
+    })
 }
