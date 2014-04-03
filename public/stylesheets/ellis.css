@@ -10,7 +10,7 @@ body {
 
 /* line 82, ../sass/ellis.scss */
 div.info_window {
-  width: 500px;
+  width: 42em;
 }
 
 /* line 87, ../sass/ellis.scss */
@@ -102,7 +102,7 @@ input:focus, textarea:focus {
   overflow: hidden;
   margin-left: 5%;
   margin-right: 5%;
-  padding-top: 80px;
+  padding-top: 5em;
 }
 /* line 157, ../sass/ellis.scss */
 #intro h1 {
@@ -156,7 +156,7 @@ input:focus, textarea:focus {
 
 /* line 194, ../sass/ellis.scss */
 .link_txt {
-  margin-left: 10px;
+  margin-left: 1em;
 }
 
 /* line 198, ../sass/ellis.scss */
@@ -167,7 +167,7 @@ input:focus, textarea:focus {
 
 /* line 207, ../sass/ellis.scss */
 .main {
-  height: 800px;
+  height: 66em;
   background: #333;
 }
 
@@ -183,9 +183,9 @@ input:focus, textarea:focus {
 
 /* line 221, ../sass/ellis.scss */
 #mapper {
-  height: 800px;
+  height: 66em;
   width: 100%;
-  max-width: 730px;
+  max-width: 61em;
   float: left;
   z-index: 5;
   position: absolute;
@@ -228,15 +228,15 @@ nav ul li {
   border: 2px solid #0d2839;
   color: #0d2839;
   margin: 0;
-  margin-top: 5px;
+  margin-top: .4em;
   padding: 2em;
   -webkit-border-radius: 0.7em;
   -moz-border-radius: 0.7em;
   border-radius: 0.7em;
   z-index: 8;
   position: absolute;
-  height: 700px;
-  max-width: 310px;
+  height: 44em;
+  max-width: 20em;
 }
 
 /* line 266, ../sass/ellis.scss */
@@ -305,10 +305,10 @@ nav ul li {
 /* line 313, ../sass/ellis.scss */
 .right_bar {
   width: 30%;
-  max-width: 310px;
+  max-width: 25em;
   height: 100%;
   float: right;
-  right: 15px;
+  right: 1em;
 }
 /* line 320, ../sass/ellis.scss */
 .right_bar a {
@@ -381,7 +381,7 @@ nav ul li {
   /* The Fallback */
   background: rgba(204, 0, 0, 0.8);
   width: 90%;
-  max-width: 480px;
+  max-width: 40em;
   margin: 5px 0px 0px 50px;
   padding: 1em;
   cursor: pointer;
@@ -395,7 +395,7 @@ nav ul li {
 /* line 384, ../sass/ellis.scss */
 #search {
   width: 70%;
-  max-width: 550px;
+  max-width: 46e;
   z-index: 8;
   position: absolute;
 }
@@ -408,12 +408,12 @@ strong {
 
 /* line 397, ../sass/ellis.scss */
 td, th {
-  padding-left: 13px;
+  padding-left: 1em;
 }
 
 /* line 401, ../sass/ellis.scss */
 .wrap {
-  width: 1050px;
+  width: 66em;
   margin: auto;
   padding: 5em 0;
   overflow: hidden;
@@ -424,7 +424,7 @@ td, th {
   margin: auto;
   overflow: hidden;
   padding: 0;
-  width: 1050px;
+  width: 66em;
 }
 
 /* line 415, ../sass/ellis.scss */
@@ -441,21 +441,21 @@ td, th {
 .circle_num {
   border-radius: 50%;
   color: white;
-  width: 38px;
-  height: 38px;
-  line-height: 38px;
+  width: 3em;
+  height: 3em;
+  line-height: 3em;
   text-align: center;
-  font-size: 18px;
-  margin: 15px 5px 0px 5px;
+  font-size: 1.5em;
+  margin: 1.25em .4em 0px .4em;
   float: left;
 }
 
 /* line 436, ../sass/ellis.scss */
 .ig_text {
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 1.5em;
+  line-height: 2em;
   text-align: left;
-  margin: 12px 5px 15px 10px;
+  margin: 1em .4em 1.25em 1em;
 }
 
 /* line 443, ../sass/ellis.scss */
@@ -500,62 +500,62 @@ td, th {
 /* line 477, ../sass/ellis.scss */
 .info_address {
   font-family: "Oswald", sans-serif;
-  font-size: 18px;
+  font-size: 1.5em;
   float: left;
-  margin-top: 10px;
+  margin-top: .8em;
 }
 
 /* line 484, ../sass/ellis.scss */
 .info_table {
   font-family: "Open Sans", sans-serif;
-  font-size: 12px;
+  font-size: 1em;
   clear: both;
 }
 
 /* line 490, ../sass/ellis.scss */
 td {
-  padding-bottom: 15px;
+  padding-bottom: 1.25em;
 }
 
 /* line 494, ../sass/ellis.scss */
 .header_nums {
   font-family: "Oswald", sans-serif;
-  margin-bottom: 10px;
+  margin-bottom: .8em;
   clear: both;
 }
 
 /* line 500, ../sass/ellis.scss */
 .dirty_dozen {
-  width: 255px;
-  height: 45px;
-  border-radius: 0px 0px 5px 5px;
+  width: 21em;
+  height: 3.75em;
+  border-radius: 0px 0px .4em .4em;
   background-color: #cc0029;
   margin-left: 35%;
-  margin-top: -14px;
-  margin-bottom: 15px;
-  padding: 1px 10px 5px 5px;
+  margin-top: -1.25em;
+  margin-bottom: 1.25em;
+  padding: .1em .8em .4em .4em;
 }
 
 /* line 511, ../sass/ellis.scss */
 .dd_hdr {
   font-family: "Oswald", sans-serif;
-  font-size: 16px;
+  font-size: 1.3em;
   color: white;
-  margin-top: 12px;
+  margin-top: 1em;
 }
 
 /* line 518, ../sass/ellis.scss */
 #dd_hdr {
-  margin-top: 12px;
-  margin-left: 5px;
+  margin-top: 1em;
+  margin-left: 0.4em;
 }
 
 /* line 523, ../sass/ellis.scss */
 #dd_lrn {
   font-family: "Open Sans", sans-serif;
-  font-size: 10px;
+  font-size: 1em;
   color: black;
-  margin-left: 6px;
+  margin-left: .5em;
   text-decoration: none;
 }
 
