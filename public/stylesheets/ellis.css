@@ -553,23 +553,24 @@ td {
 .dd_lrn {
   font-family: "Open Sans", sans-serif;
   font-size: 10px;
-  color: black;
+  color: black  !important;
   margin-left: 6px;
+  text-decoration: none;
 }
 
-/* line 540, ../sass/ellis.scss */
+/* line 541, ../sass/ellis.scss */
 .social_btns {
   padding-bottom: 10px;
   height: 48px;
 }
-/* line 543, ../sass/ellis.scss */
+/* line 544, ../sass/ellis.scss */
 .social_btns img {
   margin: 5px;
   cursor: pointer;
 }
 
 @media all and (max-width: 800px) {
-  /* line 550, ../sass/ellis.scss */
+  /* line 551, ../sass/ellis.scss */
   .luggageIcon {
     display: none;
   }

@@ -522,8 +522,9 @@ td {
 .dd_lrn {
   font-family: $font-sans;
   font-size: 10px;
-  color: black;
+  color: black  !important;
   margin-left: 6px;
+  text-decoration: none;
 }
 
 
