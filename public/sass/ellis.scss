@@ -494,6 +494,7 @@ td {
 .header_nums {
   font-family: $font-display;
   margin-bottom: 10px;
+  clear: both;
 }
 
 .dirty_dozen {
@@ -519,14 +520,16 @@ td {
   margin-left: 5px
 }
 
-.dd_lrn {
+#dd_lrn {
   font-family: $font-sans;
   font-size: 10px;
-  color: black  !important;
+  color: black;//  !important;
   margin-left: 6px;
   text-decoration: none;
 }
-
+.no_evictions {
+  clear: both;
+}
 
 //SOCIAL//
 

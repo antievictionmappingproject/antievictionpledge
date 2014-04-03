@@ -145,7 +145,7 @@ function openInfoWindow(result, addressTxt) {
         subtext += "</table></div>";
         text = "<div class='info_window'><div class='info_address'>"+ addressTxt+"</div>";
         if (obj.dirty_dozen != null) {
-            text += "<div class='dirty_dozen'><p class='dd_hdr' id='dd_hdr'>A Dirty Dozen Eviction<a href='" + obj.dirty_dozen + "' class='dd_lrn'>Learn More</a></p></div>";
+            text += "<div class='dirty_dozen'><p class='dd_hdr' id='dd_hdr'>A Dirty Dozen Eviction<a href='" + obj.dirty_dozen + "' id='dd_lrn'>Learn More</a></p></div>";
 
         }
         text += "<div class='header_nums'>" +
@@ -154,7 +154,7 @@ function openInfoWindow(result, addressTxt) {
         text +=  "<div class='total_col' style='width:36%'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior or Disabled Tenants</div></div></div>";
         text += subtext;
     } else {
-        text = "<div class='info_window'><p class='info_address'>"+ addressTxt+"</p><hr/><p>No Ellis Act Evictions on record for this address</p></div>";
+        text = "<div class='info_window'><p class='info_address'>"+ addressTxt+"</p><div class='no_evictions'><p>No Ellis Act Evictions on record for this address</p></div></div>";
     }
     marker.bindPopup(text, {maxWidth:500}).openPopup();
 }

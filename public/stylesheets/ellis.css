@@ -521,9 +521,10 @@ td {
 .header_nums {
   font-family: "Oswald", sans-serif;
   margin-bottom: 10px;
+  clear: both;
 }
 
-/* line 499, ../sass/ellis.scss */
+/* line 500, ../sass/ellis.scss */
 .dirty_dozen {
   width: 255px;
   height: 45px;
@@ -535,7 +536,7 @@ td {
   padding: 1px 10px 5px 5px;
 }
 
-/* line 510, ../sass/ellis.scss */
+/* line 511, ../sass/ellis.scss */
 .dd_hdr {
   font-family: "Oswald", sans-serif;
   font-size: 16px;
@@ -543,34 +544,39 @@ td {
   margin-top: 12px;
 }
 
-/* line 517, ../sass/ellis.scss */
+/* line 518, ../sass/ellis.scss */
 #dd_hdr {
   margin-top: 12px;
   margin-left: 5px;
 }
 
-/* line 522, ../sass/ellis.scss */
-.dd_lrn {
+/* line 523, ../sass/ellis.scss */
+#dd_lrn {
   font-family: "Open Sans", sans-serif;
   font-size: 10px;
-  color: black  !important;
+  color: black;
   margin-left: 6px;
   text-decoration: none;
 }
 
-/* line 541, ../sass/ellis.scss */
+/* line 530, ../sass/ellis.scss */
+.no_evictions {
+  clear: both;
+}
+
+/* line 544, ../sass/ellis.scss */
 .social_btns {
   padding-bottom: 10px;
   height: 48px;
 }
-/* line 544, ../sass/ellis.scss */
+/* line 547, ../sass/ellis.scss */
 .social_btns img {
   margin: 5px;
   cursor: pointer;
 }
 
 @media all and (max-width: 800px) {
-  /* line 551, ../sass/ellis.scss */
+  /* line 554, ../sass/ellis.scss */
   .luggageIcon {
     display: none;
   }
