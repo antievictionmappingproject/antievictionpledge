@@ -129,19 +129,23 @@ function openInfoWindow(result, addressTxt) {
     if (obj.evictions && obj.evictions.length > 0) {
         var subtext = "<div class='info_table'><table>";
         var max_units = 0;
-        var protected = 0;
+        var protected = obj.protected_tenants;
         for (var i = 0; i < obj.evictions.length; i++) {
             var ev = obj.evictions[i];
             var d = new Date(ev.date);
             max_units = Math.max(max_units, ev.units);
-            protected = Math.max(protected, ev.protected);
-            subtext += "<tr><td class='ev_date'>"+ d.toLocaleDateString() + "</td><td class='ev_landlords'>" + ev.landlord
-                + "</td></tr></div>";
+//            protected = Math.max(protected, ev.protected_tenants);
+            subtext += "<tr><td class='ev_date'>"+ d.toLocaleDateString() + "</td><td class='ev_landlords'>";
+            subtext += ev.landlords[i];
+            for (var j = 1; j < ev.landlords.length; j++) {
+                subtext += " &bull; " + ev.landlords[j];
+            }
+            subtext += "</td></tr></div>";
         }
         subtext += "</table></div>";
         text = "<div class='info_window'><div class='info_address'>"+ addressTxt+"</div>";
-        if (true) {//(obj.url != null)
-            text += "<div class='dirty_dozen'><p class='dd_hdr' id='dd_hdr'>A Dirty Dozen Eviction<span class='dd_lrn'>Learn More</span></p></div>";
+        if (obj.dirty_dozen != null) {
+            text += "<div class='dirty_dozen'><p class='dd_hdr' id='dd_hdr'>A Dirty Dozen Eviction<a href='" + obj.dirty_dozen + "' class='dd_lrn'>Learn More</a></p></div>";
 
         }
         text += "<div class='header_nums'>" +

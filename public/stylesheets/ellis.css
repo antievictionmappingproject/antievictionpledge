@@ -185,7 +185,7 @@ input:focus, textarea:focus {
 #mapper {
   height: 800px;
   width: 100%;
-  max-width: 1050px;
+  max-width: 730px;
   float: left;
   z-index: 5;
   position: absolute;
