@@ -295,6 +295,24 @@ nav {
   }
 }
 
+.page_buttons {
+  clear: both;
+  a {
+    text-decoration: none;
+    color: $color-offwhite;
+    cursor: pointer;
+  }
+}
+
+.previous {
+  float: left;
+}
+
+.more {
+  float: left;
+  margin-left: 90%;
+}
+
 .resources, .aboutus {
   color: $color-darkestblue;
   float: left; 

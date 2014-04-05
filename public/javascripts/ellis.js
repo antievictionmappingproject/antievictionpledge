@@ -9,6 +9,8 @@ var map;
 var marker;
 var infoWindow;
 var endpoint = "displacement-server-env-rtmfzur43y.elasticbeanstalk.com";
+var currentPage = 0;
+var totalPledges = 0;
 
 $(document).ready(function() {
     map = L.map("mapper").setView([37.760, -122.435], 12);
@@ -62,6 +64,14 @@ $(document).ready(function() {
         $("html, body").animate({ scrollTop:  0}, 300);
     });
 
+    $('#more_btn').click(function(){
+        currentPage += 1;
+        retrievePledges();
+    });
+    $('#back_btn').click(function(){
+        currentPage -= 1;
+        retrievePledges();
+    });
     retrievePledges();
 });
 
@@ -163,7 +173,7 @@ function retrievePledges() {
     $('.pledgeColumn').empty();
 
     $.ajax({
-        url: "http://"+endpoint+"/pledges",
+        url: "http://"+endpoint+"/pledges?limit=30&skip="+currentPage*30,
         type: 'GET',
         success: function(result) {
             var j = 0
@@ -178,6 +188,7 @@ function retrievePledges() {
                 var blob = '<li class="pledger"><span class="name">'+result[i].name+'</span> <span class="reason">' + result[i].reason + '</span></li>';
                 list.append(blob);
             }
+            adjustButtons();
         }
     });
 
@@ -186,6 +197,21 @@ function retrievePledges() {
         type: 'GET',
         success: function(result) {
             $('#pledge_total').text(result+" people have pledged");
+            adjustButtons();
+            totalPledges = result;
         }
     })
+}
+
+function adjustButtons() {
+    if (currentPage == 0) {
+        $('.previous').hide();
+    } else {
+        $('.previous').show();
+    }
+    if (totalPledges / 30 > currentPage + 1) {
+        $('.more').show();
+    } else {
+        $('.more').hide();
+    }
 }
