@@ -31,8 +31,9 @@ $(document).ready(function() {
 
     $('#pet_link').click(function(){
         submitPledge();
-        $('#petition').hide(100);
-        $('#feedback').show(100);
+        $('#petition').fadeOut(600, function () {
+            $('#feedback').fadeIn(800)
+        });
     });
 
     $('#tw_btn').click(function() {
