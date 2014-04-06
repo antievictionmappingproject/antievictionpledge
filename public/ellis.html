@@ -20,8 +20,8 @@
             <a href="#" id="logo"><img src="http://placehold.it/150x80" alt="Eviction Pledge logo"></a>
                 <nav> 
                     <ul>
-                        <a href="#" id="searchPledgelink"><li>Pledge</li></a>
-                        <a href="#" id="pledgeslink"><li>See Who Has Pledged</li></a>
+                        <a href="#" id="searchPledgelink"><li>Eviction History &amp; Pledge</li></a>
+                        <a href="#" id="pledgeslink"><li>See Who Pledged</li></a>
                         <a href="#" id="learnMorelink"><li>Learn More</li></a>
                     </ul>
                 </nav>
@@ -30,22 +30,24 @@
  <!--   <div class="scrollarea">-->
         <div id="intro">
             <div class="wrap">
-            <div class="luggageIcon">
-                <img src="images/stencil.jpg" width="414" height="450" alt="Tenants Here Forced Out logo">
-            </div>
+                <div class="luggageIcon">
+                    <img src="images/stencil.jpg" width="300" height="450" alt="Tenants Here Forced Out logo">
+                </div>
 
-            <div class="blurb">
-                <h1>Evictions Ruin Lives</h1>
-                <p class="introBody">San Francisco communities are being destroyed to make room for <strong>you</strong>. Protect them by refusing to rent or buy properties left free through no-fault evictions.</p>
-                <p><a href="#" class="CTA">Pledge to Support Housing Justice</a></p>
-            </div>
+                <div id="blurb">
+                    <h1>San Francisco is in Crisis</h1>
+                    <p>Real-estate speculators are cashing in on record housing prices by evicting longtime city residents. Many of the affected are <strong>elderly</strong>, <strong>disabled</strong> and <strong>low-income</strong> with no affordable housing options. It's a complex problem, but <strong>you can help</strong>. Pledge not to rent or buy property left free because of a no-fault eviction.
+                    </p>
+
+                    <p class="centered"><a href="#" class="CTA">Pledge to Support Housing Justice</a></p>
+                </div>
             </div>
         </div>
 
         <div class="main">
             <div class="wrap">
                 <div id="search">
-                    <p class="search"><input id="address" type="text" placeholder="Enter Address"/><a class="link_txt" id="find_btn">Find</a></p>
+                    <p class="search"><input id="address" type="text" placeholder="Enter an address to check its eviction history"/><a class="link_txt" id="find_btn">Find</a></p>
                 </div>
 
                  <div id='mapper'></div>
@@ -54,7 +56,7 @@
 
                     <div class="right_bar">
                         <div class="petition" id="petition">
-                            <p class="standUp">Take a Stand</p>
+                            <h1>Take a Stand</h1>
                             <p class="pledgeText">I pledge not to rent or buy any unit that has seen an eviction as a result of the Ellis Act. </p>
                             <p class="label">First Name:</p>
                             <input type="text" id="pt_firstname" class="pt_txt" placeholder="First Name"/>
@@ -66,12 +68,23 @@
                             <p class="label">Why is this important to you?</p>
                             <textarea id="pt_reason" class="pt_txtarea" cols="22" rows="5"></textarea>
                             <p class="chk_label"><input type="checkbox" id="pt_usable" name="use" value="usable" checked="true"/>Show my name in the pledge list</p>
-                            <p><a id="pet_link" class="pt_link" role="button">I Support Housing Justice</a></p>
+                            <p class="centered"><a id="pet_link" class="pt_link" role="button">I Support Housing Justice</a></p>
                         </div>
                         <div class="petition" id="feedback">
-                            <p class="header">Pledge Successful!</p>
-                            <p>Please share your commitment to housing justice:</p>
-                            <div class="social_btns"><img id="fb_btn" src="images/facebook.png" width="48" height="48"><img id="tw_btn" src="images/twitter.png" width="48" height="48"></div>
+                            <h1>Thank you!</h1>
+                            <h2 class="standUp">Help Spread the Word</h2>
+                                <div class="social_btns"><img id="fb_btn" src="images/facebook.png" width="48" height="48"><img id="tw_btn" src="images/twitter.png" width="48" height="48">
+                                </div>
+                            <h2 class="standUp">Write Your Legislators</h2>
+                            <p><a href="#">Support Closing Ellis Loopholes</a>
+                            </p>
+                            <p>
+                            <a href="#">Support Increased Relocation Compensation</a>
+                            </p>
+                            <h2 class="standUp">Take Direct Action</h2>
+                            <p><a href="http://evictionfreesf.org/?page_id=592">Eviction Free SF Event Calendar</a></p>
+                            <h2 class="standUp">Join Us</h2>
+                            <p><a href="https://antievictionmap.squarespace.com/contact/">Contact the Anti-Eviction Mapping Project</a></p>
                         </div>
                     </div>
                 </div>
@@ -126,10 +139,10 @@
                 </div>
                 <div class="page_buttons">
                     <div class="previous">
-                        <p><a  id="back_btn"><< back</a></p>
+                        <p><a  id="back_btn"><< Back</a></p>
                     </div>
                     <div class="more">
-                        <p><a  id="more_btn">more >></a></p>
+                        <p><a  id="more_btn">More >></a></p>
                     </div>
                 </div>
             </div>
@@ -141,7 +154,7 @@
                     <h2 class="dark">Resources</h2>
                     <ul>
                         <a href="http://www.sftu.org"><li>The San Francisco Tenants Union</li></a>
-                        <a href="http://hrcsf.org"><li>Housing Rights Committee of SF</li></a>
+                        <a href="http://hrcsf.org"><li>Housing Rights Committee of San Francisco</li></a>
                         <a href="http://www.tenantstogether.org"><li>Tenants Together</li></a>
                         <a href="http://www.evictionfreesf.org"><li>Eviction Free San Francisco</li></a>
                     </ul>

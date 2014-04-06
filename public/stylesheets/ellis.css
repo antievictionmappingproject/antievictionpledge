@@ -1,4 +1,4 @@
-/* line 73, ../sass/ellis.scss */
+/* line 72, ../sass/ellis.scss */
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
@@ -8,33 +8,17 @@ body {
   background: #0d2839;
 }
 
-/* line 82, ../sass/ellis.scss */
+/* line 81, ../sass/ellis.scss */
+.centered {
+  text-align: center;
+}
+
+/* line 85, ../sass/ellis.scss */
 div.info_window {
   width: 42em;
 }
 
-/* line 87, ../sass/ellis.scss */
-#feedback {
-  display: none;
-}
-
-/* line 91, ../sass/ellis.scss */
-#find_btn {
-  color: #f2f0e0;
-  font-family: "Oswald", sans-serif;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-/* line 97, ../sass/ellis.scss */
-#find_btn:hover {
-  color: #12212b;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-}
-
-/* line 103, ../sass/ellis.scss */
+/* line 90, ../sass/ellis.scss */
 .footer {
   background: #0d2839;
   border-top: 1px solid #12212b;
@@ -47,7 +31,7 @@ div.info_window {
 }
 /* line 34, ../sass/ellis.scss */
 .footer a {
-  color: #f2f0e0;
+  color: #f9faf3;
   text-decoration: none;
 }
 /* line 38, ../sass/ellis.scss */
@@ -59,7 +43,18 @@ div.info_window {
   -o-transition: all 0.2s ease-in;
 }
 
-/* line 115, ../sass/ellis.scss */
+/* line 102, ../sass/ellis.scss */
+h1 {
+  color: #f9faf3;
+  font-family: "Oswald", sans-serif;
+  font-size: 4em;
+  font-weight: 400;
+  letter-spacing: .05em;
+  margin: 0;
+  text-shadow: 4px 4px 0px #cc0029;
+}
+
+/* line 112, ../sass/ellis.scss */
 h2 {
   color: #588b9b;
   font-family: "Lusitana", serif;
@@ -69,110 +64,18 @@ h2 {
   text-shadow: 1px 1px 2px #164563;
 }
 
-/* line 124, ../sass/ellis.scss */
+/* line 121, ../sass/ellis.scss */
 h2.dark {
   color: #0d2839;
   text-shadow: 1px 1px 2px #6295a6;
 }
 
-/* line 129, ../sass/ellis.scss */
+/* line 126, ../sass/ellis.scss */
 img {
   float: left;
 }
 
-/* line 133, ../sass/ellis.scss */
-input[type=text], textarea {
-  font-size: .8em;
-  font-style: italic;
-  border: 1px solid #DDDDDD;
-  margin: 0;
-  padding: .5em;
-  width: 96%;
-}
-
-/* line 142, ../sass/ellis.scss */
-input:focus, textarea:focus {
-  border: 1px solid #fff;
-  outline: none;
-}
-
-/* line 149, ../sass/ellis.scss */
-#intro {
-  clear: both;
-  overflow: hidden;
-  margin-left: 5%;
-  margin-right: 5%;
-  padding-top: 5em;
-}
-/* line 157, ../sass/ellis.scss */
-#intro h1 {
-  color: #f2f0e0;
-  font-family: "Oswald", sans-serif;
-  font-size: 4em;
-  font-weight: 400;
-  letter-spacing: .075em;
-  margin-bottom: 0;
-  text-shadow: 4px 4px 0px #cc0029;
-}
-/* line 167, ../sass/ellis.scss */
-#intro .introBody {
-  color: #b6ced4;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.3em;
-  font-weight: 300;
-  line-height: 1.5;
-  margin: 1.6em 0 3em 0;
-}
-/* line 176, ../sass/ellis.scss */
-#intro .CTA {
-  background: #588b9b;
-  color: #0d2839;
-  font-family: "Oswald", sans-serif;
-  font-weight: 400;
-  letter-spacing: .075em;
-  padding: 1em 2em;
-  text-decoration: none;
-  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.2);
-  -webkit-border-radius: 0.7em;
-  -moz-border-radius: 0.7em;
-  border-radius: 0.7em;
-}
-/* line 181, ../sass/ellis.scss */
-#intro .CTA:hover {
-  color: #f2f0e0;
-  background: #cc0029;
-  text-shadow: 2px 2px 0px #a30021;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-}
-
-/* line 189, ../sass/ellis.scss */
-#learnMore {
-  background: #588b9b;
-  wrap: left;
-  clear: both;
-}
-
-/* line 195, ../sass/ellis.scss */
-.link_txt {
-  margin-left: 1em;
-}
-
-/* line 199, ../sass/ellis.scss */
-.luggageIcon {
-  float: left;
-  margin-right: 3em;
-}
-
-/* line 208, ../sass/ellis.scss */
-.main {
-  height: 66em;
-  background: #333;
-}
-
-/* line 213, ../sass/ellis.scss */
+/* line 130, ../sass/ellis.scss */
 .main_menu {
   background: #12212b;
   height: 6em;
@@ -182,23 +85,13 @@ input:focus, textarea:focus {
   z-index: 99;
 }
 
-/* line 222, ../sass/ellis.scss */
-#mapper {
-  height: 66em;
-  width: 100%;
-  max-width: 61em;
-  float: left;
-  z-index: 5;
-  position: absolute;
-}
-
-/* line 234, ../sass/ellis.scss */
+/* line 139, ../sass/ellis.scss */
 nav {
   float: right;
 }
 /* line 34, ../sass/ellis.scss */
 nav a {
-  color: #f2f0e0;
+  color: #f9faf3;
   text-decoration: none;
 }
 /* line 38, ../sass/ellis.scss */
@@ -209,12 +102,12 @@ nav a:hover {
   -ms-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
 }
-/* line 238, ../sass/ellis.scss */
+/* line 143, ../sass/ellis.scss */
 nav ul {
   list-style: none;
   margin: 1.95em 0 2em 0;
 }
-/* line 242, ../sass/ellis.scss */
+/* line 147, ../sass/ellis.scss */
 nav ul li {
   float: left;
   font-family: "Open Sans", sans-serif;
@@ -223,80 +116,7 @@ nav ul li {
   display: block;
 }
 
-/* line 252, ../sass/ellis.scss */
-.petition {
-  background: rgba(242, 240, 224, 0.9);
-  border: 2px solid #0d2839;
-  color: #0d2839;
-  margin: 0;
-  margin-top: .4em;
-  padding: 2em;
-  -webkit-border-radius: 0.7em;
-  -moz-border-radius: 0.7em;
-  border-radius: 0.7em;
-  z-index: 8;
-  position: absolute;
-  height: 44em;
-  max-width: 20em;
-}
-
-/* line 267, ../sass/ellis.scss */
-#pledges {
-  background: #0d2839;
-  float: left;
-  width: 100%;
-}
-
-/* line 273, ../sass/ellis.scss */
-.pledgeColumn {
-  float: left;
-  width: 28%;
-  padding: 0 3em 0 0;
-}
-/* line 278, ../sass/ellis.scss */
-.pledgeColumn ul {
-  list-style: none;
-}
-/* line 282, ../sass/ellis.scss */
-.pledgeColumn li {
-  color: #f2f0e0;
-  font-size: 1em;
-  font-weight: 300;
-  margin: 5px;
-}
-/* line 289, ../sass/ellis.scss */
-.pledgeColumn p {
-  margin: 1em 0;
-  padding: 0;
-}
-/* line 293, ../sass/ellis.scss */
-.pledgeColumn .name {
-  font-weight: bold;
-}
-
-/* line 298, ../sass/ellis.scss */
-.page_buttons {
-  clear: both;
-}
-/* line 300, ../sass/ellis.scss */
-.page_buttons a {
-  text-decoration: none;
-  color: #f2f0e0;
-  cursor: pointer;
-}
-
-/* line 307, ../sass/ellis.scss */
-.previous {
-  float: left;
-}
-
-/* line 311, ../sass/ellis.scss */
-.more {
-  float: left;
-  margin-left: 90%;
-}
-
-/* line 316, ../sass/ellis.scss */
+/* line 157, ../sass/ellis.scss */
 .resources, .aboutus {
   color: #12212b;
   float: left;
@@ -304,7 +124,7 @@ nav ul li {
 }
 /* line 34, ../sass/ellis.scss */
 .resources a, .aboutus a {
-  color: #f2f0e0;
+  color: #f9faf3;
   text-decoration: none;
 }
 /* line 38, ../sass/ellis.scss */
@@ -315,17 +135,208 @@ nav ul li {
   -ms-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
 }
-/* line 322, ../sass/ellis.scss */
+/* line 163, ../sass/ellis.scss */
 .resources ul, .aboutus ul {
   list-style: none;
   padding: 0;
 }
-/* line 327, ../sass/ellis.scss */
+/* line 168, ../sass/ellis.scss */
 .resources li, .aboutus li {
   margin: .4em 0;
 }
 
-/* line 332, ../sass/ellis.scss */
+/* line 173, ../sass/ellis.scss */
+.scrollarea {
+  overflow: scroll;
+}
+
+/* line 177, ../sass/ellis.scss */
+strong {
+  text-transform: uppercase;
+  font-size: .9em;
+}
+
+/* line 182, ../sass/ellis.scss */
+td, th {
+  padding-left: 1em;
+}
+
+/* line 186, ../sass/ellis.scss */
+.wrap {
+  width: 66em;
+  margin: auto;
+  padding: 5em 0;
+  overflow: hidden;
+}
+
+/* line 193, ../sass/ellis.scss */
+.wrapNoMargin {
+  margin: auto;
+  overflow: hidden;
+  padding: 0;
+  width: 66em;
+}
+
+/* INTRO STYLES */
+/* line 202, ../sass/ellis.scss */
+#blurb p {
+  color: #f9faf3;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0;
+  padding: 1em 0 1.2em 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 214, ../sass/ellis.scss */
+#intro {
+  clear: both;
+  overflow: hidden;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 5em;
+}
+
+/* line 223, ../sass/ellis.scss */
+.CTA {
+  font-size: .8em;
+  background: #588b9b;
+  color: #0d2839;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  letter-spacing: .075em;
+  padding: .8em 2em;
+  text-decoration: none;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.2);
+  -webkit-border-radius: 0.7em;
+  -moz-border-radius: 0.7em;
+  border-radius: 0.7em;
+}
+
+/* line 229, ../sass/ellis.scss */
+.CTA:hover {
+  color: #f9faf3;
+  background: #cc0029;
+  text-shadow: 2px 2px 0px #a30021;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+/* line 236, ../sass/ellis.scss */
+.luggageIcon {
+  float: left;
+  margin-right: 3em;
+}
+
+/* SEARCH AND PLEDGE STYLES */
+/* PLEDGE STYLES */
+/* line 243, ../sass/ellis.scss */
+#feedback {
+  display: none;
+}
+
+/* line 247, ../sass/ellis.scss */
+#feedback, #petition {
+  margin: 0 0 0 3em;
+  padding: 0;
+  z-index: 8;
+  position: absolute;
+  height: 42em;
+  max-width: 20em;
+}
+/* line 34, ../sass/ellis.scss */
+#feedback a, #petition a {
+  color: #588b9b;
+  text-decoration: none;
+}
+/* line 38, ../sass/ellis.scss */
+#feedback a:hover, #petition a:hover {
+  color: #f9faf3;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+}
+/* line 256, ../sass/ellis.scss */
+#feedback h1, #petition h1 {
+  font-size: 3em;
+  padding: 0;
+  margin: 0;
+  text-shadow: 3px 3px 0px #cc0029;
+}
+/* line 263, ../sass/ellis.scss */
+#feedback h2, #petition h2 {
+  color: #f9faf3;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5em;
+  letter-spacing: .001em;
+  line-height: 1;
+  padding-top: 1em;
+  margin-bottom: .5em;
+  text-shadow: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 276, ../sass/ellis.scss */
+input[type=text], textarea {
+  font-size: .8em;
+  font-style: italic;
+  border: 1px solid #DDDDDD;
+  margin: 0;
+  padding: .5em;
+  width: 96%;
+}
+
+/* line 285, ../sass/ellis.scss */
+input:focus, textarea:focus {
+  border: 1px solid #fff;
+  outline: none;
+}
+
+/* line 292, ../sass/ellis.scss */
+.link_txt {
+  margin-left: 1em;
+}
+
+/* line 296, ../sass/ellis.scss */
+#pledges {
+  background: #0d2839;
+  float: left;
+  width: 100%;
+}
+
+/* line 302, ../sass/ellis.scss */
+.pledgeColumn {
+  float: left;
+  width: 28%;
+  padding: 0 3em 0 0;
+}
+/* line 307, ../sass/ellis.scss */
+.pledgeColumn ul {
+  list-style: none;
+}
+/* line 311, ../sass/ellis.scss */
+.pledgeColumn li {
+  color: #f9faf3;
+  font-size: 1em;
+  font-weight: 300;
+  margin: 5px;
+}
+/* line 318, ../sass/ellis.scss */
+.pledgeColumn p {
+  margin: 1em 0;
+  padding: 0;
+}
+/* line 322, ../sass/ellis.scss */
+.pledgeColumn .name {
+  font-weight: bold;
+}
+
+/* line 327, ../sass/ellis.scss */
 .right_bar {
   width: 30%;
   max-width: 25em;
@@ -333,25 +344,25 @@ nav ul li {
   float: right;
   right: 1em;
 }
-/* line 339, ../sass/ellis.scss */
-.right_bar a {
+/* line 334, ../sass/ellis.scss */
+.right_bar #pet_link {
   cursor: pointer;
   background: #588b9b;
   color: #0d2839;
   font-family: "Oswald", sans-serif;
-  font-size: .8em;
+  font-size: 1em;
   font-weight: 400;
   letter-spacing: .075em;
-  padding: .6em 2em;
+  padding: .8em 1.8em;
   text-decoration: none;
   text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.2);
   -webkit-border-radius: 0.7em;
   -moz-border-radius: 0.7em;
   border-radius: 0.7em;
 }
-/* line 345, ../sass/ellis.scss */
-.right_bar a:hover {
-  color: #f2f0e0;
+/* line 340, ../sass/ellis.scss */
+.right_bar #pet_link:hover {
+  color: #f9faf3;
   background: #0d2839;
   text-shadow: 2px 2px 0px #051118;
   -webkit-transition: all 0.3s ease-in-out;
@@ -359,46 +370,92 @@ nav ul li {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
 }
-/* line 352, ../sass/ellis.scss */
+/* line 347, ../sass/ellis.scss */
 .right_bar .expl {
+  color: white;
   font-size: .6em;
   margin: .6em 0 2em 0;
+  -webkit-font-smoothing: antialiased;
 }
-/* line 356, ../sass/ellis.scss */
+/* line 353, ../sass/ellis.scss */
 .right_bar .chk_label {
+  color: white;
   font-size: .6em;
-  margin: .6em 0 4em 0;
+  margin: .6em 0 5em 0;
+  -webkit-font-smoothing: antialiased;
 }
-/* line 360, ../sass/ellis.scss */
+/* line 359, ../sass/ellis.scss */
 .right_bar .label {
+  color: #f9faf3;
   margin: 1.2em 0px .2em 0px;
   font-size: .9em;
+  -webkit-font-smoothing: antialiased;
 }
-/* line 365, ../sass/ellis.scss */
-.right_bar p.standUp {
-  color: #0d2839;
-  font-family: "Oswald", sans-serif;
-  font-size: 2.5em;
-  font-weight: 600;
-  letter-spacing: .04em;
-  margin: 0;
-  padding: 0;
-  text-shadow: 3px 3px 0px #588b9b;
-  text-transform: uppercase;
-}
-/* line 377, ../sass/ellis.scss */
+/* line 366, ../sass/ellis.scss */
 .right_bar p.pledgeText {
+  color: #f9faf3;
   font-family: "Oswald", sans-serif;
   font-size: 1.5em;
   margin: .5em 0 1.25em 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
 }
-/* line 384, ../sass/ellis.scss */
+/* line 375, ../sass/ellis.scss */
 .right_bar span {
   font-size: .6em;
 }
 
-/* line 389, ../sass/ellis.scss */
+/* line 380, ../sass/ellis.scss */
+.social_btns {
+  padding-bottom: 10px;
+  height: 48px;
+}
+/* line 383, ../sass/ellis.scss */
+.social_btns img {
+  margin: 5px;
+  cursor: pointer;
+}
+
+/* MAP and SEARCH STYLES */
+/* line 391, ../sass/ellis.scss */
+#address {
+  width: 87%;
+}
+
+/* line 395, ../sass/ellis.scss */
+#find_btn {
+  color: #f9faf3;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: .1em;
+  padding-left: .5em;
+  text-transform: uppercase;
+}
+/* line 402, ../sass/ellis.scss */
+#find_btn:hover {
+  color: #12212b;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+/* line 408, ../sass/ellis.scss */
+.main {
+  height: 60em;
+  background: #333;
+}
+
+/* line 413, ../sass/ellis.scss */
+#mapper {
+  height: 60em;
+  width: 100%;
+  max-width: 61em;
+  float: left;
+  z-index: 5;
+  position: absolute;
+}
+
+/* line 425, ../sass/ellis.scss */
 .search {
   background: #cc0000;
   /* The Fallback */
@@ -410,144 +467,116 @@ nav ul li {
   cursor: pointer;
   float: left;
 }
-/* line 398, ../sass/ellis.scss */
-.search #address {
-  width: 80%;
-}
 
-/* line 403, ../sass/ellis.scss */
+/* line 436, ../sass/ellis.scss */
 #search {
   width: 70%;
-  max-width: 46e;
+  max-width: 46em;
   z-index: 8;
   position: absolute;
 }
 
-/* line 411, ../sass/ellis.scss */
-strong {
-  text-transform: uppercase;
-  font-size: .9em;
+/* SEARCH RESULTS STYLES */
+/* line 444, ../sass/ellis.scss */
+.circle_num {
+  border-radius: 50%;
+  color: white;
+  float: left;
+  width: 2.5em;
+  height: 2.5em;
+  line-height: 2.5em;
+  margin: 0;
+  text-align: center;
+  font-size: 1.5em;
 }
 
-/* line 416, ../sass/ellis.scss */
-td, th {
-  padding-left: 1em;
-}
-
-/* line 420, ../sass/ellis.scss */
-.wrap {
-  width: 66em;
-  margin: auto;
-  padding: 5em 0;
-  overflow: hidden;
-}
-
-/* line 427, ../sass/ellis.scss */
-.wrapNoMargin {
-  margin: auto;
-  overflow: hidden;
-  padding: 0;
-  width: 66em;
-}
-
-/* line 434, ../sass/ellis.scss */
-.scrollarea {
-  overflow: scroll;
-}
-
-/* line 438, ../sass/ellis.scss */
+/* line 456, ../sass/ellis.scss */
 .pledger {
   list-style: none;
 }
 
-/* line 442, ../sass/ellis.scss */
-.circle_num {
-  border-radius: 50%;
-  color: white;
-  width: 3em;
-  height: 3em;
-  line-height: 3em;
-  text-align: center;
-  font-size: 1.5em;
-  margin: 1.25em .4em 0px .4em;
-  float: left;
-}
-
-/* line 455, ../sass/ellis.scss */
+/* line 460, ../sass/ellis.scss */
 .ig_text {
+  float: left;
   font-size: 1.5em;
-  line-height: 2em;
   text-align: left;
   margin: 1em .4em 1.25em 1em;
 }
 
-/* line 462, ../sass/ellis.scss */
+/* line 467, ../sass/ellis.scss */
 .bluebg {
   background-color: #0d2839;
 }
 
-/* line 466, ../sass/ellis.scss */
+/* line 471, ../sass/ellis.scss */
 .redbg {
   background-color: #cc0029;
 }
 
-/* line 470, ../sass/ellis.scss */
+/* line 475, ../sass/ellis.scss */
 .lightbluebg {
   background-color: #588b9b;
 }
 
-/* line 474, ../sass/ellis.scss */
+/* line 479, ../sass/ellis.scss */
 .total_col {
-  width: 33%;
+  width: 20%;
   float: left;
 }
-/* line 478, ../sass/ellis.scss */
+/* line 483, ../sass/ellis.scss */
 .total_col .red {
   color: #cc0029;
 }
-/* line 482, ../sass/ellis.scss */
+/* line 487, ../sass/ellis.scss */
 .total_col .blue {
   color: #0d2839;
 }
-/* line 486, ../sass/ellis.scss */
+/* line 491, ../sass/ellis.scss */
 .total_col .lightblue {
   color: #588b9b;
 }
 
-/* line 491, ../sass/ellis.scss */
+/* line 496, ../sass/ellis.scss */
 .ev_date {
   font-weight: bold;
+  text-align: right;
   vertical-align: top;
 }
 
-/* line 496, ../sass/ellis.scss */
+/* line 502, ../sass/ellis.scss */
+.ev_landlords {
+  padding-bottom: .5em;
+}
+
+/* line 506, ../sass/ellis.scss */
 .info_address {
+  color: #0d2839;
   font-family: "Oswald", sans-serif;
   font-size: 1.5em;
   float: left;
-  margin-top: .8em;
+  margin-top: .6em;
 }
 
-/* line 503, ../sass/ellis.scss */
+/* line 514, ../sass/ellis.scss */
 .info_table {
   font-family: "Open Sans", sans-serif;
   font-size: 1em;
   clear: both;
 }
 
-/* line 509, ../sass/ellis.scss */
+/* line 520, ../sass/ellis.scss */
 td {
   padding-bottom: 1.25em;
 }
 
-/* line 513, ../sass/ellis.scss */
+/* line 524, ../sass/ellis.scss */
 .header_nums {
   font-family: "Oswald", sans-serif;
   margin-bottom: .8em;
   clear: both;
 }
 
-/* line 519, ../sass/ellis.scss */
+/* line 530, ../sass/ellis.scss */
 .dirty_dozen {
   width: 21em;
   height: 3.75em;
@@ -559,47 +588,68 @@ td {
   padding: .1em .8em .4em .4em;
 }
 
-/* line 530, ../sass/ellis.scss */
+/* line 541, ../sass/ellis.scss */
 .dd_hdr {
   font-family: "Oswald", sans-serif;
   font-size: 1.3em;
   color: white;
-  margin-top: 1em;
 }
 
-/* line 537, ../sass/ellis.scss */
+/* line 547, ../sass/ellis.scss */
 #dd_hdr {
-  margin-top: 1em;
-  margin-left: 0.4em;
+  margin-top: .8em;
+  margin-left: 1.7em;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* line 542, ../sass/ellis.scss */
+/* line 553, ../sass/ellis.scss */
 #dd_lrn {
   font-family: "Open Sans", sans-serif;
-  font-size: 1em;
+  font-size: .7em;
+  font-weight: 600;
   color: black;
   margin-left: .5em;
   text-decoration: none;
 }
 
-/* line 549, ../sass/ellis.scss */
+/* line 561, ../sass/ellis.scss */
 .no_evictions {
   clear: both;
 }
 
-/* line 563, ../sass/ellis.scss */
-.social_btns {
-  padding-bottom: 10px;
-  height: 48px;
-}
+/* SEE WHO PLEDGED STYLES */
 /* line 566, ../sass/ellis.scss */
-.social_btns img {
-  margin: 5px;
+.page_buttons {
+  clear: both;
+}
+/* line 568, ../sass/ellis.scss */
+.page_buttons a {
+  text-decoration: none;
+  color: #f9faf3;
   cursor: pointer;
 }
 
+/* line 575, ../sass/ellis.scss */
+.previous {
+  float: left;
+}
+
+/* line 579, ../sass/ellis.scss */
+.more {
+  float: left;
+  margin-left: 90%;
+}
+
+/* LEARN MORE STYLES */
+/* line 585, ../sass/ellis.scss */
+#learnMore {
+  background: #588b9b;
+  wrap: left;
+  clear: both;
+}
+
 @media all and (max-width: 800px) {
-  /* line 573, ../sass/ellis.scss */
+  /* line 593, ../sass/ellis.scss */
   .luggageIcon {
     display: none;
   }

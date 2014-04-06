@@ -1,179 +1,227 @@
-// VARIABLES //
+// SASS VARIABLES //
+  $color-darkblue: #0D2839;
+  $color-darkestblue: #12212B;
+  $color-lightblue: #588B9B;
+  // $color-offwhite: #f2f0e0;
+  $color-offwhite: #f9faf3;
+  $color-red: #cc0029;
+  $font-display: 'Oswald', sans-serif;
+  $font-h2: 'Lusitana', serif;
+  $font-sans: 'Open Sans', sans-serif;
+  $petition-height: 42em;
+  $map-height: 60em;
+  $max-petition-width: 20em;
 
-$color-darkblue: #0D2839;
-$color-darkestblue: #12212B;
-$color-lightblue: #588B9B;
-$color-offwhite: #f2f0e0;
-$color-red: #cc0029;
-$font-display: 'Oswald', sans-serif;
-$font-h2: 'Lusitana', serif;
-$font-sans: 'Open Sans', sans-serif;
-$petition-height: 44em;
-$map-height: 66em;
-$max-petition-width: 20em;
-
-// MIXINS //
-@mixin boxshadow($shadow) {
-   -moz-box-shadow: $shadow;
-   -webkit-box-shadow: $shadow;
-   box-shadow: inset $shadow;
-}
-
-@mixin ctabuttonstyle {
-  background: $color-lightblue;
-  color: $color-darkblue;
-  font-family: $font-display;
-  font-weight: 400;
-  letter-spacing: .075em;
-  padding: 1em 2em;
-  text-decoration: none;
-  text-shadow: 0px 1px 1px rgba(255,255,255,0.2);
-}
-
-@mixin whitelinks($color) {
-  a {
-    color: $color-offwhite;
-    text-decoration: none;
-
-    &:hover {
-      color: $color;
-      @include selectanimation(all .2s ease-in);
-    }
-  } 
-}
-
-@mixin roundedcorner($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  border-radius: $radius;
-}
-
-@mixin selectanimation($animation) {
-  -webkit-transition: $animation;
-  -moz-transition: $animation;
-  -ms-transition: $animation;
-  -o-transition: $animation;
-}
-
-@mixin submitbuttonstyle {
-  background: $color-lightblue;
-  color: $color-darkblue;
-  font-family: $font-display;
-  font-size: .8em;
-  font-weight: 400;
-  letter-spacing: .075em;
-  padding: .6em 2em;
-  text-decoration: none;
-  text-shadow: 0px 1px 1px rgba(255,255,255,0.2);
-}
-
-
-// STYLE //
-
-body {
-  font-family: $font-sans;
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 0;
-  padding: 0;
-  background: $color-darkblue;
-}
-
-div.info_window {
-  width: 42em;
-  //height: 220px;
-}
-
-#feedback {
-  display: none;
-}
-
-#find_btn {
-  color: $color-offwhite;
-  font-family: $font-display;
-  letter-spacing: .1em;
-  text-transform:uppercase;
-
-  &:hover {
-    color: $color-darkestblue;
-    @include selectanimation(all 0.30s ease-in-out);
+// SASS MIXINS //
+  @mixin boxshadow($shadow) {
+     -moz-box-shadow: $shadow;
+     -webkit-box-shadow: $shadow;
+     box-shadow: inset $shadow;
   }
-}
 
-.footer {
-  background: $color-darkblue;
-  border-top: 1px solid $color-darkestblue;
-  clear: both;
-  color: $color-lightblue;
-  font-size: .75em;
-  padding: 1em 0; 
-  text-align: center;
-  width: 100%;
-  @include whitelinks($color-lightblue);
-}
+  @mixin ctabuttonstyle {
+    background: $color-lightblue;
+    color: $color-darkblue;
+    font-family: $font-display;
+    font-weight: 400;
+    letter-spacing: .075em;
+    padding: .8em 2em;
+    text-decoration: none;
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.2);
+  }
 
-h2 {
-  color: $color-lightblue;
-  font-family: $font-h2;
-  font-size: 1.8em;
-  letter-spacing: .05em;
-  line-height: 1;
-  text-shadow: 1px 1px 2px lighten($color-darkblue, 10%);
-}
+  @mixin links($linkcolor, $alinkcolor) {
+    a {
+      color: $linkcolor;
+      text-decoration: none;
 
-h2.dark {
-  color: $color-darkblue;
-  text-shadow: 1px 1px 2px lighten($color-lightblue, 4%);
-}
+      &:hover {
+        color: $alinkcolor;
+        @include selectanimation(all .2s ease-in);
+      }
+    } 
+  }
 
-img {
-  float: left;
-}
+  @mixin roundedcorner($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+  }
 
-input[type=text], textarea {
-  font-size: .8em;
-  font-style: italic;
-  border: 1px solid #DDDDDD;
-  margin: 0;
-  padding: .5em;
-  width: 96%;
-}
+  @mixin selectanimation($animation) {
+    -webkit-transition: $animation;
+    -moz-transition: $animation;
+    -ms-transition: $animation;
+    -o-transition: $animation;
+  }
 
-input:focus, textarea:focus {
-  border: 1px solid #fff;
-  outline: none;
-  // @include boxshadow(0 0 5px $color-darkblue);
-  // @include selectanimation(all 0.40s ease-in-out);
-}
+  @mixin submitbuttonstyle {
+    background: $color-lightblue;
+    color: $color-darkblue;
+    font-family: $font-display;
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: .075em;
+    padding: .8em 1.8em;
+    text-decoration: none;
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.2);
+  }
 
-#intro {
-  // background-image:url('../images/');
-  clear: both;
-  overflow: hidden;
-  margin-left: 5%;
-  margin-right: 5%;
-  padding-top: 5em; //make room for menu
+// GLOBAL STYLES //
+
+  body {
+    font-family: $font-sans;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background: $color-darkblue;
+  }
+
+  .centered {
+    text-align: center;
+  }
+
+  div.info_window {
+    width: 42em;
+    //height: 220px;
+  }
+
+  .footer {
+    background: $color-darkblue;
+    border-top: 1px solid $color-darkestblue;
+    clear: both;
+    color: $color-lightblue;
+    font-size: .75em;
+    padding: 1em 0; 
+    text-align: center;
+    width: 100%;
+    @include links($color-offwhite, $color-lightblue);
+  }
 
   h1 {
   color: $color-offwhite;
   font-family: $font-display;
   font-size: 4em;
   font-weight: 400;
-  letter-spacing: .075em;
-  margin-bottom: 0;
+  letter-spacing: .05em;
+  margin: 0;
   text-shadow: 4px 4px 0px $color-red;
   }
 
-  .introBody {
-  color: #b6ced4;
-  font-family: $font-sans;
-  font-size: 1.3em;  
-  font-weight: 300;
-  line-height: 1.5;
-  margin: 1.6em 0 3em 0;
+  h2 {
+    color: $color-lightblue;
+    font-family: $font-h2;
+    font-size: 1.8em;
+    letter-spacing: .05em;
+    line-height: 1;
+    text-shadow: 1px 1px 2px lighten($color-darkblue, 10%);
   }
 
-  .CTA {      //Should be centered with paragraph text//
+  h2.dark {
+    color: $color-darkblue;
+    text-shadow: 1px 1px 2px lighten($color-lightblue, 4%);
+  }
+
+  img {
+    float: left;
+  }
+
+  .main_menu {
+    background: $color-darkestblue;
+    height: 6em;
+    width: 100%;
+    border-bottom: 1px solid #06131c;
+    position: fixed;
+    z-index: 99;
+  }
+
+  nav {
+    float: right;
+    @include links($color-offwhite, $color-lightblue);
+
+    ul {
+      list-style: none;
+      margin: 1.95em 0 2em 0;
+
+      li {
+      float: left;
+      font-family: $font-sans;
+      margin-left: 2em;
+      padding: .3em .1em; 
+      display: block;
+      }
+    }
+  }
+
+  .resources, .aboutus {
+    color: $color-darkestblue;
+    float: left; 
+    width: 50%;
+    @include links($color-offwhite, $color-darkblue);
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin: .4em 0;
+    }
+  }
+
+  .scrollarea {
+    overflow: scroll;
+  }
+
+  strong {
+    text-transform:uppercase;
+    font-size: .9em;
+  }
+
+  td, th {
+    padding-left: 1em;
+  }
+
+  .wrap {
+    width:66em;
+    margin: auto;
+    padding: 5em 0;
+    overflow: hidden;
+  }
+
+  .wrapNoMargin {
+    margin: auto;
+    overflow: hidden;
+    padding: 0;
+    width:66em;
+  }
+
+/* INTRO STYLES */
+  #blurb {
+    p {
+      color: $color-offwhite;
+      font-family: $font-sans;
+      font-size: 1.5em;  
+      font-weight: 300;
+      line-height: 1.5;
+      margin: 0;
+      padding: 1em 0 1.2em 0;
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+
+  #intro {
+    // background-image:url('../images/');
+    clear: both;
+    overflow: hidden;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 5em; //make room for menu
+  }
+
+  .CTA {      
+    font-size: .8em;
     @include ctabuttonstyle;
     @include roundedcorner(0.7em);
   }
@@ -183,392 +231,364 @@ input:focus, textarea:focus {
     background: $color-red;
     text-shadow: 2px 2px 0px darken($color-red, 8%);
     @include selectanimation(all 0.30s ease-in-out);
-  }
-}
+    }
 
-#learnMore {
-  background: $color-lightblue;
-  wrap: left;
-  clear: both;
-}
-
-.link_txt {
-  margin-left: 1em;
-}
-
-.luggageIcon  {
-  float: left;
-  margin-right: 3em;
-}
-
-.blurb {
-  //float:right;
-}
-
-.main {
-  height: $map-height;
-  background: #333;
-}
-
-.main_menu {
-  background: $color-darkestblue;
-  height: 6em;
-  width: 100%;
-  border-bottom: 1px solid #06131c;
-  position: fixed;
-  z-index: 99;
-}
-
-#mapper {
-  height: $map-height;
-  width: 100%;
-  max-width: 61em;
-  //margin: 10%;
-  float: left;
-  z-index: 5;
-  position: absolute;
-  //background: rgba(204, 0, 0, 0.8);
-  //padding: 1em;
-}
-
-nav {
-  float: right;
-  @include whitelinks($color-lightblue);
-
-  ul {
-    list-style: none;
-    margin: 1.95em 0 2em 0;
-
-    li {
+  .luggageIcon  {
     float: left;
-    font-family: $font-sans;
-    margin-left: 2em;
-    padding: .3em .1em; 
-    display: block;
+    margin-right: 3em;
+  }
+
+/* SEARCH AND PLEDGE STYLES */
+  /* PLEDGE STYLES */
+  #feedback {
+    display: none;
+  }
+
+  #feedback, #petition {
+    margin: 0 0 0 3em;
+    padding: 0;
+    z-index: 8;
+    position: absolute;
+    height: $petition-height;
+    max-width: $max-petition-width;
+    @include links($color-lightblue, $color-offwhite);
+  
+    h1 {
+      font-size: 3em;
+      padding: 0;
+      margin: 0;
+      text-shadow: 3px 3px 0px $color-red;
+    }
+
+    h2 {
+      color: $color-offwhite;
+      font-family: $font-display;
+      font-size: 1.5em;
+      letter-spacing: .001em;
+      line-height: 1;
+      padding-top: 1em;
+      margin-bottom: .5em;
+      text-shadow: none;
+      -webkit-font-smoothing: antialiased;
     }
   }
-}
 
-.petition {
-  background: rgba(242,240,224,0.9);
-  border: 2px solid $color-darkblue;
-  color: $color-darkblue;
-  margin: 0;
-  margin-top: .4em;
-  padding: 2em;
-  @include roundedcorner(0.7em);
-  z-index: 8;
-  position: absolute;
-  height: $petition-height;
-  max-width: $max-petition-width;
-}
-
-
-#pledges {
-  background: $color-darkblue;
-  float: left;
-  width: 100%
-}
-
-.pledgeColumn {
-  float: left;
-  width: 28%;
-  padding: 0 3em 0 0;
-
-  ul {
-    list-style: none;
-  }
-
-  li {
-    color: $color-offwhite;
-    font-size: 1em;
-    font-weight: 300;
-    margin: 5px;
-  }
-
-  p {
-    margin: 1em 0;
-    padding: 0;
-  }
-  .name {
-    font-weight: bold;
-  }
-}
-
-.page_buttons {
-  clear: both;
-  a {
-    text-decoration: none;
-    color: $color-offwhite;
-    cursor: pointer;
-  }
-}
-
-.previous {
-  float: left;
-}
-
-.more {
-  float: left;
-  margin-left: 90%;
-}
-
-.resources, .aboutus {
-  color: $color-darkestblue;
-  float: left; 
-  width: 50%;
-  @include whitelinks($color-darkblue);
-
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  li {
-    margin: .4em 0;
-  }
-}
-
-.right_bar {
-  width: 30%;
-  max-width: 25em;
-  height: 100%;
-  float: right;
-  right: 1em;
-
-  a {   // Should be centered in the div //
-    cursor: pointer;
-    @include submitbuttonstyle;
-    @include roundedcorner(0.7em);
-  }
-
-  a:hover {   // Weird 1px border around top of button //
-    color: $color-offwhite;
-    background: $color-darkblue;
-    text-shadow: 2px 2px 0px darken($color-darkblue, 8%);
-    @include selectanimation(all 0.30s ease-in-out);
-  }
-
-  .expl {
-    font-size: .6em;
-    margin: .6em 0 2em 0;
-  }
-  .chk_label {
-    font-size: .6em;
-    margin: .6em 0 4em 0;
-  }
-  .label {
-    margin: 1.2em 0px .2em 0px;
-    font-size: .9em;
-  }
-
-  p.standUp {
-    color: $color-darkblue;
-    font-family: $font-display;
-    font-size: 2.5em;
-    font-weight: 600;
-    letter-spacing: .04em;
+  input[type=text], textarea {
+    font-size: .8em;
+    font-style: italic;
+    border: 1px solid #DDDDDD;
     margin: 0;
-    padding: 0;
-    text-shadow: 3px 3px 0px $color-lightblue;
-    text-transform:uppercase;
+    padding: .5em;
+    width: 96%;
   }
 
-  p.pledgeText {
-    font-family: $font-display;
-    font-size: 1.5em;
-    margin: .5em 0 1.25em 0;
-    padding: 0;
+  input:focus, textarea:focus {
+    border: 1px solid #fff;
+    outline: none;
+    // @include boxshadow(0 0 5px $color-darkblue);
+    // @include selectanimation(all 0.40s ease-in-out);
   }
 
-  span {
-    font-size: .6em;
-  }
-}
-
-.search {
-  background: rgb(204, 0, 0); /* The Fallback */
-  background: rgba(204, 0, 0, 0.8); 
-  width: 90%;
-  max-width: 40em;
-  margin: 5px 0px 0px 50px;
-  padding: 1em;
-  cursor: pointer;
-  float: left;
-  #address {
-    width: 80%;
+  .link_txt {
+    margin-left: 1em;
   }
 
-}
-#search {
-  width: 70%;
-  max-width: 46e;
-  z-index: 8;
-  position: absolute;
-
-}
-
-strong {
-  text-transform:uppercase;
-  font-size: .9em;
-}
-
-td, th {
-  padding-left: 1em;
-}
-
-.wrap {
-  width:66em;
-  margin: auto;
-  padding: 5em 0;
-  overflow: hidden;
-}
-
-.wrapNoMargin {
-  margin: auto;
-  overflow: hidden;
-  padding: 0;
-  width:66em;
-}
-
-.scrollarea {
-  overflow: scroll;
-}
-
-.pledger {
-  list-style: none;
-}
-
-.circle_num {
-  border-radius: 50%;
-  color: white;
-  width: 3em;
-  height: 3em;
-  line-height: 3em;
-  //padding: .5em;
-  text-align: center;
-  font-size: 1.5em;
-  margin: 1.25em .4em 0px .4em;
-  float: left;
-}
-
-.ig_text {
-  font-size: 1.5em;
-  line-height: 2em;
-  text-align: left;
-  margin: 1em .4em 1.25em 1em;
-}
-
-.bluebg {
-  background-color: $color-darkblue;
-}
-
-.redbg {
-  background-color: $color-red;
-}
-
-.lightbluebg {
-  background-color: $color-lightblue;
-}
-
-.total_col {
-  width: 33%;
-  //margin-right: 1%;
-  float: left;
-  .red {
-    color: $color-red;
+  #pledges {
+    background: $color-darkblue;
+    float: left;
+    width: 100%
   }
 
-  .blue {
-    color: $color-darkblue;
+  .pledgeColumn {
+    float: left;
+    width: 28%;
+    padding: 0 3em 0 0;
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      color: $color-offwhite;
+      font-size: 1em;
+      font-weight: 300;
+      margin: 5px;
+    }
+
+    p {
+      margin: 1em 0;
+      padding: 0;
+    }
+    .name {
+      font-weight: bold;
+    }
   }
 
-  .lightblue {
-    color: $color-lightblue;
+  .right_bar {
+    width: 30%;
+    max-width: 25em;
+    height: 100%;
+    float: right;
+    right: 1em;
+
+    #pet_link {   
+      cursor: pointer;
+      @include submitbuttonstyle;
+      @include roundedcorner(0.7em);
+    }
+
+    #pet_link:hover {   
+      color: $color-offwhite;
+      background: $color-darkblue;
+      text-shadow: 2px 2px 0px darken($color-darkblue, 8%);
+      @include selectanimation(all 0.30s ease-in-out);
+    }
+
+    .expl {
+      color: white;
+      font-size: .6em;
+      margin: .6em 0 2em 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .chk_label {
+      color: white;
+      font-size: .6em;
+      margin: .6em 0 5em 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .label {
+      color: $color-offwhite;
+      margin: 1.2em 0px .2em 0px;
+      font-size: .9em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    p.pledgeText {
+      color: $color-offwhite;
+      font-family: $font-display;
+      font-size: 1.5em;
+      margin: .5em 0 1.25em 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    span {
+      font-size: .6em;
+    }
   }
-}
 
-.ev_date {
-  font-weight: bold;
-  vertical-align: top;
-}
+  .social_btns {
+    padding-bottom: 10px;
+    height: 48px;
+    img {
+      margin: 5px;
+      cursor: pointer;
 
-.info_address {
-  font-family: $font-display;
-  font-size: 1.5em;
-  float: left;
-  margin-top: .8em;
-}
-
-.info_table {
-  font-family: $font-sans;
-  font-size: 1em;
-  clear: both;
-}
-
-td {
-  padding-bottom: 1.25em;
-}
-
-.header_nums {
-  font-family: $font-display;
-  margin-bottom: .8em;
-  clear: both;
-}
-
-.dirty_dozen {
-  width: 21em;
-  height: 3.75em;
-  border-radius: 0px 0px .4em .4em;
-  background-color: $color-red;
-  margin-left: 35%;
-  margin-top: -1.25em;
-  margin-bottom: 1.25em;
-  padding: .1em .8em .4em .4em;
-}
-
-.dd_hdr {
-  font-family: $font-display;
-  font-size: 1.3em;
-  color: white;
-  margin-top: 1em;
-}
-
-#dd_hdr {
-  margin-top: 1em;
-  margin-left: .4em
-}
-
-#dd_lrn {
-  font-family: $font-sans;
-  font-size: 1em;
-  color: black;//  !important;
-  margin-left: .5em;
-  text-decoration: none;
-}
-.no_evictions {
-  clear: both;
-}
-
-//SOCIAL//
-
-//.twitter-share-button {
-//  margin-top: 15px;
-//}
-//
-//.fb-share-button {
-//  margin: 0px 5px;
-//}
-
-.social_btns {
-  padding-bottom: 10px;
-  height: 48px;
-  img {
-    margin: 5px;
-    cursor: pointer;
-
+    }
   }
-}
+
+  /* MAP and SEARCH STYLES */
+    #address {
+        width: 87%;
+      }
+
+    #find_btn {
+      color: $color-offwhite;
+      font-family: $font-display;
+      letter-spacing: .1em;
+      padding-left: .5em;
+      text-transform:uppercase;
+
+      &:hover {
+        color: $color-darkestblue;
+        @include selectanimation(all 0.30s ease-in-out);
+      }
+    }
+
+    .main {
+      height: $map-height;
+      background: #333;
+      }
+
+      #mapper {
+        height: $map-height;
+        width: 100%;
+        max-width: 61em;
+        //margin: 10%;
+        float: left;
+        z-index: 5;
+        position: absolute;
+        //background: rgba(204, 0, 0, 0.8);
+        //padding: 1em;
+      }
+
+    .search {
+      background: rgb(204, 0, 0); /* The Fallback */
+      background: rgba(204, 0, 0, 0.8); 
+      width: 90%;
+      max-width: 40em;
+      margin: 5px 0px 0px 50px;
+      padding: 1em;
+      cursor: pointer;
+      float: left;
+
+    }
+    #search {
+      width: 70%;
+      max-width: 46em;
+      z-index: 8;
+      position: absolute;
+    }
+
+  /* SEARCH RESULTS STYLES */
+    .circle_num {
+      border-radius: 50%;
+      color: white;
+      float: left;
+      width: 2.5em;
+      height: 2.5em;
+      line-height: 2.5em;
+      margin: 0;
+      text-align: center;
+      font-size: 1.5em;
+      }
+
+    .pledger {
+      list-style: none;
+    }
+
+    .ig_text {
+      float: left;
+      font-size: 1.5em;
+      text-align: left;
+      margin: 1em .4em 1.25em 1em;
+    }
+
+    .bluebg {
+      background-color: $color-darkblue;
+    }
+
+    .redbg {
+      background-color: $color-red;
+    }
+
+    .lightbluebg {
+      background-color: $color-lightblue;
+    }
+
+    .total_col {
+      width: 20%;
+      //margin-right: 1%;
+      float: left;
+      .red {
+        color: $color-red;
+      }
+
+      .blue {
+        color: $color-darkblue;
+      }
+
+      .lightblue {
+        color: $color-lightblue;
+      }
+    }
+
+    .ev_date {
+      font-weight: bold;
+      text-align: right;
+      vertical-align: top;
+    }
+
+    .ev_landlords {
+      padding-bottom: .5em;
+    }
+
+    .info_address {
+      color: $color-darkblue;
+      font-family: $font-display;
+      font-size: 1.5em;
+      float: left;
+      margin-top: .6em;
+    }
+
+    .info_table {
+      font-family: $font-sans;
+      font-size: 1em;
+      clear: both;
+    }
+
+    td {
+      padding-bottom: 1.25em;
+    }
+
+    .header_nums {
+      font-family: $font-display;
+      margin-bottom: .8em;
+      clear: both;
+    }
+
+    .dirty_dozen {
+      width: 21em;
+      height: 3.75em;
+      border-radius: 0px 0px .4em .4em;
+      background-color: $color-red;
+      margin-left: 35%;
+      margin-top: -1.25em;
+      margin-bottom: 1.25em;
+      padding: .1em .8em .4em .4em;
+    }
+
+    .dd_hdr {
+      font-family: $font-display;
+      font-size: 1.3em;
+      color: white;
+    }
+
+    #dd_hdr {
+      margin-top: .8em;
+      margin-left: 1.7em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    #dd_lrn {
+      font-family: $font-sans;
+      font-size: .7em;
+      font-weight: 600;
+      color: black;//  !important;
+      margin-left: .5em;
+      text-decoration: none;
+    }
+    .no_evictions {
+      clear: both;
+    }
+
+/* SEE WHO PLEDGED STYLES */
+  .page_buttons {
+    clear: both;
+    a {
+      text-decoration: none;
+      color: $color-offwhite;
+      cursor: pointer;
+    }
+  }
+
+  .previous {
+    float: left;
+  }
+
+  .more {
+    float: left;
+    margin-left: 90%;
+  }
+
+/* LEARN MORE STYLES */
+  #learnMore {
+    background: $color-lightblue;
+    wrap: left;
+    clear: both;
+  }
+
+
 @media all and (max-width: 800px) {
   .luggageIcon {
     display: none;
