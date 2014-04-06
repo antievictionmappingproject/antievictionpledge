@@ -154,18 +154,21 @@ function openInfoWindow(result, addressTxt) {
             subtext += "</td></tr></div>";
         }
         subtext += "</table></div>";
-        text = "<div class='info_window'><div class='info_address'>"+ addressTxt+"</div>";
+        var add_class = obj.dirty_dozen != null ? 'info_address with_dd' : 'info_address without_dd';
+        text = "<div class='info_window'><div class='" + add_class +"'>"+ addressTxt+"</div>";
         if (obj.dirty_dozen != null) {
             text += "<div class='dirty_dozen'><p class='dd_hdr' id='dd_hdr'>A Dirty Dozen Eviction<a href='" + obj.dirty_dozen + "' id='dd_lrn'>Learn More</a></p></div>";
 
         }
         text += "<div class='header_nums'>" +
-                 "<div class='total_col'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>Ellis Act Evictions</div></div>";
+                 "<div class='total_col' style='width:30%'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>Ellis Act Evictions</div></div>";
         text +=  "<div class='total_col' style='width:30%'><div class='circle_num bluebg'>"+ max_units +"</div><div class='ig_text blue'>Affected Units</div></div>";
-        text +=  "<div class='total_col' style='width:36%'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior or Disabled Tenants</div></div></div>";
+        text +=  "<div class='total_col' style='width:40%'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior or Disabled<br />Tenants</div></div></div>";
         text += subtext;
     } else {
-        text = "<div class='info_window'><p class='info_address'>"+ addressTxt+"</p><div class='no_evictions'><p>No Ellis Act Evictions on record for this address</p></div></div>";
+//        text = "<div class='info_window'><p class='info_address'>"+ addressTxt+"</p><div class='no_evictions'><p>No Ellis Act Evictions on record for this address</p></div></div>";
+        text = "<div class='info_window fixed'><div class='info_address without_dd'>"+ addressTxt+"</div><div class='total_col' style='width:100%'><div class='circle_num lightbluebg'>0</div><div class='no_evictions'>" +
+            "There are no evictions at the address. Awesome!</div></div></div> ";
     }
     marker.bindPopup(text, {maxWidth:500}).openPopup();
 }
