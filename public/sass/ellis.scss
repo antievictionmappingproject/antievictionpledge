@@ -558,6 +558,15 @@
 
     .ev_landlords {
       padding-bottom: .5em;
+      vertical-align: top;
+    }
+
+    .ev_type {
+      vertical-align: top;
+      a {
+        text-decoration: none;
+        color: $color-darkblue;
+      }
     }
 
     .info_address {
