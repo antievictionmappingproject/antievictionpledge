@@ -90,6 +90,10 @@
 
   div.info_window_fixed {
     width: 42em;
+
+
+    //height: 220px;
+
   }
 
   .fixed {
@@ -793,6 +797,45 @@
     //   }
     // }
 
+
+@media all and (max-width: 800px) {
+  .luggageIcon {
+    display: none;
+  }
+  .right_bar {
+    position: inherit;
+    float: none;
+    width: 100%;
+  }
+
+  .mapSearch {
+    postion: inherit;
+    width: 100%;
+    height: $map-height;
+    margin-bottom: -8em;
+  }
+
+  .main {
+    height: $map-height + $petition-height;
+  }
+
+  #petition, #feedback {
+    position: inherit;
+    max-width: 100%;
+  }
+
+  #mapper {
+    float: none;
+  }
+}
+
+@media all and (max-width: 1150px) {
+  .wrap, .wrapNoMargin {
+    width: 100%;
+  }
+
+
+}
 
 
 

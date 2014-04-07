@@ -160,6 +160,7 @@ function openInfoWindow(result, addressTxt) {
         text += "<div class='header_nums'>" +
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  "<div class='total_col' style='width:30%'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>Ellis Act Evictions</div></div>";
         text +=  "<div class='total_col' style='width:30%'><div class='circle_num bluebg'>"+ max_units +"</div><div class='ig_text blue'>Affected Units</div></div>";
         text +=  "<div class='total_col' style='width:40%'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior or Disabled<br />Tenants</div></div></div>";
@@ -169,12 +170,17 @@ function openInfoWindow(result, addressTxt) {
 =======
 =======
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> FETCH_HEAD
                  "<div class='total_col' style='width:30%'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>Ellis Act<br />Evictions</div></div>";
         text +=  "<div class='total_col' style='width:30%'><div class='circle_num bluebg'>"+ max_units +"</div><div class='ig_text blue'>Affected<br />Units</div></div>";
         text +=  "<div class='total_col' style='width:40%'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior or Disabled<br />Tenants</div></div></div>";
         text += subtext;
     } else {
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD
