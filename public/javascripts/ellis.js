@@ -140,14 +140,25 @@ function openInfoWindow(result, addressTxt) {
         var subtext = "<div class='info_table'><table>";
         var max_units = 0;
         var protected = obj.protected_tenants;
+        var omi = false;
+        var ellis = false;
         for (var i = 0; i < obj.evictions.length; i++) {
             var ev = obj.evictions[i];
+            if (ev.eviction_type == "ellis") {
+                ellis = true;
+            } else if (ev.eviction_type == "omi") {
+                omi = true;
+            }
             var d = new Date(ev.date);
             max_units = Math.max(max_units, ev.units);
             subtext += "<tr><td class='ev_date'>"+ d.toLocaleDateString() + "</td><td class='ev_landlords'>";
-            subtext += ev.landlords[i];
-            for (var j = 1; j < ev.landlords.length; j++) {
-                subtext += " &bull; " + ev.landlords[j];
+            if (ev.hasOwnProperty("landlords")){
+                subtext += ev.landlords[i];
+                for (var j = 1; j < ev.landlords.length; j++) {
+                    subtext += " &bull; " + ev.landlords[j];
+                }
+            } else {
+                subtext += "Unknown";
             }
             subtext += "</td></tr></div>";
         }
@@ -157,8 +168,9 @@ function openInfoWindow(result, addressTxt) {
         if (obj.dirty_dozen != null) {
             text += "<div class='dirty_dozen'><p class='dd_hdr' id='dd_hdr'>A Dirty Dozen Eviction<a href='" + obj.dirty_dozen + "' id='dd_lrn'>Learn More</a></p></div>";
         }
+        var evTypesText = (omi ? (ellis ? "Total <br/ >Evictions" : "Owner Move-in<br />Evictions"): "Ellis Act<br />Evictions" );
         text += "<div class='header_nums'>" +
-                 "<div class='total_col' style='width:30%'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>Ellis Act<br />Evictions</div></div>";
+                 "<div class='total_col' style='width:30%'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>"+evTypesText+"</div></div>";
         text +=  "<div class='total_col' style='width:30%'><div class='circle_num bluebg'>"+ max_units +"</div><div class='ig_text blue'>Affected<br />Units</div></div>";
         text +=  "<div class='total_col' style='width:40%'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior or Disabled<br />Tenants</div></div></div>";
         text += subtext;
