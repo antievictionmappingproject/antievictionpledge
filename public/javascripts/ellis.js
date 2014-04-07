@@ -98,6 +98,7 @@ function findAndZoom() {
             fetchEllisInfo(reqStr, addressTxt, function(result) {
                 openInfoWindow(result, addressTxt);
             });
+            $('#instructions').hide();
         } else {
             alert("Geocode was not successful for the following reason: " + status);
         }

@@ -455,6 +455,19 @@
       position: absolute;
     }
 
+    #instructions {
+      width: 25em;
+      z-index: 9;
+      position: absolute;
+      margin: 6em 0em 3em 8em;
+      padding: 2em;
+      float: left;
+      color: $color-offwhite;
+      background: rgba(24, 24, 24, .5);
+      border-radius: 1em;
+      border: 1px solid $color-offwhite;
+    }
+
   /* SEARCH RESULTS STYLES */
     .circle_num {
       border-radius: 50%;
