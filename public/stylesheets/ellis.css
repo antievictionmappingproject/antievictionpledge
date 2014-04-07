@@ -677,4 +677,41 @@ td {
   .luggageIcon {
     display: none;
   }
+
+  /* line 619, ../sass/ellis.scss */
+  .right_bar {
+    position: inherit;
+    float: none;
+    width: 100%;
+  }
+
+  /* line 625, ../sass/ellis.scss */
+  .mapSearch {
+    postion: inherit;
+    width: 100%;
+    height: 60em;
+    margin-bottom: -8em;
+  }
+
+  /* line 632, ../sass/ellis.scss */
+  .main {
+    height: 102em;
+  }
+
+  /* line 636, ../sass/ellis.scss */
+  #petition, #feedback {
+    position: inherit;
+    max-width: 100%;
+  }
+
+  /* line 641, ../sass/ellis.scss */
+  #mapper {
+    float: none;
+  }
+}
+@media all and (max-width: 1150px) {
+  /* line 647, ../sass/ellis.scss */
+  .wrap, .wrapNoMargin {
+    width: 100%;
+  }
 }
