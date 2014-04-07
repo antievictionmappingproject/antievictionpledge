@@ -158,32 +158,11 @@ function openInfoWindow(result, addressTxt) {
             text += "<div class='dirty_dozen'><p class='dd_hdr' id='dd_hdr'>A Dirty Dozen Eviction<a href='" + obj.dirty_dozen + "' id='dd_lrn'>Learn More</a></p></div>";
         }
         text += "<div class='header_nums'>" +
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 "<div class='total_col' style='width:30%'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>Ellis Act Evictions</div></div>";
-        text +=  "<div class='total_col' style='width:30%'><div class='circle_num bluebg'>"+ max_units +"</div><div class='ig_text blue'>Affected Units</div></div>";
-        text +=  "<div class='total_col' style='width:40%'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior or Disabled<br />Tenants</div></div></div>";
-        text += subtext;
-    } else {
-//        text = "<div class='info_window'><p class='info_address'>"+ addressTxt+"</p><div class='no_evictions'><p>No Ellis Act Evictions on record for this address</p></div></div>";
-=======
-=======
->>>>>>> FETCH_HEAD
-=======
->>>>>>> FETCH_HEAD
                  "<div class='total_col' style='width:30%'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>Ellis Act<br />Evictions</div></div>";
         text +=  "<div class='total_col' style='width:30%'><div class='circle_num bluebg'>"+ max_units +"</div><div class='ig_text blue'>Affected<br />Units</div></div>";
         text +=  "<div class='total_col' style='width:40%'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior or Disabled<br />Tenants</div></div></div>";
         text += subtext;
     } else {
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> FETCH_HEAD
-=======
->>>>>>> FETCH_HEAD
-=======
->>>>>>> FETCH_HEAD
         text = "<div class='info_window fixed'><div class='info_address without_dd'>"+ addressTxt+"</div><div class='total_col' style='width:100%'><div class='circle_num lightbluebg'>0</div><div class='no_evictions'>" +
             "There are no evictions at the address. Awesome!</div></div></div> ";
     }
