@@ -71,12 +71,12 @@
 // GLOBAL STYLES //
 
   body {
+    background-color: #0d2839;
     font-family: $font-sans;
     font-size: 16px;
     line-height: 1.5;
     margin: 0;
     padding: 0;
-    background: $color-darkblue;
   }
 
   .centered {
@@ -226,6 +226,16 @@
     width:66em;
   }
 
+  .background {
+    background-image: url('images/background.png') center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -moz-backgorund-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #0d2839;
+  }
+
 /* INTRO STYLES */
   #blurb {
     p {
@@ -263,9 +273,8 @@
   }
 
   #intro {
-    // background-image:url('../images/');
     clear: both;
-    overflow: hidden;
+    // overflow: hidden;
     margin-left: 5%;
     margin-right: 5%;
     padding-top: 5em; //make room for menu
