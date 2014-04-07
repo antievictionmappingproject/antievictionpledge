@@ -180,6 +180,11 @@
     }
   }
 
+  .smaller {
+    font-size: smaller;
+    margin-top: 5em;
+  }
+
   .scrollarea {
     overflow: scroll;
   }
@@ -600,8 +605,9 @@
   }
 
   .more {
-    float: left;
-    margin-left: 90%;
+    float: right;
+    position: absolute;
+    right: 10%;
   }
 
 /* LEARN MORE STYLES */
