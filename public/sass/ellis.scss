@@ -227,13 +227,11 @@
   }
 
   .background {
-    background-image: url('images/background.png') center center;
-    background-repeat: no-repeat;
+    background: url('images/background.png') no-repeat center center;
     background-size: cover;
     -moz-backgorund-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-color: #0d2839;
   }
 
 /* INTRO STYLES */
