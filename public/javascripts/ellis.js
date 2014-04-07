@@ -1,6 +1,6 @@
 /**
  * Created with JetBrains RubyMine.
- * User: smagee
+  User: smagee
  * Date: 3/11/14
  * Time: 2:15 PM
  * To change this template use File | Settings | File Templates.
@@ -31,8 +31,9 @@ $(document).ready(function() {
 
     $('#pet_link').click(function(){
         submitPledge();
-        $('#petition').hide(100);
-        $('#feedback').show(100);
+        $('#petition').fadeOut(600, function () {
+            $('#feedback').fadeIn(800)
+        });
     });
 
     $('#tw_btn').click(function() {
@@ -97,6 +98,7 @@ function findAndZoom() {
             fetchEllisInfo(reqStr, addressTxt, function(result) {
                 openInfoWindow(result, addressTxt);
             });
+            $('#instructions').hide();
         } else {
             alert("Geocode was not successful for the following reason: " + status);
         }
@@ -114,7 +116,6 @@ function fetchEllisInfo(addressQuery, addressTxt, callback) {
 }
 
 function submitPledge() {
-    console.log($('#pt_usable').is(':checked'));
     var data = {
         firstName: $('#pt_firstname').val(),
         lastName: $('#pt_lastname').val(),
@@ -127,7 +128,6 @@ function submitPledge() {
         data: data,
         type: 'POST',
         success: function(result) {
-            console.log(result);
             retrievePledges();
         }
     });
@@ -144,7 +144,6 @@ function openInfoWindow(result, addressTxt) {
             var ev = obj.evictions[i];
             var d = new Date(ev.date);
             max_units = Math.max(max_units, ev.units);
-//            protected = Math.max(protected, ev.protected_tenants);
             subtext += "<tr><td class='ev_date'>"+ d.toLocaleDateString() + "</td><td class='ev_landlords'>";
             subtext += ev.landlords[i];
             for (var j = 1; j < ev.landlords.length; j++) {
@@ -153,18 +152,34 @@ function openInfoWindow(result, addressTxt) {
             subtext += "</td></tr></div>";
         }
         subtext += "</table></div>";
-        text = "<div class='info_window'><div class='info_address'>"+ addressTxt+"</div>";
+        var add_class = obj.dirty_dozen != null ? 'info_address with_dd' : 'info_address without_dd';
+        text = "<div class='info_window'><div class='" + add_class +"'>"+ addressTxt+"</div>";
         if (obj.dirty_dozen != null) {
             text += "<div class='dirty_dozen'><p class='dd_hdr' id='dd_hdr'>A Dirty Dozen Eviction<a href='" + obj.dirty_dozen + "' id='dd_lrn'>Learn More</a></p></div>";
-
         }
         text += "<div class='header_nums'>" +
-                 "<div class='total_col'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>Ellis Act Evictions</div></div>";
+<<<<<<< HEAD
+<<<<<<< HEAD
+                 "<div class='total_col' style='width:30%'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>Ellis Act Evictions</div></div>";
         text +=  "<div class='total_col' style='width:30%'><div class='circle_num bluebg'>"+ max_units +"</div><div class='ig_text blue'>Affected Units</div></div>";
-        text +=  "<div class='total_col' style='width:36%'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior or Disabled Tenants</div></div></div>";
+        text +=  "<div class='total_col' style='width:40%'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior or Disabled<br />Tenants</div></div></div>";
         text += subtext;
     } else {
-        text = "<div class='info_window'><p class='info_address'>"+ addressTxt+"</p><div class='no_evictions'><p>No Ellis Act Evictions on record for this address</p></div></div>";
+//        text = "<div class='info_window'><p class='info_address'>"+ addressTxt+"</p><div class='no_evictions'><p>No Ellis Act Evictions on record for this address</p></div></div>";
+=======
+=======
+>>>>>>> FETCH_HEAD
+                 "<div class='total_col' style='width:30%'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>Ellis Act<br />Evictions</div></div>";
+        text +=  "<div class='total_col' style='width:30%'><div class='circle_num bluebg'>"+ max_units +"</div><div class='ig_text blue'>Affected<br />Units</div></div>";
+        text +=  "<div class='total_col' style='width:40%'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior or Disabled<br />Tenants</div></div></div>";
+        text += subtext;
+    } else {
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
+>>>>>>> FETCH_HEAD
+        text = "<div class='info_window fixed'><div class='info_address without_dd'>"+ addressTxt+"</div><div class='total_col' style='width:100%'><div class='circle_num lightbluebg'>0</div><div class='no_evictions'>" +
+            "There are no evictions at the address. Awesome!</div></div></div> ";
     }
     marker.bindPopup(text, {maxWidth:500}).openPopup();
 }
@@ -185,7 +200,8 @@ function retrievePledges() {
                     sel = $('#pledgeColumn_'+j);
                     list = sel.append('<ul/>');
                 }
-                var blob = '<li class="pledger"><span class="name">'+result[i].name+'</span> <span class="reason">' + result[i].reason + '</span></li>';
+                var reason = result[i].reason ? result[i].reason : "";
+                var blob = '<li class="pledger"><span class="name">'+result[i].name+'</span> <span class="reason">' + reason + '</span></li>';
                 list.append(blob);
             }
             adjustButtons();

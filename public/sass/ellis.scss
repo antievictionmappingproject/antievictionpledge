@@ -36,6 +36,7 @@
       text-decoration: none;
 
       &:hover {
+        border-bottom: 1px dotted #50A9CA;
         color: $alinkcolor;
         @include selectanimation(all .2s ease-in);
       }
@@ -87,6 +88,14 @@
     //height: 220px;
   }
 
+  div.info_window_fixed {
+    width: 42em;
+  }
+
+  .fixed {
+    height: 7em;
+  }
+
   .footer {
     background: $color-darkblue;
     border-top: 1px solid $color-darkestblue;
@@ -105,13 +114,13 @@
   font-size: 4em;
   font-weight: 400;
   letter-spacing: .05em;
-  margin: 0;
+  margin: 0 0 .2em 0;
   text-shadow: 4px 4px 0px $color-red;
   }
 
   h2 {
     color: $color-lightblue;
-    font-family: $font-h2;
+    font-family: $font-display;
     font-size: 1.8em;
     letter-spacing: .05em;
     line-height: 1;
@@ -123,18 +132,31 @@
     text-shadow: 1px 1px 2px lighten($color-lightblue, 4%);
   }
 
+  .hideDesktop {
+    display: none;
+  }
+
+  .hideMobile {
+    display: inline;
+  }
+
   img {
     float: left;
   }
 
   .main_menu {
-    background: $color-darkestblue;
-    height: 6em;
+    background: rgb(18, 33, 43); /* The Fallback */
+    background: rgba(18, 33, 43, 0.9);
+    height: 4em;
     width: 100%;
     border-bottom: 1px solid #06131c;
     position: fixed;
     z-index: 99;
   }
+
+  // #logoImage {
+  //   padding: 1em 0;
+  // } 
 
   nav {
     float: right;
@@ -142,7 +164,7 @@
 
     ul {
       list-style: none;
-      margin: 1.95em 0 2em 0;
+      margin: 1em 0 2em 0;
 
       li {
       float: left;
@@ -168,6 +190,11 @@
     li {
       margin: .4em 0;
     }
+  }
+
+  .smaller {
+    font-size: smaller;
+    margin-top: 5em;
   }
 
   .scrollarea {
@@ -206,21 +233,16 @@
       font-weight: 300;
       line-height: 1.5;
       margin: 0;
-      padding: 1em 0 1.2em 0;
+      padding: 1em 0 3em 0;
       -webkit-font-smoothing: antialiased;
     }
   }
 
-  #intro {
-    // background-image:url('../images/');
-    clear: both;
-    overflow: hidden;
-    margin-left: 5%;
-    margin-right: 5%;
-    padding-top: 5em; //make room for menu
+  .buttonContainer{
+    margin: 1.2em;
   }
 
-  .CTA {      
+  .CTA {     
     font-size: .8em;
     @include ctabuttonstyle;
     @include roundedcorner(0.7em);
@@ -236,6 +258,15 @@
   .luggageIcon  {
     float: left;
     margin-right: 3em;
+  }
+
+  #intro {
+    // background-image:url('../images/');
+    clear: both;
+    overflow: hidden;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 5em; //make room for menu
   }
 
 /* SEARCH AND PLEDGE STYLES */
@@ -302,7 +333,7 @@
   .pledgeColumn {
     float: left;
     width: 28%;
-    padding: 0 3em 0 0;
+    padding: 0 5em 0 0;
 
     ul {
       list-style: none;
@@ -312,7 +343,7 @@
       color: $color-offwhite;
       font-size: 1em;
       font-weight: 300;
-      margin: 5px;
+      margin: .8em;
     }
 
     p {
@@ -322,6 +353,10 @@
     .name {
       font-weight: bold;
     }
+  }
+
+  #pledgeColumn_3 {
+    padding: 0;
   }
 
   .right_bar {
@@ -440,6 +475,19 @@
       position: absolute;
     }
 
+    #instructions {
+      width: 25em;
+      z-index: 9;
+      position: absolute;
+      margin: 6em 0em 3em 8em;
+      padding: 2em;
+      float: left;
+      color: $color-offwhite;
+      background: rgba(24, 24, 24, .5);
+      border-radius: 1em;
+      border: 1px solid $color-offwhite;
+    }
+
   /* SEARCH RESULTS STYLES */
     .circle_num {
       border-radius: 50%;
@@ -461,7 +509,7 @@
       float: left;
       font-size: 1.5em;
       text-align: left;
-      margin: 1em .4em 1.25em 1em;
+      margin: 0em .4em 1.25em .4em;
     }
 
     .bluebg {
@@ -477,7 +525,7 @@
     }
 
     .total_col {
-      width: 20%;
+      width: 25%;
       //margin-right: 1%;
       float: left;
       .red {
@@ -508,8 +556,15 @@
       font-family: $font-display;
       font-size: 1.5em;
       float: left;
+      margin-bottom: 0.6em;
+    }
+    .with_dd {
       margin-top: .6em;
     }
+    .without_dd {
+      margin-top: -.3em;
+    }
+
 
     .info_table {
       font-family: $font-sans;
@@ -559,8 +614,14 @@
       text-decoration: none;
     }
     .no_evictions {
-      clear: both;
+      float: left;
+      font-size: 1.5em;
+      text-align: left;
+      margin: .5em 0em .5em 1em;
+      color: $color-lightblue;
     }
+
+
 
 /* SEE WHO PLEDGED STYLES */
   .page_buttons {
@@ -576,9 +637,14 @@
     float: left;
   }
 
+  .previous, .more {
+    @include links($color-offwhite, $color-lightblue);
+  }
+
   .more {
-    float: left;
-    margin-left: 90%;
+    float: right;
+    position: absolute;
+    right: 10%;
   }
 
 /* LEARN MORE STYLES */
@@ -588,11 +654,152 @@
     clear: both;
   }
 
+/* MEDIA QUERIES. ABANDON ALL HOPE YE WHO ENTER HERE */
 
-@media all and (max-width: 800px) {
-  .luggageIcon {
-    display: none;
-  }
-}
+  /* styles for browsers larger than 20em/320px but smaller than 75em/1200px. EM references font size 16px */
+    @media all and (min-width: 20em) and (max-width: 30em) {
+      body {
+        font-size: 11px;
+        line-height: 1.2;
+      }
+
+      .buttonContainer {
+        margin: 1em 0 0 0;
+      }
+
+      h1 {
+          margin: 0 0 .5em 0;
+        }
+
+      .hideMobile {
+        display: none;
+      }
+
+      .hideDesktop {
+        display: inline;
+      }
+
+      i {
+          margin: 0 .5em 0 0;
+        }
+      }
+
+    @media all and (max-width: 800px) {
+      .luggageIcon {
+        display: none;
+      }
+
+      .right_bar {
+        position: inherit;
+        float: none;
+        width: 100%;
+      }
+
+      .mapSearch {
+        postion: inherit;
+        width: 100%;
+        height: $map-height;
+        margin-bottom: -8em;
+      }
+
+      .main {
+        height: $map-height + $petition-height;
+      }
+
+      #petition, #feedback {
+        position: inherit;
+        max-width: 100%;
+      }
+
+      #mapper {
+        float: none;
+      }
+
+      #feedback, #pledges, #petition, #mapper {
+        height: 30em;
+        width: 24em;
+      }
+      
+      #feedback, #pledges, #petition, #mapper, .resources, .aboutus {
+        float: none;
+        padding: 1em 0;
+        width: 24em;
+      }
+
+      .main_menu {
+        background: rgb(18, 33, 43); /* The Fallback */
+        background: rgba(18, 33, 43, 0.9);
+        height: 4em;
+        width: 100%;
+        border-bottom: 1px solid #06131c;
+        position: fixed;
+        z-index: 99;
+      }
+
+      #logoImage {
+        width: 127px;
+        height: 40px;
+      } 
+
+      nav {
+
+        ul {
+          // margin: 1em 0 2em 0;
+        }
+
+        li {
+          float: left;
+          font-family: $font-sans;
+          margin-left: 2em;
+          padding: .3em .1em; 
+          display: block;
+        }
+      }
+
+      .pledgeColumn {
+        width: 99%;
+        padding: 0;
+      }
+
+      .wrap {
+        margin: auto;
+        padding: 1em;
+        width: 25em;
+      }
+
+      .wrapNoMargin {
+        width: 28em;
+      }
+    }
+
+    @media all and (max-width: 1150px) {
+      .wrap, .wrapNoMargin {
+        width: 100%;
+      }
+    }
 
 
+    // and (max-width: 75em) {
+    //   body {
+    //     font-size: 12px;
+    //   }
+
+    //   .wrap {
+    //     width:80em;
+    //   }
+
+    //   .wrapNoMargin {
+    //     width:80em;
+    //   }
+    // }
+
+
+
+
+  /* styles for browsers larger than 85em/1360px. EM references font size 16px */
+    // @media all and (max-width: 84.9em) {
+    //   body {
+    //     font-size: 14px;
+    //     line-height: 1.2;
+    //   }
+    // }

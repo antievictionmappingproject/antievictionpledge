@@ -7,6 +7,7 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
     <link rel="stylesheet" href="./stylesheets/ellis.css"/>
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,600,700,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lusitana:400,700' rel='stylesheet' type='text/css'>
@@ -17,12 +18,13 @@
 <body>
     <div id="main_menu" class="main_menu">
         <div class="wrapNoMargin">
-            <a href="#" id="logo"><img src="http://placehold.it/150x80" alt="Eviction Pledge logo"></a>
+            <a href="#" id="logo"><img src="http://placehold.it/190x60" width="190" height="60" alt="Eviction Pledge logo" id="logoImage"></a>
                 <nav> 
                     <ul>
-                        <a href="#" id="searchPledgelink"><li>Eviction History &amp; Pledge</li></a>
-                        <a href="#" id="pledgeslink"><li>See Who Pledged</li></a>
-                        <a href="#" id="learnMorelink"><li>Learn More</li></a>
+                        <a href="#" id="searchPledgelink"><li class="hideMobile">Eviction History &amp; Pledge</li></a>
+                        <a href="#" id="pledgeslink"><li class="hideMobile">See Who Pledged</li></a>
+                        <a href="#" id="learnMorelink"><li class="hideMobile">Learn More</li></a>
+                        <li id="hideDesktop"><a href="#"><i class="fa fa-bars fa-2x"></i></a></li>
                     </ul>
                 </nav>
         </div>
@@ -30,28 +32,37 @@
  <!--   <div class="scrollarea">-->
         <div id="intro">
             <div class="wrap">
-                <div class="luggageIcon">
+                <div class="luggageIcon hideMobile">
                     <img src="images/stencil.jpg" width="300" height="450" alt="Tenants Here Forced Out logo">
                 </div>
 
                 <div id="blurb">
                     <h1>San Francisco is in Crisis</h1>
-                    <p>Real-estate speculators are cashing in on record housing prices by evicting longtime city residents. Many of the affected are <strong>elderly</strong>, <strong>disabled</strong> and <strong>low-income</strong> with no affordable housing options. It's a complex problem, but <strong>you can help</strong>. Pledge not to rent or buy property left free because of a no-fault eviction.
+                    <p class="hideMobile">Real-estate speculators are cashing in on record housing prices by evicting longtime city residents. Many of the affected are <strong>elderly</strong>, <strong>disabled</strong> and <strong>low-income</strong> with no affordable housing options. It's a complex problem, but <strong>you can help</strong>. Don't rent or buy property left free because of a no-fault eviction.
                     </p>
 
-                    <p class="centered"><a href="#" class="CTA">Pledge to Support Housing Justice</a></p>
+                    <p class="hideDesktop">Real-estate speculators are evicting longtime city residents. Many are <strong>elderly</strong>, <strong>disabled</strong> and <strong>low-income</strong> with no affordable housing options. <strong>You can help</strong>. Don't rent or buy property left free by eviction.
+                    </p>
+
+                    <div class="buttonContainer">
+                        <p class="centered"><a href="#" class="CTA"><span class="hideMobile">Pledge to </span> Support Housing Justice</a></p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="main">
             <div class="wrap">
-                <div id="search">
-                    <p class="search"><input id="address" type="text" placeholder="Enter an address to check its eviction history"/><a class="link_txt" id="find_btn">Find</a></p>
+                <div class="mapSearch">
+                    <div id="search">
+                        <p class="search"><input id="address" type="text" placeholder="Enter an address"/><a class="link_txt" id="find_btn">Find</a></p>
+                    </div>
+                    <div id="instructions">
+                        <p class="instructions">Enter a San Francisco address to check its eviction history.</p>
+                    </div>
+
+                     <div id='mapper'></div>
                 </div>
-
-                 <div id='mapper'></div>
-
                 <div id="searchPledge">
 
                     <div class="right_bar">
@@ -109,7 +120,7 @@
                         <li><p>Blanditi I.</p></li>
                     </ul>
                 </div>
-                <div class="pledgeColumn" id="pledgeColumn_2">
+                <div class="pledgeColumn hideMobile" id="pledgeColumn_2">
                     <ul>
                         <li><p>Lorem I.</p></li>
                         <li><p>Psumdo L. </p></li>
@@ -123,7 +134,7 @@
                         <li><p>Blanditi I.</p></li>
                     </ul>
                 </div>
-                <div class="pledgeColumn"  id="pledgeColumn_3">
+                <div class="pledgeColumn hideMobile"  id="pledgeColumn_3">
                     <ul>
                         <li><p>Suntin C.</p><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga</p></li>
                         <li><p>Psumdo L. </p></li>
@@ -163,11 +174,12 @@
                 <div class="aboutus">
                     <h2 class="dark">About Us</h2>
                     <p>The Anti-Eviction Mapping Project makes visible the ways in which evictions and gentrification target Bay Area communities.
-                        It seeks to de-isolate those displaced and act as a tool for collective resistance.</p>
-                    <p>We use maps and digital storytelling to make the often invisible processes of eviction, displacement and gentrification clearly seen.
+                    It seeks to de-isolate those displaced and act as a tool for collective resistance.</p>
+                    <p class="hideMobile">We use maps and digital storytelling to make the often invisible processes of eviction, displacement and gentrification clearly seen.
                         We have recently released time-lapse maps of <a href="http://www.antievictionmappingproject.net/ellis.html">Ellis Act Evictions</a> and all <a href="http://www.antievictionmappingproject.net/combined.html">No-Fault Evictions</a> that have taken place since 1997.
                         We have also mapped <a href="http://www.antievictionmappingproject.net/seniordisabled.html">evictions of seniors and people with disabilities</a> over the last three years, with information about the landlords and speculators who have displaced them.</p>
                     <p><a href="https://antievictionmap.squarespace.com/about/">Find out more...</a></p>
+                    <p class="smaller">Photo from Flickr user <a href="https://www.flickr.com/photos/gazeronly/">Torbakhopper</a>, used under Creative Commons license</p>
                 </div>
             </div>
         </div>
