@@ -158,7 +158,7 @@ function openInfoWindow(result, addressTxt) {
             if (ev.hasOwnProperty("units")) {
                 max_units = Math.max(max_units, ev.units);
             }
-            subtext += "<tr><td class='ev_date'>"+ d.toLocaleDateString() + "</td><td class='ev_type'>" + evictionTypeHash[ev.eviction_type] + "</td><td class='ev_landlords'>";
+            subtext += "<tr><td class='ev_date'>"+ d.toLocaleDateString() + "<br />" + evictionTypeHash[ev.eviction_type] + "</td><td class='ev_landlords'>";
             if (ev.hasOwnProperty("landlords")){
                 subtext += "Landlords: " + ev.landlords[0];
                 for (var j = 1; j < ev.landlords.length; j++) {
@@ -167,7 +167,7 @@ function openInfoWindow(result, addressTxt) {
             } else if (ev.hasOwnProperty("unit")){
                 subtext += ev.unit;
             } else {
-                subtext += "Unit info N/A";
+                subtext += "Detailed unit info not available";
             }
             subtext += "</td></tr></div>";
         }

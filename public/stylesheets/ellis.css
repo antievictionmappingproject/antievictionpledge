@@ -606,24 +606,19 @@ input:focus, textarea:focus {
   text-align: right;
   vertical-align: top;
 }
+/* line 557, ../sass/ellis.scss */
+.ev_date a {
+  text-decoration: none;
+  color: #0d2839;
+}
 
-/* line 559, ../sass/ellis.scss */
+/* line 563, ../sass/ellis.scss */
 .ev_landlords {
   padding-bottom: .5em;
   vertical-align: top;
 }
 
-/* line 564, ../sass/ellis.scss */
-.ev_type {
-  vertical-align: top;
-}
-/* line 566, ../sass/ellis.scss */
-.ev_type a {
-  text-decoration: none;
-  color: #0d2839;
-}
-
-/* line 572, ../sass/ellis.scss */
+/* line 568, ../sass/ellis.scss */
 .info_address {
   color: #0d2839;
   font-family: "Oswald", sans-serif;
@@ -632,36 +627,36 @@ input:focus, textarea:focus {
   margin-bottom: 0.6em;
 }
 
-/* line 579, ../sass/ellis.scss */
+/* line 575, ../sass/ellis.scss */
 .with_dd {
   margin-top: .6em;
 }
 
-/* line 582, ../sass/ellis.scss */
+/* line 578, ../sass/ellis.scss */
 .without_dd {
   margin-top: -.3em;
 }
 
-/* line 587, ../sass/ellis.scss */
+/* line 583, ../sass/ellis.scss */
 .info_table {
   font-family: "Open Sans", sans-serif;
   font-size: 1em;
   clear: both;
 }
 
-/* line 593, ../sass/ellis.scss */
+/* line 589, ../sass/ellis.scss */
 td {
   padding-bottom: 1.25em;
 }
 
-/* line 597, ../sass/ellis.scss */
+/* line 593, ../sass/ellis.scss */
 .header_nums {
   font-family: "Oswald", sans-serif;
   margin-bottom: .8em;
   clear: both;
 }
 
-/* line 603, ../sass/ellis.scss */
+/* line 599, ../sass/ellis.scss */
 .dirty_dozen {
   width: 21em;
   height: 3.75em;
@@ -673,21 +668,21 @@ td {
   padding: .1em .8em .4em .4em;
 }
 
-/* line 614, ../sass/ellis.scss */
+/* line 610, ../sass/ellis.scss */
 .dd_hdr {
   font-family: "Oswald", sans-serif;
   font-size: 1.3em;
   color: white;
 }
 
-/* line 620, ../sass/ellis.scss */
+/* line 616, ../sass/ellis.scss */
 #dd_hdr {
   margin-top: .8em;
   margin-left: 1.7em;
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 626, ../sass/ellis.scss */
+/* line 622, ../sass/ellis.scss */
 #dd_lrn {
   font-family: "Open Sans", sans-serif;
   font-size: .7em;
@@ -697,7 +692,7 @@ td {
   text-decoration: none;
 }
 
-/* line 634, ../sass/ellis.scss */
+/* line 630, ../sass/ellis.scss */
 .no_evictions {
   float: left;
   font-size: 1.5em;
@@ -707,18 +702,18 @@ td {
 }
 
 /* SEE WHO PLEDGED STYLES */
-/* line 645, ../sass/ellis.scss */
+/* line 641, ../sass/ellis.scss */
 .page_buttons {
   clear: both;
 }
-/* line 647, ../sass/ellis.scss */
+/* line 643, ../sass/ellis.scss */
 .page_buttons a {
   text-decoration: none;
   color: #f9faf3;
   cursor: pointer;
 }
 
-/* line 654, ../sass/ellis.scss */
+/* line 650, ../sass/ellis.scss */
 .previous {
   float: left;
 }
@@ -738,7 +733,7 @@ td {
   -o-transition: all 0.2s ease-in;
 }
 
-/* line 662, ../sass/ellis.scss */
+/* line 658, ../sass/ellis.scss */
 .more {
   float: right;
   position: absolute;
@@ -746,7 +741,7 @@ td {
 }
 
 /* LEARN MORE STYLES */
-/* line 669, ../sass/ellis.scss */
+/* line 665, ../sass/ellis.scss */
 #learnMore {
   background: #588b9b;
   wrap: left;
@@ -756,51 +751,51 @@ td {
 /* MEDIA QUERIES. ABANDON ALL HOPE YE WHO ENTER HERE */
 /* styles for browsers larger than 20em/320px but smaller than 75em/1200px. EM references font size 16px */
 @media all and (min-width: 20em) and (max-width: 30em) {
-  /* line 679, ../sass/ellis.scss */
+  /* line 675, ../sass/ellis.scss */
   body {
     font-size: 11px;
     line-height: 1.2;
   }
 
-  /* line 684, ../sass/ellis.scss */
+  /* line 680, ../sass/ellis.scss */
   .buttonContainer {
     margin: 1em 0 0 0;
   }
 
-  /* line 688, ../sass/ellis.scss */
+  /* line 684, ../sass/ellis.scss */
   h1 {
     margin: 0 0 .5em 0;
   }
 
-  /* line 692, ../sass/ellis.scss */
+  /* line 688, ../sass/ellis.scss */
   .hideMobile {
     display: none;
   }
 
-  /* line 696, ../sass/ellis.scss */
+  /* line 692, ../sass/ellis.scss */
   .hideDesktop {
     display: inline;
   }
 
-  /* line 700, ../sass/ellis.scss */
+  /* line 696, ../sass/ellis.scss */
   i {
     margin: 0 .5em 0 0;
   }
 }
 @media all and (max-width: 800px) {
-  /* line 706, ../sass/ellis.scss */
+  /* line 702, ../sass/ellis.scss */
   .luggageIcon {
     display: none;
   }
 
-  /* line 710, ../sass/ellis.scss */
+  /* line 706, ../sass/ellis.scss */
   .right_bar {
     position: inherit;
     float: none;
     width: 100%;
   }
 
-  /* line 716, ../sass/ellis.scss */
+  /* line 712, ../sass/ellis.scss */
   .mapSearch {
     postion: inherit;
     width: 100%;
@@ -808,36 +803,36 @@ td {
     margin-bottom: -8em;
   }
 
-  /* line 723, ../sass/ellis.scss */
+  /* line 719, ../sass/ellis.scss */
   .main {
     height: 102em;
   }
 
-  /* line 727, ../sass/ellis.scss */
+  /* line 723, ../sass/ellis.scss */
   #petition, #feedback {
     position: inherit;
     max-width: 100%;
   }
 
-  /* line 732, ../sass/ellis.scss */
+  /* line 728, ../sass/ellis.scss */
   #mapper {
     float: none;
   }
 
-  /* line 736, ../sass/ellis.scss */
+  /* line 732, ../sass/ellis.scss */
   #feedback, #pledges, #petition, #mapper {
     height: 30em;
     width: 24em;
   }
 
-  /* line 741, ../sass/ellis.scss */
+  /* line 737, ../sass/ellis.scss */
   #feedback, #pledges, #petition, #mapper, .resources, .aboutus {
     float: none;
     padding: 1em 0;
     width: 24em;
   }
 
-  /* line 747, ../sass/ellis.scss */
+  /* line 743, ../sass/ellis.scss */
   .main_menu {
     background: #12212b;
     /* The Fallback */
@@ -849,13 +844,13 @@ td {
     z-index: 99;
   }
 
-  /* line 757, ../sass/ellis.scss */
+  /* line 753, ../sass/ellis.scss */
   #logoImage {
     width: 127px;
     height: 40px;
   }
 
-  /* line 768, ../sass/ellis.scss */
+  /* line 764, ../sass/ellis.scss */
   nav li {
     float: left;
     font-family: "Open Sans", sans-serif;
@@ -864,44 +859,44 @@ td {
     display: block;
   }
 
-  /* line 777, ../sass/ellis.scss */
+  /* line 773, ../sass/ellis.scss */
   .pledgeColumn {
     width: 99%;
     padding: 0;
   }
 
-  /* line 782, ../sass/ellis.scss */
+  /* line 778, ../sass/ellis.scss */
   .wrap {
     margin: auto;
     padding: 1em;
     width: 25em;
   }
 
-  /* line 788, ../sass/ellis.scss */
+  /* line 784, ../sass/ellis.scss */
   .wrapNoMargin {
     width: 28em;
   }
 }
 @media all and (max-width: 1150px) {
-  /* line 794, ../sass/ellis.scss */
+  /* line 790, ../sass/ellis.scss */
   .wrap, .wrapNoMargin {
     width: 100%;
   }
 }
 @media all and (max-width: 800px) {
-  /* line 816, ../sass/ellis.scss */
+  /* line 812, ../sass/ellis.scss */
   .luggageIcon {
     display: none;
   }
 
-  /* line 819, ../sass/ellis.scss */
+  /* line 815, ../sass/ellis.scss */
   .right_bar {
     position: inherit;
     float: none;
     width: 100%;
   }
 
-  /* line 825, ../sass/ellis.scss */
+  /* line 821, ../sass/ellis.scss */
   .mapSearch {
     postion: inherit;
     width: 100%;
@@ -909,24 +904,24 @@ td {
     margin-bottom: -8em;
   }
 
-  /* line 832, ../sass/ellis.scss */
+  /* line 828, ../sass/ellis.scss */
   .main {
     height: 102em;
   }
 
-  /* line 836, ../sass/ellis.scss */
+  /* line 832, ../sass/ellis.scss */
   #petition, #feedback {
     position: inherit;
     max-width: 100%;
   }
 
-  /* line 841, ../sass/ellis.scss */
+  /* line 837, ../sass/ellis.scss */
   #mapper {
     float: none;
   }
 }
 @media all and (max-width: 1150px) {
-  /* line 847, ../sass/ellis.scss */
+  /* line 843, ../sass/ellis.scss */
   .wrap, .wrapNoMargin {
     width: 100%;
   }
