@@ -271,8 +271,6 @@ td, th {
 /* line 273, ../sass/ellis.scss */
 #intro {
   clear: both;
-  margin-left: 5%;
-  margin-right: 5%;
   padding-top: 5em;
 }
 
@@ -636,7 +634,7 @@ input:focus, textarea:focus {
 
 /* line 579, ../sass/ellis.scss */
 .without_dd {
-  margin-top: -.3em;
+  margin-top: -0.3em;
 }
 
 /* line 584, ../sass/ellis.scss */
@@ -752,7 +750,7 @@ td {
 
 /* MEDIA QUERIES. ABANDON ALL HOPE YE WHO ENTER HERE */
 /* styles for browsers larger than 20em/320px but smaller than 75em/1200px. EM references font size 16px */
-@media all and (min-width: 20em) and (max-width: 30em) {
+@media all and (max-width: 30em) {
   /* line 676, ../sass/ellis.scss */
   body {
     font-size: 11px;
@@ -785,19 +783,39 @@ td {
   }
 }
 @media all and (max-width: 800px) {
-  /* line 703, ../sass/ellis.scss */
+  /* line 704, ../sass/ellis.scss */
+  body {
+    font-size: 14px;
+  }
+
+  /* line 708, ../sass/ellis.scss */
+  #blurb p {
+    padding: 1em 0 .5em;
+  }
+
+  /* line 712, ../sass/ellis.scss */
+  .hideMobile {
+    display: none;
+  }
+
+  /* line 716, ../sass/ellis.scss */
+  .hideDesktop {
+    display: block;
+  }
+
+  /* line 720, ../sass/ellis.scss */
   .luggageIcon {
     display: none;
   }
 
-  /* line 707, ../sass/ellis.scss */
+  /* line 724, ../sass/ellis.scss */
   .right_bar {
     position: inherit;
     float: none;
     width: 100%;
   }
 
-  /* line 713, ../sass/ellis.scss */
+  /* line 730, ../sass/ellis.scss */
   .mapSearch {
     postion: inherit;
     width: 100%;
@@ -805,30 +823,30 @@ td {
     margin-bottom: -8em;
   }
 
-  /* line 720, ../sass/ellis.scss */
+  /* line 737, ../sass/ellis.scss */
   .main {
     height: 102em;
   }
 
-  /* line 724, ../sass/ellis.scss */
+  /* line 741, ../sass/ellis.scss */
   #petition, #feedback {
     position: inherit;
     max-width: 100%;
   }
 
-  /* line 729, ../sass/ellis.scss */
+  /* line 746, ../sass/ellis.scss */
   #mapper {
     float: none;
   }
 
-  /* line 733, ../sass/ellis.scss */
+  /* line 750, ../sass/ellis.scss */
   #feedback, #pledges, #petition, .resources, .aboutus {
     float: none;
     padding: 1em 0;
     width: 24em;
   }
 
-  /* line 739, ../sass/ellis.scss */
+  /* line 756, ../sass/ellis.scss */
   .main_menu {
     background: #12212b;
     /* The Fallback */
@@ -840,13 +858,13 @@ td {
     z-index: 99;
   }
 
-  /* line 749, ../sass/ellis.scss */
+  /* line 766, ../sass/ellis.scss */
   #logoImage {
     width: 127px;
     height: 40px;
   }
 
-  /* line 759, ../sass/ellis.scss */
+  /* line 776, ../sass/ellis.scss */
   nav li {
     float: left;
     font-family: "Open Sans", sans-serif;
@@ -855,20 +873,20 @@ td {
     display: block;
   }
 
-  /* line 768, ../sass/ellis.scss */
+  /* line 785, ../sass/ellis.scss */
   .pledgeColumn {
     width: 99%;
     padding: 0;
   }
 
-  /* line 773, ../sass/ellis.scss */
+  /* line 790, ../sass/ellis.scss */
   .wrap {
     margin: auto;
     padding: 1em;
     width: 25em;
   }
 
-  /* line 779, ../sass/ellis.scss */
+  /* line 796, ../sass/ellis.scss */
   .wrapNoMargin {
     width: 28em;
   }

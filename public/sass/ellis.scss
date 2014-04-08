@@ -273,8 +273,8 @@
   #intro {
     clear: both;
     // overflow: hidden;
-    margin-left: 5%;
-    margin-right: 5%;
+    // margin-left: 5%;
+    // margin-right: 5%;
     padding-top: 5em; //make room for menu
   }
 
@@ -672,7 +672,7 @@
 /* MEDIA QUERIES. ABANDON ALL HOPE YE WHO ENTER HERE */
 
 /* styles for browsers larger than 20em/320px but smaller than 75em/1200px. EM references font size 16px */
-  @media all and (min-width: 20em) and (max-width: 30em) {
+  @media all and (max-width: 30em) {
     body {
       font-size: 11px;
       line-height: 1.2;
@@ -700,6 +700,23 @@
   }
 
   @media all and (max-width: 800px) {
+
+    body {
+      font-size: 14px;
+    }
+    
+    #blurb p {
+      padding: 1em 0 .5em;
+    }
+
+    .hideMobile {
+      display: none;
+    }
+
+    .hideDesktop {
+      display: block;
+    }
+
     .luggageIcon {
       display: none;
     }
