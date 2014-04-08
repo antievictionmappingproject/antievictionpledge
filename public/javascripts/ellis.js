@@ -118,8 +118,9 @@ function findAndZoom() {
     var address = $("#address")[0].value;
     geocoder.geocode( { 'address': address, 'componentRestrictions':{'locality': 'San+Francisco'}}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
-            var pt = [results[0].geometry.location.k, results[0].geometry.location.A];
-            map.setView(pt, 16);
+            var pt = [results[0].geometry.location.k , results[0].geometry.location.A];
+            var pt2   = [results[0].geometry.location.k +.002, results[0].geometry.location.A];
+            map.setView(pt2, 16);
             marker = L.marker(pt).addTo(map);
             var add = results[0].address_components;
             var reqStr ="num="+ encodeURI(add[0].short_name)+"&st="+encodeURI(add[1].short_name);
@@ -221,7 +222,7 @@ function openInfoWindow(result, addressTxt) {
         text += subtext;
     } else {
         text = "<div class='info_window fixed'><div class='info_address without_dd'>"+ addressTxt+"</div><div class='total_col' style='width:100%'><div class='circle_num lightbluebg'>0</div><div class='no_evictions'>" +
-            "There are no evictions at this address. Awesome!</div></div></div> ";
+            "There are no evictions at this address.<br />Awesome!</div></div></div> ";
     }
     marker.bindPopup(text, {maxWidth:500}).openPopup();
 }
