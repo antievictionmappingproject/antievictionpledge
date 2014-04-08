@@ -82,6 +82,7 @@ $(document).ready(function() {
         }
         retrievePledges();
     });
+    numColumns = $('.pledgeColumn:visible').length;
     retrievePledges();
 });
 
