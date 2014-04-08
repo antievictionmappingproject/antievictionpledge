@@ -463,7 +463,7 @@
 
       #mapper {
         height: $map-height;
-        width: 100%;
+        width: 65%;
         max-width: 61em;
         //margin: 10%;
         float: left;
@@ -813,6 +813,10 @@
   @media all and (min-width: 801px) and (max-width: 1160px) {
     body {
       font-size: 12px;
+    }
+
+    .wrap {
+      width: 100%;
     }
 
     #blurb p {

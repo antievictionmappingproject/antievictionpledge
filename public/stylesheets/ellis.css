@@ -503,7 +503,7 @@ input:focus, textarea:focus {
 /* line 464, ../sass/ellis.scss */
 #mapper {
   height: 60em;
-  width: 100%;
+  width: 65%;
   max-width: 61em;
   float: left;
   z-index: 5;
@@ -644,7 +644,7 @@ input:focus, textarea:focus {
 
 /* line 589, ../sass/ellis.scss */
 .without_dd {
-  margin-top: -0.3em;
+  margin-top: -.3em;
 }
 
 /* line 594, ../sass/ellis.scss */
@@ -913,11 +913,16 @@ td {
   }
 
   /* line 818, ../sass/ellis.scss */
+  .wrap {
+    width: 100%;
+  }
+
+  /* line 822, ../sass/ellis.scss */
   #blurb p {
     padding: .5em 0;
   }
 
-  /* line 822, ../sass/ellis.scss */
+  /* line 826, ../sass/ellis.scss */
   #logoImage {
     width: 127px;
     height: 40px;

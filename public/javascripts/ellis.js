@@ -10,7 +10,10 @@ var marker;
 var infoWindow;
 var endpoint = "displacement-server-env-rtmfzur43y.elasticbeanstalk.com";
 var currentPage = 0;
+var currentPledge = 0;
 var totalPledges = 0;
+var numColumns = 3;
+var timeoutHook;
 
 var evictionTypeHash = {
     "omi" : '<a href="http://www.sftu.org/omi.html" target="_blank">Owner Move-In</a>',
@@ -71,14 +74,32 @@ $(document).ready(function() {
     });
 
     $('#more_btn').click(function(){
-        currentPage += 1;
+        currentPledge += (numColumns * 10);
         retrievePledges();
     });
     $('#back_btn').click(function(){
-        currentPage -= 1;
+        currentPledge -= (numColumns * 10);
         retrievePledges();
     });
     retrievePledges();
+});
+
+$(window).resize(function(){
+    var tempColumns = $('.pledgeColumn:visible').length;
+    if (tempColumns != numColumns) {
+        if (timeoutHook != null) {
+            clearTimeout(timeoutHook);
+            timeoutHook = null;
+        }
+        timeoutHook = setTimeout(function(){
+            var tempColumns = $('.pledgeColumn:visible').length;
+            if (tempColumns != numColumns) {
+                numColumns = tempColumns;
+                retrievePledges();
+            }
+        });
+
+    }
 });
 
 function scrollTo(element, time) {
@@ -177,30 +198,27 @@ function openInfoWindow(result, addressTxt) {
         if (obj.dirty_dozen != null) {
             text += "<div class='dirty_dozen'><p class='dd_hdr' id='dd_hdr'>A Dirty Dozen Eviction<a href='" + obj.dirty_dozen + "' id='dd_lrn'>Learn More</a></p></div>";
         }
-        var evTypesText, evUnitsNum, evDataType;
+        var evUnitsNum, evDataType;
         if (omi){
             if ( ellis) {
-                evTypesText = "Total <br/ >Evictions"
                 evUnitsNum = max_units;
                 evDataType = "Landlord/Unit info";
             } else  {
-                evTypesText = "Owner Move-in<br />Evictions";
                 evUnitsNum = obj.evictions.length;
                 evDataType = "Unit Info"
             }
         } else {
-            evTypesText = "Ellis Act<br />Evictions"
             evUnitsNum = max_units;
             evDataType = "Landlord info";
         }
         text += "<div class='header_nums'>" +
-                 "<div class='total_col' style='width:33%'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>"+evTypesText+"</div></div>";
+                 "<div class='total_col' style='width:33%'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>Total <br/ >Evictions</div></div>";
         text +=  "<div class='total_col' style='width:27%'><div class='circle_num bluebg'>"+ evUnitsNum +"</div><div class='ig_text blue'>Affected<br />Units</div></div>";
         text +=  "<div class='total_col' style='width:40%'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior or Disabled<br />Tenants Since 2008</div></div></div>";
         text += subtext;
     } else {
         text = "<div class='info_window fixed'><div class='info_address without_dd'>"+ addressTxt+"</div><div class='total_col' style='width:100%'><div class='circle_num lightbluebg'>0</div><div class='no_evictions'>" +
-            "There are no evictions at the address. Awesome!</div></div></div> ";
+            "There are no evictions at this address. Awesome!</div></div></div> ";
     }
     marker.bindPopup(text, {maxWidth:500}).openPopup();
 }
@@ -209,7 +227,7 @@ function retrievePledges() {
     $('.pledgeColumn').empty();
 
     $.ajax({
-        url: "http://"+endpoint+"/pledges?limit=30&skip="+currentPage*30,
+        url: "http://"+endpoint+"/pledges?limit="+(10 * numColumns)+"&skip="+currentPledge,
         type: 'GET',
         success: function(result) {
             var j = 0
@@ -237,16 +255,17 @@ function retrievePledges() {
             adjustButtons();
             totalPledges = result;
         }
-    })
+    });
 }
 
 function adjustButtons() {
-    if (currentPage == 0) {
+    var numPerPage = numColumns * 10;
+    if (currentPledge == 0) {
         $('.previous').hide();
     } else {
         $('.previous').show();
     }
-    if (totalPledges / 30 > currentPage + 1) {
+    if (totalPledges > currentPledge + numPerPage) {
         $('.more').show();
     } else {
         $('.more').hide();
