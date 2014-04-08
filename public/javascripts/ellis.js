@@ -7,9 +7,7 @@
  */
 var map;
 var marker;
-var infoWindow;
 var endpoint = "displacement-server-env-rtmfzur43y.elasticbeanstalk.com";
-var currentPage = 0;
 var currentPledge = 0;
 var totalPledges = 0;
 var numColumns = 3;
@@ -119,6 +117,7 @@ function findAndZoom() {
     geocoder.geocode( { 'address': address, 'componentRestrictions':{'locality': 'San+Francisco'}}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             var pt = [results[0].geometry.location.k , results[0].geometry.location.A];
+            //adjust view so big info does not overlap search bar
             var pt2   = [results[0].geometry.location.k +.002, results[0].geometry.location.A];
             map.setView(pt2, 16);
             marker = L.marker(pt).addTo(map);
@@ -170,6 +169,7 @@ function openInfoWindow(result, addressTxt) {
         var subtext = "<div class='info_table'><table>";
         var max_units = 0;
         var protected = obj.hasOwnProperty("protected_tenants") ? obj.protected_tenants : 0;
+        //some building have omis, some ellises, some both
         var omi = false;
         var ellis = false;
         for (var i = 0; i < obj.evictions.length; i++) {
@@ -197,23 +197,21 @@ function openInfoWindow(result, addressTxt) {
             subtext += "</td></tr></div>";
         }
         subtext += "</table></div>";
+        //address needs different margins with dirty dozen tag
         var add_class = obj.dirty_dozen != null ? 'info_address with_dd' : 'info_address without_dd';
         text = "<div class='info_window'><div class='" + add_class +"'>"+ addressTxt+"</div>";
         if (obj.dirty_dozen != null) {
             text += "<div class='dirty_dozen'><p class='dd_hdr' id='dd_hdr'>A Dirty Dozen Eviction<a href='" + obj.dirty_dozen + "' id='dd_lrn'>Learn More</a></p></div>";
         }
-        var evUnitsNum, evDataType;
+        var evUnitsNum;
         if (omi){
             if ( ellis) {
                 evUnitsNum = max_units;
-                evDataType = "Landlord/Unit info";
             } else  {
                 evUnitsNum = obj.evictions.length;
-                evDataType = "Unit Info"
             }
         } else {
             evUnitsNum = max_units;
-            evDataType = "Landlord info";
         }
         text += "<div class='header_nums'>" +
                  "<div class='total_col' style='width:33%'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>Total <br/ >Evictions</div></div>";
