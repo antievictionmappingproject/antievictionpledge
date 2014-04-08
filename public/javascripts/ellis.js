@@ -79,6 +79,9 @@ $(document).ready(function() {
     });
     $('#back_btn').click(function(){
         currentPledge -= (numColumns * 10);
+        if (currentPledge < 0) {
+            currentPledge = 0;
+        }
         retrievePledges();
     });
     retrievePledges();
@@ -97,7 +100,7 @@ $(window).resize(function(){
                 numColumns = tempColumns;
                 retrievePledges();
             }
-        });
+        }, 500);
 
     }
 });
