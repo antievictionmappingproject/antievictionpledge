@@ -243,7 +243,7 @@
       font-weight: 300;
       line-height: 1.5;
       margin: 0;
-      padding: 1em 0 3em 0;
+      padding: 1em 0 1em 0;
       -webkit-font-smoothing: antialiased;
     }
   }
@@ -636,8 +636,6 @@
       color: $color-lightblue;
     }
 
-
-
 /* SEE WHO PLEDGED STYLES */
   .page_buttons {
     clear: both;
@@ -796,4 +794,16 @@
     .wrapNoMargin {
       width: 28em;
     }
+  }
+
+  @media all and (min-width: 801px) and (max-width: 1160px) {
+    body {
+      font-size: 12px;
+    }
+
+    #logoImage {
+      width: 127px;
+      height: 40px;
+    }
+
   }
