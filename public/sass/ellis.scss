@@ -227,7 +227,7 @@
   }
 
   .background {
-    background: url('images/background.png') no-repeat center center;
+    background: url('../images/background.png') no-repeat center center;
     background-size: cover;
     -moz-backgorund-size: cover;
     -o-background-size: cover;
@@ -469,13 +469,14 @@
     .search {
       background: rgb(204, 0, 0); /* The Fallback */
       background: rgba(204, 0, 0, 0.8); 
-      width: 90%;
+      width: 85%;
       max-width: 40em;
-      margin: 5px 0px 0px 50px;
+      margin: .3em 0px 0px 2em;
       padding: 1em;
       cursor: pointer;
       float: left;
-
+      position: absolute;
+      left: 2em;
     }
     #search {
       width: 70%;
@@ -670,189 +671,112 @@
 
 /* MEDIA QUERIES. ABANDON ALL HOPE YE WHO ENTER HERE */
 
-  /* styles for browsers larger than 20em/320px but smaller than 75em/1200px. EM references font size 16px */
-    @media all and (min-width: 20em) and (max-width: 30em) {
-      body {
-        font-size: 11px;
-        line-height: 1.2;
+/* styles for browsers larger than 20em/320px but smaller than 75em/1200px. EM references font size 16px */
+  @media all and (min-width: 20em) and (max-width: 30em) {
+    body {
+      font-size: 11px;
+      line-height: 1.2;
+    }
+
+    .buttonContainer {
+      margin: 1em 0 0 0;
+    }
+
+    h1 {
+        margin: 0 0 .5em 0;
+    }
+
+    .hideMobile {
+      display: none;
+    }
+
+    .hideDesktop {
+      display: inline;
+    }
+
+    i {
+        margin: 0 .5em 0 0;
+    }
+  }
+
+  @media all and (max-width: 800px) {
+    .luggageIcon {
+      display: none;
+    }
+
+    .right_bar {
+      position: inherit;
+      float: none;
+      width: 100%;
+    }
+
+    .mapSearch {
+      postion: inherit;
+      width: 100%;
+      height: $map-height;
+      margin-bottom: -8em;
+    }
+
+    .main {
+      height: $map-height + $petition-height;
+    }
+
+    #petition, #feedback {
+      position: inherit;
+      max-width: 100%;
+    }
+
+    #mapper {
+      float: none;
+    }
+
+    #feedback, #pledges, #petition, .resources, .aboutus {
+      float: none;
+      padding: 1em 0;
+      width: 24em;
+    }
+
+    .main_menu {
+      background: rgb(18, 33, 43); /* The Fallback */
+      background: rgba(18, 33, 43, 0.9);
+      height: 4em;
+      width: 100%;
+      border-bottom: 1px solid #06131c;
+      position: fixed;
+      z-index: 99;
+    }
+
+    #logoImage {
+      width: 127px;
+      height: 40px;
+    }
+
+    nav {
+      ul {
+        // margin: 1em 0 2em 0;
       }
 
-      .buttonContainer {
-        margin: 1em 0 0 0;
-      }
-
-      h1 {
-          margin: 0 0 .5em 0;
-        }
-
-      .hideMobile {
-        display: none;
-      }
-
-      .hideDesktop {
-        display: inline;
-      }
-
-      i {
-          margin: 0 .5em 0 0;
-        }
-      }
-
-    @media all and (max-width: 800px) {
-      .luggageIcon {
-        display: none;
-      }
-
-      .right_bar {
-        position: inherit;
-        float: none;
-        width: 100%;
-      }
-
-      .mapSearch {
-        postion: inherit;
-        width: 100%;
-        height: $map-height;
-        margin-bottom: -8em;
-      }
-
-      .main {
-        height: $map-height + $petition-height;
-      }
-
-      #petition, #feedback {
-        position: inherit;
-        max-width: 100%;
-      }
-
-      #mapper {
-        float: none;
-      }
-
-      #feedback, #pledges, #petition, #mapper {
-        height: 30em;
-        width: 24em;
-      }
-      
-      #feedback, #pledges, #petition, #mapper, .resources, .aboutus {
-        float: none;
-        padding: 1em 0;
-        width: 24em;
-      }
-
-      .main_menu {
-        background: rgb(18, 33, 43); /* The Fallback */
-        background: rgba(18, 33, 43, 0.9);
-        height: 4em;
-        width: 100%;
-        border-bottom: 1px solid #06131c;
-        position: fixed;
-        z-index: 99;
-      }
-
-      #logoImage {
-        width: 127px;
-        height: 40px;
-      } 
-
-      nav {
-
-        ul {
-          // margin: 1em 0 2em 0;
-        }
-
-        li {
-          float: left;
-          font-family: $font-sans;
-          margin-left: 2em;
-          padding: .3em .1em; 
-          display: block;
-        }
-      }
-
-      .pledgeColumn {
-        width: 99%;
-        padding: 0;
-      }
-
-      .wrap {
-        margin: auto;
-        padding: 1em;
-        width: 25em;
-      }
-
-      .wrapNoMargin {
-        width: 28em;
+      li {
+        float: left;
+        font-family: $font-sans;
+        margin-left: 2em;
+        padding: .3em .1em;
+        display: block;
       }
     }
 
-    @media all and (max-width: 1150px) {
-      .wrap, .wrapNoMargin {
-        width: 100%;
-      }
+    .pledgeColumn {
+      width: 99%;
+      padding: 0;
     }
 
+    .wrap {
+      margin: auto;
+      padding: 1em;
+      width: 25em;
+    }
 
-    // and (max-width: 75em) {
-    //   body {
-    //     font-size: 12px;
-    //   }
-
-    //   .wrap {
-    //     width:80em;
-    //   }
-
-    //   .wrapNoMargin {
-    //     width:80em;
-    //   }
-    // }
-
-
-@media all and (max-width: 800px) {
-  .luggageIcon {
-    display: none;
+    .wrapNoMargin {
+      width: 28em;
+    }
   }
-  .right_bar {
-    position: inherit;
-    float: none;
-    width: 100%;
-  }
-
-  .mapSearch {
-    postion: inherit;
-    width: 100%;
-    height: $map-height;
-    margin-bottom: -8em;
-  }
-
-  .main {
-    height: $map-height + $petition-height;
-  }
-
-  #petition, #feedback {
-    position: inherit;
-    max-width: 100%;
-  }
-
-  #mapper {
-    float: none;
-  }
-}
-
-@media all and (max-width: 1150px) {
-  .wrap, .wrapNoMargin {
-    width: 100%;
-  }
-
-
-}
-
-
-
-  /* styles for browsers larger than 85em/1360px. EM references font size 16px */
-    // @media all and (max-width: 84.9em) {
-    //   body {
-    //     font-size: 14px;
-    //     line-height: 1.2;
-    //   }
-    // }
