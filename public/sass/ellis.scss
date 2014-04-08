@@ -20,7 +20,8 @@
   }
 
   @mixin ctabuttonstyle {
-    background: $color-lightblue;
+    background: rgb(88, 139, 155);
+    background: rgba(88, 139, 155, .8);
     color: $color-darkblue;
     font-family: $font-display;
     font-weight: 400;
@@ -239,9 +240,9 @@
     p {
       color: $color-offwhite;
       font-family: $font-sans;
-      font-size: 1.5em;  
+      font-size: 1.3em;  
       font-weight: 300;
-      line-height: 1.5;
+      line-height: 1.7;
       margin: 0;
       padding: 1em 0 1em 0;
       -webkit-font-smoothing: antialiased;
@@ -249,7 +250,7 @@
   }
 
   .buttonContainer{
-    margin: 1.2em;
+    margin: 1em 0 3em 0;
   }
 
   .CTA {     
@@ -268,6 +269,7 @@
   .luggageIcon  {
     float: left;
     margin-right: 3em;
+    margin-bottom: 6em;
   }
 
   #intro {
@@ -277,6 +279,11 @@
     // margin-right: 5%;
     padding-top: 5em; //make room for menu
   }
+
+  #intro .wrap {
+    width: 45em;
+  }
+
 
 /* SEARCH AND PLEDGE STYLES */
   /* PLEDGE STYLES */
@@ -486,16 +493,19 @@
     }
 
     #instructions {
-      width: 25em;
-      z-index: 9;
-      position: absolute;
+      background: rgb(24, 24, 24);
+      background: rgba(24, 24, 24, .5);
+      border-radius: .5em;
+      color: $color-offwhite;
+      float: left;
+      font-family: $font-sans;
+      font-weight: 300;
+      letter-spacing: .7;
       margin: 6em 0em 3em 8em;
       padding: 2em;
-      float: left;
-      color: $color-offwhite;
-      background: rgba(24, 24, 24, .5);
-      border-radius: 1em;
-      border: 1px solid $color-offwhite;
+      position: absolute;
+      width: 28em;
+      z-index: 9;
     }
 
   /* SEARCH RESULTS STYLES */
@@ -676,10 +686,6 @@
       line-height: 1.2;
     }
 
-    .buttonContainer {
-      margin: 1em 0 0 0;
-    }
-
     h1 {
         margin: 0 0 .5em 0;
     }
@@ -704,7 +710,11 @@
     }
     
     #blurb p {
-      padding: 1em 0 .5em;
+      padding: .5em 0 1em 0;
+    }
+
+    .buttonContainer {
+      margin: 0 0 2.5em 0;
     }
 
     .hideMobile {
@@ -713,6 +723,10 @@
 
     .hideDesktop {
       display: block;
+    }
+
+    #address {
+      width: 83%
     }
 
     .luggageIcon {
@@ -799,6 +813,10 @@
   @media all and (min-width: 801px) and (max-width: 1160px) {
     body {
       font-size: 12px;
+    }
+
+    #blurb p {
+      padding: .5em 0;
     }
 
     #logoImage {
