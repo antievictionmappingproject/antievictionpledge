@@ -644,7 +644,7 @@ input:focus, textarea:focus {
 
 /* line 589, ../sass/ellis.scss */
 .without_dd {
-  margin-top: -.3em;
+  margin-top: -0.3em;
 }
 
 /* line 594, ../sass/ellis.scss */
@@ -840,28 +840,32 @@ td {
 
   /* line 749, ../sass/ellis.scss */
   .main {
-    height: 102em;
+    height: 58em;
   }
 
   /* line 753, ../sass/ellis.scss */
   #petition, #feedback {
+    float: none;
     position: inherit;
     max-width: 100%;
+    margin: 0;
+    width: 24em;
+    padding: 0;
   }
 
-  /* line 758, ../sass/ellis.scss */
+  /* line 762, ../sass/ellis.scss */
   #mapper {
     float: none;
   }
 
-  /* line 762, ../sass/ellis.scss */
-  #feedback, #pledges, #petition, .resources, .aboutus {
+  /* line 766, ../sass/ellis.scss */
+  #pledges, .resources, .aboutus {
     float: none;
     padding: 1em 0;
     width: 24em;
   }
 
-  /* line 768, ../sass/ellis.scss */
+  /* line 773, ../sass/ellis.scss */
   .main_menu {
     background: #12212b;
     /* The Fallback */
@@ -871,12 +875,6 @@ td {
     border-bottom: 1px solid #06131c;
     position: fixed;
     z-index: 99;
-  }
-
-  /* line 778, ../sass/ellis.scss */
-  #logoImage {
-    width: 127px;
-    height: 40px;
   }
 
   /* line 788, ../sass/ellis.scss */
@@ -895,34 +893,43 @@ td {
   }
 
   /* line 802, ../sass/ellis.scss */
+  #sorryMobile {
+    border-radius: .5em;
+    background: #f9faf3;
+    background: rgba(249, 250, 243, 0.6);
+    margin: 1em 0 2em 0;
+    padding: .5em;
+  }
+
+  /* line 810, ../sass/ellis.scss */
   .wrap {
     margin: auto;
     padding: 1em;
     width: 25em;
   }
 
-  /* line 808, ../sass/ellis.scss */
+  /* line 816, ../sass/ellis.scss */
   .wrapNoMargin {
     width: 28em;
   }
 }
 @media all and (min-width: 801px) and (max-width: 1160px) {
-  /* line 814, ../sass/ellis.scss */
+  /* line 822, ../sass/ellis.scss */
   body {
     font-size: 12px;
   }
 
-  /* line 818, ../sass/ellis.scss */
+  /* line 826, ../sass/ellis.scss */
   .wrap {
     width: 100%;
   }
 
-  /* line 822, ../sass/ellis.scss */
+  /* line 830, ../sass/ellis.scss */
   #blurb p {
     padding: .5em 0;
   }
 
-  /* line 826, ../sass/ellis.scss */
+  /* line 834, ../sass/ellis.scss */
   #logoImage {
     width: 127px;
     height: 40px;
