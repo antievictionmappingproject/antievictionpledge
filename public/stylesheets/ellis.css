@@ -548,7 +548,7 @@ input:focus, textarea:focus {
   position: absolute;
   width: 28em;
   z-index: 9;
-}
+  text-align: center; }
 
 /* SEARCH RESULTS STYLES */
 /* line 512, ../sass/ellis.scss */

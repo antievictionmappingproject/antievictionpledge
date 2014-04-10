@@ -115,8 +115,8 @@ function scrollTo(element, time) {
 function findAndZoom() {
     var geocoder = new google.maps.Geocoder();
     var address = $("#address")[0].value;
-    geocoder.geocode( { 'address': address, 'componentRestrictions':{'locality': 'San+Francisco'}}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
+    geocoder.geocode( { 'address': address, 'componentRestrictions':{'locality': 'San Francisco'}}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK && results[0].types.indexOf("street_address") >= 0) {
             var pt = [results[0].geometry.location.k , results[0].geometry.location.A];
             //adjust view so big info does not overlap search bar
             var pt2   = [results[0].geometry.location.k +.002, results[0].geometry.location.A];
@@ -130,7 +130,7 @@ function findAndZoom() {
             });
             $('#instructions').hide();
         } else {
-            alert("Geocode was not successful for the following reason: " + status);
+            $('#instructions').text("Address not found within San Francisco. Please check the spelling and try again.").show();
         }
     });
 }
@@ -140,7 +140,17 @@ function fetchEllisInfo(addressQuery, addressTxt, callback) {
         url: "http://"+endpoint+"/properties?"+addressQuery,
         type: 'GET',
         success: function(result) {
+            console.log(result);
             callback(result, addressTxt);
+        },
+        error: function(result) {
+            var popupText = '<div class="leaflet-popup-content" style="width: 501px;">' +
+                '<div class="info_window">' +
+                  '<div class="info_address without_dd">' + addressTxt + '</div>' +
+                       '<div class="info_table">' +
+                       'No information available about this address' +
+                       '</div></div></div>'
+            marker.bindPopup(popupText, {maxWidth:500}).openPopup();
         }
     });
 }
