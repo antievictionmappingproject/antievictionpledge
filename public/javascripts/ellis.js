@@ -46,6 +46,9 @@ $(document).ready(function() {
         window.open("https://twitter.com/intent/tweet?text=I+Pledged+not+to+rent+or+buy+Ellis-Acted+buildings.+You+can+too&url=http://www.antievictionmappingproject.net/ellis.html&via=antievictionmap", '1369959514879','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');
     });
 
+    $('#fb_btn').click(function() {
+        window.open("http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.antievictionmappingproject.net%2Fpledge%2F", '1369959514870','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');
+    });
 
     $('#searchPledgelink').click(function() {
         scrollTo($('#searchPledge'), 250);
