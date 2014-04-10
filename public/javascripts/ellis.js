@@ -43,7 +43,7 @@ $(document).ready(function() {
     });
 
     $('#tw_btn').click(function() {
-        window.open("https://twitter.com/intent/tweet?text=I%20took%20a%20stand%20for%20SF%20%26%20pledged%20not%20to%20rent%20or%20buy%20units%20made%20available%20by%20eviction.%20Join%20me%3A&url=http://www.antievictionmappingproject.net/pledge/&via=antievictionmap", '1369959514879','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');
+        window.open("https://twitter.com/intent/tweet?text=I%20took%20a%20stand%20for%20SF%20%26%20pledged%20not%20to%20rent%20or%20buy%20units%20made%20available%20by%20eviction.%20Join%20me%3A&url=http://pledge.antievictionmappingproject.net/&via=antievictionmap", '1369959514879','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');
     });
 
     $('#fb_btn').click(function() {
