@@ -212,7 +212,7 @@ function openInfoWindow(result, addressTxt) {
         var add_class = obj.dirty_dozen != null ? 'info_address with_dd' : 'info_address without_dd';
         text = "<div class='info_window'><div class='" + add_class +"'>"+ addressTxt+"</div>";
         if (obj.dirty_dozen != null) {
-            text += "<div class='dirty_dozen'><p class='dd_hdr' id='dd_hdr'>A Dirty Dozen Eviction<a href='" + obj.dirty_dozen + "' id='dd_lrn'>Learn More</a></p></div>";
+            text += "<div class='dirty_dozen'><p class='dd_hdr' id='dd_hdr'>A Dirty Dozen Eviction<a href='" + obj.dirty_dozen + "' id='dd_lrn' target='_blank'>Learn More</a></p></div>";
         }
         var evUnitsNum;
         if (omi){
