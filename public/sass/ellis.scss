@@ -96,7 +96,7 @@
   }
 
   .fixed {
-    height: 7em;
+    height: 10em;
   }
 
   .footer {
@@ -592,6 +592,18 @@
       margin-top: -.3em;
     }
 
+    .contact_noeviction {
+      position: absolute;
+      bottom: 2.5em;
+      right: 1em;
+      font-family: $font-sans;
+      font-size: 1em;
+       a {
+        font-weight: bold;
+        text-decoration: none;
+        color: $color-darkblue;
+      }
+    }
 
     .info_table {
       font-family: $font-sans;

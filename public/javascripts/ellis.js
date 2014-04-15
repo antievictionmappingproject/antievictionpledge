@@ -150,12 +150,18 @@ function fetchEllisInfo(addressQuery, addressTxt, callback) {
             var popupText = '<div class="leaflet-popup-content" style="width: 501px;">' +
                 '<div class="info_window">' +
                   '<div class="info_address without_dd">' + addressTxt + '</div>' +
-                       '<div class="info_table">' +
+                       '<div class="info_table" style="height: 6.5em">' +
                        'No information available about this address' +
-                       '</div></div></div>'
+                       '</div>' +
+                       submitMoreDataDiv(addressTxt) +
+                       '</div></div>'
             marker.bindPopup(popupText, {maxWidth:500}).openPopup();
         }
     });
+}
+
+function submitMoreDataDiv(addressTxt) {
+    return "<div class='contact_noeviction'>Know of an eviction or buyout that should be listed here? <a href='mailto:aemppledge@gmail.com?subject=" + encodeURIComponent(addressTxt) + "' target='_blank'>Let us know</a></div>";
 }
 
 function submitPledge() {
@@ -234,7 +240,7 @@ function openInfoWindow(result, addressTxt) {
         text += subtext;
     } else {
         text = "<div class='info_window fixed'><div class='info_address without_dd'>"+ addressTxt+"</div><div class='total_col' style='width:100%'><div class='circle_num lightbluebg'>0</div><div class='no_evictions'>" +
-            "There are no evictions at this address.<br />Awesome!</div></div></div> ";
+            "There are no evictions at this address.<br />Awesome!</div></div>" + submitMoreDataDiv(addressTxt) +"</div> ";
     }
     marker.bindPopup(text, {maxWidth:500}).openPopup();
 }

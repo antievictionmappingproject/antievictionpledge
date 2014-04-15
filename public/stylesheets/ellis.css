@@ -16,7 +16,7 @@ div.info_window_fixed {
   width: 42em; }
 
 .fixed {
-  height: 7em; }
+  height: 10em; }
 
 .footer {
   background: #0d2839;
@@ -470,6 +470,17 @@ input:focus, textarea:focus {
 
 .without_dd {
   margin-top: -.3em; }
+
+.contact_noeviction {
+  position: absolute;
+  bottom: 2.5em;
+  right: 1em;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em; }
+  .contact_noeviction a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #0d2839; }
 
 .info_table {
   font-family: "Open Sans", sans-serif;
