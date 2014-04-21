@@ -246,25 +246,29 @@ function openInfoWindow(result, addressTxt) {
 }
 
 function retrievePledges() {
-    $('.pledgeColumn').empty();
-
     $.ajax({
         url: "http://"+endpoint+"/pledges?limit="+(10 * numColumns)+"&skip="+currentPledge,
         type: 'GET',
         success: function(result) {
-            var j = 0
-            var sel = $('#pledgeColumn_'+j)
+            var rootDiv = $('<div class="pledge_columns"></div> ');
+            var j = 1;
+            var sel = $('<div id="pledgeColumn_'+j+'" class="pledgeColumn"></div>')
             var list = sel.append('<ul/>');
             for (var i = 0; i < result.length; i++){
-                if (i % 10 == 0){
+                if (i > 0 && i % 10 == 0){
+                    rootDiv.append(sel);
                     j++;
-                    sel = $('#pledgeColumn_'+j);
+                    sel =  $('<div id="pledgeColumn_'+j+'" class="pledgeColumn hideMobile"></div>');
                     list = sel.append('<ul/>');
                 }
                 var reason = result[i].reason ? result[i].reason : "";
                 var blob = '<li class="pledger"><span class="name">'+result[i].name+'</span> <span class="reason">' + reason + '</span></li>';
                 list.append(blob);
             }
+            rootDiv.append(sel);
+            var o = $('#pledgeColumnWrapper').find('.pledge_columns');
+            o.replaceWith(rootDiv);
+
             adjustButtons();
         }
     });
