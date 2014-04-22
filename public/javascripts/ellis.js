@@ -90,14 +90,14 @@ $(document).ready(function() {
 });
 
 $(window).resize(function(){
-    var tempColumns = $('.pledgeColumn:visible').length;
+    var tempColumns = $('.hideMobile:visible').length > 0 ? 3 : 1;
     if (tempColumns != numColumns) {
         if (timeoutHook != null) {
             clearTimeout(timeoutHook);
             timeoutHook = null;
         }
         timeoutHook = setTimeout(function(){
-            var tempColumns = $('.pledgeColumn:visible').length;
+            var tempColumns = $('.hideMobile:visible').length > 0 ? 3 : 1;
             if (tempColumns != numColumns) {
                 numColumns = tempColumns;
                 retrievePledges();

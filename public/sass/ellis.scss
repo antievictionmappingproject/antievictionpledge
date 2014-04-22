@@ -139,6 +139,10 @@
     display: none;
   }
 
+  .showSmall {
+    display: none;
+  }
+
   .hideMobile {
     display: inline;
   }
@@ -717,6 +721,37 @@
     }
   }
 
+  @media all and (max-width: 600px) {
+    .hideSmall {
+      display: none;
+    }
+
+    .showSmall {
+      display: block;
+    }
+
+    .main {
+      height:$petition-height + 16em;
+    }
+  }
+
+  @media all and (min-width: 601px) and (max-width: 800px) {
+    .main {
+      height: $map-height + $petition-height + 16em;
+    }
+
+    #main_wrap {
+      width: 80%;
+    }
+
+    #mapper {
+      width: 80%;
+    }
+    #instructions {
+      margin: 6em 3em;
+    }
+  }
+
   @media all and (max-width: 800px) {
 
     body {
@@ -760,9 +795,7 @@
       margin-bottom: -8em;
     }
 
-    .main {
-      height: $petition-height + 16em;
-    }
+
 
     #petition, #feedback {
       float: none;
