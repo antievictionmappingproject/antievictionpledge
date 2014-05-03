@@ -184,10 +184,19 @@
     }
   }
 
+  .resources {
+    float: left; 
+    padding-right: 2.5em;
+  }
+
+  .aboutus {
+    float: right;
+    padding-left: 2.5em;
+  }
+
   .resources, .aboutus {
     color: $color-darkestblue;
-    float: left; 
-    width: 50%;
+    width: 46%;
     @include links($color-offwhite, $color-darkblue);
 
     ul {
@@ -695,6 +704,10 @@
     background: $color-lightblue;
     wrap: left;
     clear: both;
+  }
+
+  #resourcesList {
+    margin-bottom: 4em;
   }
 
 /* MEDIA QUERIES. ABANDON ALL HOPE YE WHO ENTER HERE */
