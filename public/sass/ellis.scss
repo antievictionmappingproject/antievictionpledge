@@ -174,10 +174,12 @@
 
       li {
       float: left;
-      font-family: $font-sans;
+      font-family: $font-display;
+      letter-spacing: .05em;
       margin-left: 2em;
       padding: .3em .1em; 
       display: block;
+      -webkit-font-smoothing: antialiased;
       }
     }
   }
