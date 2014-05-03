@@ -240,7 +240,7 @@ function openInfoWindow(result, addressTxt) {
         text += subtext;
     } else {
         text = "<div class='info_window fixed'><div class='info_address without_dd'>"+ addressTxt+"</div><div class='total_col' style='width:100%'><div class='circle_num lightbluebg'>0</div><div class='no_evictions'>" +
-            "There are no evictions at this address.<br />Awesome!</div></div>" + submitMoreDataDiv(addressTxt) +"</div> ";
+            "There are no evictions at this address. Awesome!</div></div>" + submitMoreDataDiv(addressTxt) +"</div> ";
     }
     marker.bindPopup(text, {maxWidth:500}).openPopup();
 }

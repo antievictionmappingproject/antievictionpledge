@@ -2,7 +2,6 @@
   $color-darkblue: #0D2839;
   $color-darkestblue: #12212B;
   $color-lightblue: #588B9B;
-  // $color-offwhite: #f2f0e0;
   $color-offwhite: #f9faf3;
   $color-red: #cc0029;
   $font-display: 'Oswald', sans-serif;
@@ -294,6 +293,7 @@
   #feedback {
     display: none;
     color: $color-offwhite;
+    @include links($color-lightblue, $color-offwhite);
   }
 
   #feedback, #petition {
@@ -303,7 +303,6 @@
     position: absolute;
     height: $petition-height;
     max-width: $max-petition-width;
-    @include links($color-lightblue, $color-offwhite);
   
     h1 {
       font-size: 3em;
@@ -598,7 +597,7 @@
 
     .contact_noeviction {
       position: absolute;
-      bottom: 2.5em;
+      bottom: 3em;
       right: 1em;
       font-family: $font-sans;
       font-size: 1em;
@@ -658,9 +657,10 @@
     }
     .no_evictions {
       float: left;
+      font-family: $font-display;
       font-size: 1.5em;
       text-align: left;
-      margin: .5em 0em .5em 1em;
+      margin: 1.05em 0em .5em 1em;
       color: $color-lightblue;
     }
 
