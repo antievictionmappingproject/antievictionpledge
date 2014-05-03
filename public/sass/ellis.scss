@@ -186,17 +186,17 @@
 
   .resources {
     float: left; 
-    padding-right: 2.5em;
+    padding-right: 1em;
   }
 
   .aboutus {
     float: right;
-    padding-left: 2.5em;
+    padding-left: 1em;
   }
 
   .resources, .aboutus {
     color: $color-darkestblue;
-    width: 46%;
+    width: 48%;
     @include links($color-offwhite, $color-darkblue);
 
     ul {

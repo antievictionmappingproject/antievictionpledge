@@ -150,19 +150,19 @@ nav ul li {
 /* line 187, ../sass/ellis.scss */
 .resources {
   float: left;
-  padding-right: 2.5em;
+  padding-right: 1em;
 }
 
 /* line 192, ../sass/ellis.scss */
 .aboutus {
   float: right;
-  padding-left: 2.5em;
+  padding-left: 1em;
 }
 
 /* line 197, ../sass/ellis.scss */
 .resources, .aboutus {
   color: #12212b;
-  width: 46%;
+  width: 48%;
 }
 /* line 34, ../sass/ellis.scss */
 .resources a, .aboutus a {
