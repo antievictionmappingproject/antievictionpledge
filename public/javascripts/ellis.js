@@ -120,9 +120,9 @@ function findAndZoom() {
     var address = $("#address")[0].value;
     geocoder.geocode( { 'address': address, 'componentRestrictions':{'locality': 'San Francisco'}}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK && results[0].types.indexOf("street_address") >= 0) {
-            var pt = [results[0].geometry.location.k , results[0].geometry.location.A];
+            var pt = [results[0].geometry.location.k , results[0].geometry.location.B];
             //adjust view so big info does not overlap search bar
-            var pt2   = [results[0].geometry.location.k +.002, results[0].geometry.location.A];
+            var pt2   = [results[0].geometry.location.k +.002, results[0].geometry.location.B];
             map.setView(pt2, 16);
             marker = L.marker(pt).addTo(map);
             var add = results[0].address_components;
