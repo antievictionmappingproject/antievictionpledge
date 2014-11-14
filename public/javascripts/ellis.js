@@ -6,13 +6,12 @@
  * To change this template use File | Settings | File Templates.
  */
 var map;
-var marker, markers;
+var marker;
 var endpoint = "displacement-server-env-rtmfzur43y.elasticbeanstalk.com";
 var currentPledge = 0;
 var totalPledges = 0;
 var numColumns = 3;
 var timeoutHook;
-var allEvictions = {};
 
 var evictionTypeHash = {
     "omi" : '<a href="http://www.sftu.org/omi.html" target="_blank">Owner Move-In</a>',
@@ -20,12 +19,11 @@ var evictionTypeHash = {
 };
 
 $(document).ready(function() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(centerMap, loadDefault);
-    } else {
-        loadDefault();
-    }
-
+    map = L.map("mapper").setView([37.760, -122.435], 12);
+    L.tileLayer('http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution:  'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+    }).addTo(map);
     //initialize event handlers
     $('#find_btn').click(function() {
         findAndZoom();
@@ -108,65 +106,6 @@ $(window).resize(function(){
 
     }
 });
-
-function loadDefault() {
-    map = L.map("mapper").setView([37.760, -122.435], 12);
-    L.tileLayer('http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution:  'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
-    }).addTo(map);
-    getAllEvictions();
-}
-
-function centerMap(location) {
-    map = L.map("mapper").setView([location.coords.latitude, location.coords.longitude], 16);
-    L.tileLayer('http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution:  'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
-    }).addTo(map);
-
-    var homeIcon = L.icon({
-        iconUrl: 'images/marker-icon_here.png',
-        iconSize: [25,41],
-        iconAnchor: [12,41],
-        shadowUrl: 'images/marker-icon_here_shadow.png',
-        shadowSize: [41,41],
-        shadowAnchor: [8,36]});
-    var mymarker = L.marker([location.coords.latitude, location.coords.longitude], {icon: homeIcon}).addTo(map);
-
-    getAllEvictions();
-}
-
-function getAllEvictions() {
-    $.ajax({
-        url: "http://"+endpoint+"/properties",
-        type: 'GET',
-        success: function(result) {
-            allEvictions = result;
-            markers = new L.MarkerClusterGroup();
-            for (var k in result) {
-                var item = result[k];
-                if (!item.hasOwnProperty("lat") || !item.hasOwnProperty("lon")) {
-                    continue;
-                }
-                var l = new L.LatLng(item.lat, item.lon);
-                var m = new L.marker(l);
-                m.xll = l;
-                markers.addLayer(m);
-
-            }
-            markers.on('click', function (a) {
-                var key = a.layer.xll.lat +"|" + a.layer.xll.lng;
-                console.log('marker ' + key);
-                var data = allEvictions[key];
-                marker = a.layer;
-                openInfoWindow(data, data.addresses[0]);
-            });
-
-            map.addLayer(markers);
-        }
-    });
-}
 
 function scrollTo(element, time) {
     if (time == null) {
