@@ -234,9 +234,9 @@ function openInfoWindow(result, addressTxt) {
             evUnitsNum = max_units;
         }
         text += "<div class='header_nums'>" +
-                 "<div class='total_col' style='width:33%'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>Total <br/ >Evictions</div></div>";
-        text +=  "<div class='total_col' style='width:27%'><div class='circle_num bluebg'>"+ evUnitsNum +"</div><div class='ig_text blue'>Affected<br />Units</div></div>";
-        text +=  "<div class='total_col' style='width:40%'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior or Disabled<br />Tenants Since 2008</div></div></div>";
+                 "<div class='total_col w33'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>Total <br/ >Evictions</div></div>";
+        text +=  "<div class='total_col w27'><div class='circle_num bluebg'>"+ evUnitsNum +"</div><div class='ig_text blue'>Affected<br />Units</div></div>";
+        text +=  "<div class='total_col w40'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior or Disabled<br />Tenants Since 2008</div></div></div>";
         text += subtext;
     } else {
         text = "<div class='info_window fixed'><div class='info_address without_dd'>"+ addressTxt+"</div><div class='total_col' style='width:100%'><div class='circle_num lightbluebg'>0</div><div class='no_evictions'>" +

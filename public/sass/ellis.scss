@@ -84,7 +84,8 @@
   }
 
   div.info_window {
-    width: 42em;
+    width: 100%;
+    max-width: 42em;
     //height: 220px;
   }
 
@@ -507,7 +508,7 @@
       position: absolute;
     }
 
-    #instructions {
+    .instructions {
       background: rgb(24, 24, 24);
       background: rgba(24, 24, 24, .5);
       border-radius: .5em;
@@ -561,7 +562,6 @@
     }
 
     .total_col {
-      width: 25%;
       //margin-right: 1%;
       float: left;
       .red {
@@ -575,6 +575,18 @@
       .lightblue {
         color: $color-lightblue;
       }
+    }
+
+    .w33 {
+      width: 33%;
+    }
+
+    .w40 {
+      width: 40%;
+    }
+
+    .w27 {
+      width: 27%;
     }
 
     .ev_date {
@@ -741,12 +753,70 @@
       display: none;
     }
 
-    .showSmall {
-      display: block;
+    #intro .wrap {
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-right: .5em;
+    }
+
+    #blurb  {
+      width: 90%;
+      margin: 0 auto;
+
     }
 
     .main {
-      height:$petition-height + 16em;
+      height: $map-height + $petition-height - 4em;
+    }
+
+    .total_col {
+      float: none;
+      clear: both;
+    }
+
+    .w27, .w33, .w40 {
+      width: 100%;
+    }
+
+    #mapper {
+      width: 100%;
+      float: none;
+    }
+
+    #main_wrap {
+      width: 100%;
+      padding-left: 0;
+    }
+
+    .info_address {
+      float: none;
+      margin-bottom: 1em;
+    }
+    .dirty_dozen {
+      margin-left: 0;
+    }
+
+    .instructions {
+      margin: 6em 10%;
+      width: 60%;
+      padding: 20px 10%;
+    }
+
+    #pledges, .resources, .aboutus {
+      float: none;
+      padding: 0;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .wrap {
+      margin: auto;
+      padding: 1em 0;
+      //width: 25em;
+      width: 80%;
     }
   }
 
@@ -761,9 +831,24 @@
 
     #mapper {
       width: 80%;
+      float: none;
     }
-    #instructions {
+
+    .instructions {
       margin: 6em 3em;
+    }
+
+    #pledges, .resources, .aboutus {
+      float: none;
+      padding: 1em 0;
+      width: 24em;
+    }
+
+    .wrap {
+      margin: auto;
+      padding: 1em;
+      //width: 25em;
+      width: 80%;
     }
   }
 
@@ -801,36 +886,24 @@
       position: inherit;
       float: none;
       width: 100%;
+      right: inherit;
+      margin: 0 auto;
     }
 
     .mapSearch {
-      postion: inherit;
       width: 100%;
       height: $map-height;
       margin-bottom: -8em;
     }
 
-
-
     #petition, #feedback {
       float: none;
       position: inherit;
-      max-width: 100%;
-      margin: 0;
+      max-width: 90%;
+      margin: 0 5%;
       width: 24em;
       padding: 0;
     }
-
-    #mapper {
-      float: none;
-    }
-
-    #pledges, .resources, .aboutus {
-      float: none;
-      padding: 1em 0;
-      width: 24em;
-    }
-
 
     .main_menu {
       background: rgb(18, 33, 43); /* The Fallback */
@@ -869,12 +942,7 @@
       padding: .5em;
     }
 
-    .wrap {
-      margin: auto;
-      padding: 1em;
-      //width: 25em;
-      width: 80%;
-    }
+
 
     .wrapNoMargin {
       //width: 28em;
