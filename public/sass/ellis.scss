@@ -624,6 +624,7 @@
       right: 1em;
       font-family: $font-sans;
       font-size: 1em;
+      max-width: 20em;
        a {
         font-weight: bold;
         text-decoration: none;
@@ -797,6 +798,9 @@
     }
     .dirty_dozen {
       margin-left: 0;
+      margin-bottom: .25em;
+      margin-top: -1em;
+      border-radius: .4em;
     }
 
     .instructions {
@@ -817,6 +821,10 @@
       padding: 1em 0;
       //width: 25em;
       width: 80%;
+    }
+
+    .ig_text {
+      margin-bottom: .5em;
     }
   }
 

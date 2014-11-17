@@ -147,7 +147,7 @@ function fetchEllisInfo(addressQuery, addressTxt, callback) {
             callback(result, addressTxt);
         },
         error: function(result) {
-            var popupText = '<div class="leaflet-popup-content" style="width: 501px;">' +
+            var popupText = '<div class="leaflet-popup-content">' +
                 '<div class="info_window">' +
                   '<div class="info_address without_dd">' + addressTxt + '</div>' +
                        '<div class="info_table" style="height: 6.5em">' +
