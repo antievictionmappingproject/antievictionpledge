@@ -84,7 +84,7 @@
   }
 
   div.info_window {
-    width: 100%;
+    width: 42em;
     max-width: 42em;
     //height: 220px;
   }
@@ -782,6 +782,13 @@
       width: 100%;
     }
 
+    .no_evictions {
+      float: none;
+      padding-top: .5em;
+      margin-left: 3em;
+      margin-top: -1em;
+    }
+
     #mapper {
       width: 100%;
       float: none;
@@ -795,6 +802,13 @@
     .info_address {
       float: none;
       margin-bottom: 1em;
+    }
+    //.fixed {
+    //  height: 11em;
+    //}
+
+    .contact_noeviction {
+      bottom: 2em;
     }
     .dirty_dozen {
       margin-left: 0;
