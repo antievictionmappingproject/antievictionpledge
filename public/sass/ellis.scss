@@ -470,6 +470,8 @@
         color: $color-darkestblue;
         @include selectanimation(all 0.30s ease-in-out);
       }
+
+      &:focus { outline:none; }
     }
 
     .main {
@@ -839,6 +841,10 @@
 
     .ig_text {
       margin-bottom: .5em;
+    }
+
+    div.info_window {
+      width: 100%;
     }
   }
 
