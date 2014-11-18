@@ -244,6 +244,7 @@ function openInfoWindow(result, addressTxt) {
     }
     var ww = $(window).width() - 48;
     marker.bindPopup(text, {maxWidth:Math.min(500, ww)}).openPopup();
+    $('#find_btn').focus();
 }
 
 function retrievePledges() {
