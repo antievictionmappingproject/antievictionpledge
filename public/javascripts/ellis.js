@@ -87,7 +87,27 @@ $(document).ready(function() {
     });
     numColumns = $('.pledgeColumn:visible').length;
     retrievePledges();
+
+    loadFromQuery();
 });
+
+function loadFromQuery() {
+   function getAddressParameter() {
+        var address = window.location.search.split("?address=")[1];
+        return address && decodeURIComponent(address.replace(/\+/g, ' '));
+    };
+    var addressParameter = getAddressParameter();
+
+    if (addressParameter) {
+        $("#address").val(addressParameter);
+        findAndZoom(true);
+        scrollTo($('#searchPledge'), 10);
+    };
+};
+
+$(window).bind('popstate', function() {
+    loadFromQuery();
+ });
 
 $(window).resize(function(){
     var tempColumns = $('.hideMobile:visible').length > 0 ? 3 : 1;
@@ -115,7 +135,7 @@ function scrollTo(element, time) {
     $("html, body").animate({ scrollTop:  tt}, time);
 }
 
-function findAndZoom() {
+function findAndZoom(onload) {
     var geocoder = new google.maps.Geocoder();
     var address = $("#address")[0].value;
     geocoder.geocode( { 'address': address, 'componentRestrictions':{'locality': 'San Francisco'}}, function(results, status) {
@@ -132,6 +152,9 @@ function findAndZoom() {
                 openInfoWindow(result, addressTxt);
             });
             $('#instructions').hide();
+            if (!onload) {
+                window.history.pushState(null,'','?address=' + encodeURI(addressTxt))
+            }
         } else {
             $('#instructions').text("Address not found within San Francisco. Please check the spelling and try again.").show();
         }
