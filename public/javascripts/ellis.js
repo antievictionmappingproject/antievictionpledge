@@ -239,7 +239,7 @@ function openInfoWindow(result, addressTxt) {
         text +=  "<div class='total_col w40'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior or Disabled<br />Tenants Since 2008</div></div></div>";
         text += subtext;
     } else {
-        text = "<div class='info_window fixed'><div class='info_address without_dd'>"+ addressTxt+"</div><div class='total_col w40'><div class='circle_num lightbluebg'>0</div><div class='no_evictions'>" +
+        text = "<div class='info_window fixed'><div class='info_address without_dd'>"+ addressTxt+"</div><div class='total_col'><div class='circle_num lightbluebg'>0</div><div class='no_evictions'>" +
             "There are no evictions at this address. Awesome!</div></div>" + submitMoreDataDiv(addressTxt) +"</div> ";
     }
     var ww = $(window).width() - 48;
