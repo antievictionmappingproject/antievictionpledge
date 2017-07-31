@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="upload.test.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!--	<script type="text/javascript" src="js/geojson.min.js"></script>  -->
+	</head>
+	<body>
+		<h2>File Upload Form</h2>
+		<form ref='uploadForm'
+			name ='uploadForm'
+			id='target'
+			encType="multipart/form-data">
+				<input id="sampleFile" type="file" name="sampleFile">
+  				<div id="dryRunText">Dry Run</div><input id="dryRun" type="checkbox" name="dry run">
+				<input id="upload" type="submit" value="Upload">
+		</form>
+		<div class="w_body"><div class="warning"><p><font color=#E6E6FA>.</font></p></div></div>
+		<script type="text/javascript">
+		$( document ).ready(function() {
+			$( "#target" ).submit(function( event ) {
+				event.preventDefault();
+				var data = new FormData();
+				var file = $("#sampleFile")[0].files[0];
+				var isDry = $( "#dryRun" ).is(":checked")
+				data.append('sampleFile', file);
+				data.append('dryRun', isDry);
+				$.ajax({
+				  type: "POST",
+				  url: 'http://localhost:8888/upload',
+				  data: data,
+				    cache: false,
+				    contentType: false,
+				    processData: false,
+				  success: function(data) {
+					$('.warning').text(data);
+					console.log(data);
+				  },
+				  error: function(data) {
+				  	if (IsJson(data.responseText)) {
+					  	var errors = JSON.parse(data.responseText);
+					  	console.log("errors", errors);
+					  	$('.warning').html("<div class='wlog_header'>Warning log</div>");
+					  	for (var line in errors) {
+					  		var warningMessage = '<ul><li>Line ' + line;
+				  			warningMessage += '<ul>';
+				  			var array = errors[line];
+				  			if (Object.prototype.toString.call( array ) === '[object Array]' )
+				  			{
+				  				for (var i in array) {
+				  					warningMessage += '<li>' + array[i].message + '</li>';
+				  				}
+				  			} else {
+				  				warningMessage += array;
+				  			}
+				  			warningMessage += '</ul></li></ul>';
+					  		$('.warning').append(warningMessage);
+					  	}
+					} else {
+					  	$('.warning').text(data.responseText);
+					}
+				  }
+				});
+			});
+		});
+		function IsJson(str) {
+		    try {
+		        JSON.parse(str);
+		    } catch (e) {
+		        return false;
+		    }
+		    return true;
+		}
+		</script>
+	</body>
+</html>
