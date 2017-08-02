@@ -253,8 +253,11 @@ function openInfoWindow(result, addressTxt) {
             }
             var d = new Date(ev.date);
             if (ev.hasOwnProperty("units") && ev.units !== null) { //  && ev.eviction_type == "Ellis Act WithDrawal"
-                // max_units = Math.max(max_units, parseInt(ev.units));
-                units_count++;
+                if (! isNaN(parseInt(ev.units))) {
+                    units_count += parseInt(ev.units);
+                } else {
+                    units_count++;
+                }
             }
             subtext += "<tr><td class='ev_date'>"+ d.toLocaleDateString() + "<br />" + evictionTypeHash[ev.eviction_type] + "</td><td class='ev_landlords'>";
             if (ev.eviction_type == "Ellis Act WithDrawal" && ev.hasOwnProperty("landlords")){
