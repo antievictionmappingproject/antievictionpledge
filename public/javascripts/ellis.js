@@ -14,8 +14,25 @@ var numColumns = 3;
 var timeoutHook;
 
 var evictionTypeHash = {
-    "omi" : '<a href="http://www.sftu.org/omi.html" target="_blank">Owner Move-In</a>',
-    "ellis" : '<a href="http://www.sftu.org/ellis.html" target="_blank">Ellis Act</a>'
+    "Owner Move In" : '<a href="http://www.sftu.org/omi.html" target="_blank">Owner Move-In</a>',
+    "Ellis Act WithDrawal" : '<a href="http://www.sftu.org/ellis.html" target="_blank">Ellis Act</a>',
+    "Non Payment": 'Non Payment',
+    "Breach": 'Breach',
+    "Nuisance": 'Nuisance',
+    "Illegal Use": 'Illegal Use',
+    "Failure to Sign Renewal": 'Failure to Sign Renewal',
+    "Access Denial": 'Access Denial',
+    "Unapproved Subtenant": 'Unapproved Subtenant',
+    "Demolition": 'Demolition',
+    "Capital Improvement": 'Capital Improvement',
+    "Substantial Rehab": 'Substantial Rehab',
+    "Condo Conversion": 'Condo Conversion',
+    "Roommate Same Unit": 'Roommate Same Unit',
+    "Other Cause": 'Other Cause',
+    "Late Payments": 'Late Payments',
+    "Lead Remediation": 'Lead Remediation',
+    "Development": 'Development',
+    "Good Samaritan Ends": 'Good Samaritan Ends'
 };
 
 $(document).ready(function() {
@@ -71,7 +88,8 @@ $(document).ready(function() {
     });
 
     $("#logo").click(function(){
-        $("html, body").animate({ scrollTop:  0}, 300);
+    // window.open("../update.html");
+       $("html, body").animate({ scrollTop:  0}, 300);
     });
 
     $('#more_btn').click(function(){
@@ -123,7 +141,6 @@ $(window).resize(function(){
                 retrievePledges();
             }
         }, 500);
-
     }
 });
 
@@ -166,7 +183,6 @@ function fetchEllisInfo(addressQuery, addressTxt, callback) {
         url: "http://"+endpoint+"/properties?"+addressQuery,
         type: 'GET',
         success: function(result) {
-            console.log(result);
             callback(result, addressTxt);
         },
         error: function(result) {
@@ -205,35 +221,53 @@ function submitPledge() {
     });
 }
 
+function getTotal(evictions){
+    let result = [];
+    for (let i = 0; i < evictions.length; i++) {
+        if (result.indexOf(evictions[i].petition + evictions[i].date) == -1) {
+            result.push(evictions[i].petition + evictions[i].date);
+        }
+    }
+    return result.length;
+}
+
 function openInfoWindow(result, addressTxt) {
     var obj = result;
     var text;
+    var total;
+    total = getTotal(obj.evictions);
     if (obj.evictions && obj.evictions.length > 0) {
         var subtext = "<div class='info_table'><table>";
-        var max_units = 0;
+        var units_count = 0;
         var protected = obj.hasOwnProperty("protected_tenants") ? obj.protected_tenants : 0;
         //some building have omis, some ellises, some both
         var omi = false;
         var ellis = false;
+        console.log("object", obj);
         for (var i = 0; i < obj.evictions.length; i++) {
             var ev = obj.evictions[i];
-            if (ev.eviction_type == "ellis") {
+            if (ev.eviction_type == "Ellis Act WithDrawal") {
                 ellis = true;
-            } else if (ev.eviction_type == "omi") {
+            } else if (ev.eviction_type == "Owner Move In") {
                 omi = true;
             }
             var d = new Date(ev.date);
-            if (ev.hasOwnProperty("units")) {
-                max_units = Math.max(max_units, ev.units);
+            if (ev.hasOwnProperty("units") && ev.units !== null) { //  && ev.eviction_type == "Ellis Act WithDrawal"
+                if (! isNaN(parseInt(ev.units))) {
+                    units_count += parseInt(ev.units);
+                } else {
+                    units_count++;
+                }
             }
             subtext += "<tr><td class='ev_date'>"+ d.toLocaleDateString() + "<br />" + evictionTypeHash[ev.eviction_type] + "</td><td class='ev_landlords'>";
-            if (ev.hasOwnProperty("landlords")){
+            if (ev.eviction_type == "Ellis Act WithDrawal" && ev.hasOwnProperty("landlords")){
                 subtext += "Landlords: " + ev.landlords[0];
                 for (var j = 1; j < ev.landlords.length; j++) {
                     subtext += " &bull; " + ev.landlords[j];
                 }
-            } else if (ev.hasOwnProperty("unit")){
-                subtext += ev.unit;
+            } else if (ev.hasOwnProperty("apt") && ev.apt !== null) { // ev.eviction_type == "Owner Move In" && 
+                // console.log("ev.units", ev.units);
+                subtext += ev.apt;
             } else {
                 subtext += "Detailed unit info not available";
             }
@@ -246,18 +280,9 @@ function openInfoWindow(result, addressTxt) {
         if (obj.dirty_dozen != null) {
             text += "<div class='dirty_dozen'><p class='dd_hdr' id='dd_hdr'>A Dirty Dozen Eviction<a href='" + obj.dirty_dozen + "' id='dd_lrn' target='_blank'>Learn More</a></p></div>";
         }
-        var evUnitsNum;
-        if (omi){
-            if ( ellis) {
-                evUnitsNum = max_units;
-            } else  {
-                evUnitsNum = obj.evictions.length;
-            }
-        } else {
-            evUnitsNum = max_units;
-        }
+        var evUnitsNum = units_count;
         text += "<div class='header_nums'>" +
-                 "<div class='total_col w33'><div class='circle_num redbg'>"+ obj.evictions.length +"</div><div class='ig_text red'>Total <br/ >Evictions</div></div>";
+                 "<div class='total_col w33'><div class='circle_num redbg'>"+ total +"</div><div class='ig_text red'>Total <br/ >Evictions</div></div>";
         text +=  "<div class='total_col w27'><div class='circle_num bluebg'>"+ evUnitsNum +"</div><div class='ig_text blue'>Affected<br />Units</div></div>";
         text +=  "<div class='total_col w40'><div class='circle_num lightbluebg'>"+ protected +"</div><div class='ig_text lightblue'>Senior or Disabled<br />Tenants Since 2008</div></div></div>";
         text += subtext;
