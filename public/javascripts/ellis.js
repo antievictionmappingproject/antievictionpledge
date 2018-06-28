@@ -3,19 +3,19 @@
   User: smagee
  * Date: 3/11/14
  * Time: 2:15 PM
- * To change this template use File | Settings | File Templates.
+ * To change this template use File | Settings | File Templates
  */
 var map;
 var marker;
-var endpoint = "displacementmap-server-prod.us-west-1.elasticbeanstalk.com";
+var endpoint = "pledgeserver.antievictionmap.com";
 var currentPledge = 0;
 var totalPledges = 0;
 var numColumns = 3;
 var timeoutHook;
 
 var evictionTypeHash = {
-    "Owner Move In" : '<a href="http://www.sftu.org/omi.html" target="_blank">Owner Move-In</a>',
-    "Ellis Act WithDrawal" : '<a href="http://www.sftu.org/ellis.html" target="_blank">Ellis Act</a>',
+    "Owner Move In" : '<a href="//www.sftu.org/omi.html" target="_blank">Owner Move-In</a>',
+    "Ellis Act WithDrawal" : '<a href="//www.sftu.org/ellis.html" target="_blank">Ellis Act</a>',
     "Non Payment": 'Non Payment',
     "Breach": 'Breach',
     "Nuisance": 'Nuisance',
@@ -37,9 +37,9 @@ var evictionTypeHash = {
 
 $(document).ready(function() {
     map = L.map("mapper").setView([37.760, -122.435], 12);
-    L.tileLayer('http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
+    L.tileLayer('//stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png', {
         maxZoom: 18,
-        attribution:  'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+        attribution:  'Map tiles by <a href="//stamen.com">Stamen Design</a>, <a href="//creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="//openstreetmap.org">OpenStreetMap</a> contributors, <a href="//creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
     }).addTo(map);
     //initialize event handlers
     $('#find_btn').click(function() {
@@ -60,11 +60,11 @@ $(document).ready(function() {
     });
 
     $('#tw_btn').click(function() {
-        window.open("https://twitter.com/intent/tweet?text=I%20took%20a%20stand%20for%20SF%20%26%20pledged%20not%20to%20rent%20or%20buy%20units%20made%20available%20by%20eviction.%20Join%20me%3A&url=http://pledge.antievictionmappingproject.net/&via=antievictionmap", '1369959514879','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');
+        window.open("https://twitter.com/intent/tweet?text=I%20took%20a%20stand%20for%20SF%20%26%20pledged%20not%20to%20rent%20or%20buy%20units%20made%20available%20by%20eviction.%20Join%20me%3A&url=//pledge.antievictionmappingproject.net/&via=antievictionmap", '1369959514879','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');
     });
 
     $('#fb_btn').click(function() {
-        window.open("http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.antievictionmappingproject.net%2Fpledge%2F", '1369959514870','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');
+        window.open("https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.antievictionmappingproject.net%2Fpledge%2F", '1369959514870','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');
     });
 
     $('#searchPledgelink').click(function() {
@@ -154,7 +154,7 @@ function scrollTo(element, time) {
 function findAndZoom(onload) {
     var geocoder = new google.maps.Geocoder();
     var address = $("#address")[0].value;
-    geocoder.geocode( { 'address': address, 'componentRestrictions':{'locality': 'San Francisco'}}, function(results, status) {
+    geocoder.geocode( { 'address': address, 'componentRestrictions': {'locality': 'San Francisco, CA'}}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK && (results[0].types.indexOf("street_address") >= 0 || results[0].types.indexOf("premise") >= 0)) {
             var pt = [results[0].geometry.location.lat() , results[0].geometry.location.lng()];
             //adjust view so big info does not overlap search bar
@@ -179,7 +179,7 @@ function findAndZoom(onload) {
 
 function fetchEllisInfo(addressQuery, addressTxt, callback) {
     $.ajax({
-        url: "http://"+endpoint+"/properties?"+addressQuery,
+        url: "//"+endpoint+"/properties?"+addressQuery,
         type: 'GET',
         success: function(result) {
             callback(result, addressTxt);
@@ -211,7 +211,7 @@ function submitPledge() {
         anonymous: !($('#pt_usable').is(':checked'))
     };
     $.ajax({
-        url: "http://"+endpoint+"/pledges",
+        url: "//"+endpoint+"/pledges",
         data: data,
         type: 'POST',
         success: function(result) {
@@ -287,7 +287,7 @@ function openInfoWindow(result, addressTxt) {
 
 function retrievePledges() {
     $.ajax({
-        url: "http://"+endpoint+"/pledges?limit="+(10 * numColumns)+"&skip="+currentPledge,
+        url: "//"+endpoint+"/pledges?limit="+(10 * numColumns)+"&skip="+currentPledge,
         type: 'GET',
         success: function(result) {
             var rootDiv = $('<div class="pledge_columns"></div> ');
@@ -314,7 +314,7 @@ function retrievePledges() {
     });
 
     $.ajax({
-        url: "http://"+endpoint+"/pledges/total",
+        url: "//"+endpoint+"/pledges/total",
         type: 'GET',
         success: function(result) {
             $('#pledge_total').text(result+" people have pledged");
