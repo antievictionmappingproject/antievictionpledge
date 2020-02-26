@@ -7,7 +7,8 @@
  */
 var map;
 var marker;
-var endpoint = "displacement-server-env-rtmfzur43y.elasticbeanstalk.com";
+// var endpoint = "displacement-server-env-rtmfzur43y.elasticbeanstalk.com";
+var endpoint = "localhost:8888";
 var currentPledge = 0;
 var totalPledges = 0;
 var numColumns = 3;
@@ -54,9 +55,6 @@ $(document).ready(function() {
 
     $('#pet_link').click(function(){
         submitPledge();
-        $('#petition').fadeOut(600, function () {
-            $('#feedback').fadeIn(800)
-        });
     });
 
     $('#tw_btn').click(function() {
@@ -204,21 +202,56 @@ function submitMoreDataDiv(addressTxt) {
 }
 
 function submitPledge() {
-    var data = {
-        firstName: $('#pt_firstname').val(),
-        lastName: $('#pt_lastname').val(),
-        email: $('#pt_email').val(),
-        reason: $('#pt_reason').val(),
-        anonymous: !($('#pt_usable').is(':checked'))
-    };
-    $.ajax({
-        url: "http://"+endpoint+"/pledges",
-        data: data,
-        type: 'POST',
-        success: function(result) {
-            retrievePledges();
-        }
-    });
+    var bool=true;
+    var email_Regex = /[A-Za-z]+(\.|_|-)?([A-Za-z0-9]+(\.|_|-)?)+?([A-Za-z0-9]+(\.|_|-)?)+?[A-Za-z0-9]@[A-Za-z]+(\.|_)?([A-Za-z0-9]+(\.|_|-)?)+?\.[a-z]{2,4}$/;
+    if($('#pt_firstname').val()=='' || $('#pt_firstname').val().trim(' ').length<1){
+        $('#error_name').html('Name is required');
+        bool=false;
+    }else{
+        $('#error_name').html('');
+    }
+    if($('#pt_lastname').val()=='' ||  $('#pt_lastname').val().trim(' ').length<1){
+        $('#error_lname').html('Last Name is required');
+        bool=false;
+    }else{
+        $('#error_lname').html('');
+    }
+    if(email_Regex.test($('#pt_email').val())==false ){
+        $('#error_email').html('Invalid Email');
+        bool=false;
+    }else{
+        $('#error_email').html('');
+    }
+    if($('#pt_email').val()=='' ){
+        $('#error_email').html('Email is required');
+        bool=false;
+    }
+    if($('#pt_reason').val()=='' ||  $('#pt_reason').val().trim(' ').length<1){
+        $('#error_reason').html('The field is required');
+        bool=false;
+    }else{
+        $('#error_reason').html('');
+    }
+    if(bool){
+        var data = {
+            firstName: $('#pt_firstname').val(),
+            lastName: $('#pt_lastname').val(),
+            email: $('#pt_email').val(),
+            reason: $('#pt_reason').val(),
+            anonymous: !($('#pt_usable').is(':checked'))
+        };
+        $.ajax({
+            url: "http://"+endpoint+"/pledges",
+            data: data,
+            type: 'POST',
+            success: function(result) {
+                retrievePledges();
+            }
+        });
+        $('#petition').fadeOut(600, function () {
+            $('#feedback').fadeIn(800)
+        });
+    }
 }
 
 function getTotal(evictions){
@@ -305,15 +338,17 @@ function retrievePledges() {
             var sel = $('<div id="pledgeColumn_'+j+'" class="pledgeColumn"></div>')
             var list = sel.append('<ul/>');
             for (var i = 0; i < result.length; i++){
-                if (i > 0 && i % 10 == 0){
-                    rootDiv.append(sel);
-                    j++;
-                    sel =  $('<div id="pledgeColumn_'+j+'" class="pledgeColumn hideMobile"></div>');
-                    list = sel.append('<ul/>');
+                if(result[i]['status']!=0){
+                    if (i > 0 && i % 10 == 0){
+                        rootDiv.append(sel);
+                        j++;
+                        sel =  $('<div id="pledgeColumn_'+j+'" class="pledgeColumn hideMobile"></div>');
+                        list = sel.append('<ul/>');
+                    }
+                    var reason = result[i].reason ? result[i].reason : "";
+                    var blob = '<li class="pledger"><span class="name">'+result[i].name+'</span> <span class="reason">' + reason + '</span></li>';
+                    list.append(blob);
                 }
-                var reason = result[i].reason ? result[i].reason : "";
-                var blob = '<li class="pledger"><span class="name">'+result[i].name+'</span> <span class="reason">' + reason + '</span></li>';
-                list.append(blob);
             }
             rootDiv.append(sel);
             var o = $('#pledgeColumnWrapper').find('.pledge_columns');
@@ -322,14 +357,13 @@ function retrievePledges() {
             adjustButtons();
         }
     });
-
     $.ajax({
         url: "http://"+endpoint+"/pledges/total",
         type: 'GET',
         success: function(result) {
             $('#pledge_total').text(result+" people have pledged");
-            adjustButtons();
             totalPledges = result;
+            adjustButtons();
         }
     });
 }

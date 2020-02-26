@@ -7,7 +7,8 @@
  */
 var map;
 var marker;
-var endpoint = "pledgeserver.antievictionmap.com";
+var endpoint = "localhost:8888";
+// var endpoint = "pledgeserver.antievictionmap.com";
 var currentPledge = 0;
 var totalPledges = 0;
 var numColumns = 3;

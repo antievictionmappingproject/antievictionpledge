@@ -3,9 +3,11 @@
 <head>
     <title>The Anti-Eviction Pledge</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="./javascripts/ellis.js"></script>
+    <script type="text/javascript" src="ellis.js"></script>
+<!--    <script type="text/javascript" src="./javascripts/ellis.js"></script>-->
     <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
-    <link rel="stylesheet" href="./stylesheets/ellis.css"/>
+    <link rel="stylesheet" href="ellis.css"/>
+<!--    <link rel="stylesheet" href="./stylesheets/ellis.css"/>-->
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
@@ -29,7 +31,7 @@
 <body>
     <div id="main_menu" class="main_menu">
         <div class="wrapNoMargin">
-            <a href="#" id="logo"><img src="images/logo.svg" width="190" height="60" alt="Eviction Pledge logo" id="logoImage"></a>
+            <a href="#" id="logo"><img src="public/images/logo.svg" width="190" height="60" alt="Eviction Pledge logo" id="logoImage"></a>
                 <nav> 
                     <ul>
                         <a href="#" id="searchPledgelink"><li class="hideMobile">Eviction History &amp; Pledge</li></a>
@@ -73,21 +75,27 @@
                             <h1>Take a Stand</h1>
                             <p class="pledgeText">I pledge not to rent or buy any unit that is available as the result of a no-fault eviction. </p>
                             <p class="label">First Name:</p>
+                            <div><smol id="error_name" style="color: darkred"></smol></div>
                             <input type="text" id="pt_firstname" class="pt_txt" placeholder="First Name"/>
                             <p class="label">Last Name:</p>
+                            <div><smol id="error_lname" style="color: darkred"></smol></div>
                             <input type="text" id="pt_lastname" class="pt_txt" placeholder="Last Name"/>
                             <p class="label">Email:</p>
+                            <div><smol id="error_email" style="color: darkred"></smol></div>
                             <input type="text" id="pt_email" class="pt_txt" placeholder="Email"/>
                             <p class="expl">We'll never share your email without asking!</p>
                             <p class="label">Why is this important to you?</p>
+                            <div><smol id="error_reason" style="color: darkred"></smol></div>
                             <textarea id="pt_reason" class="pt_txtarea" cols="22" rows="5"></textarea>
                             <p class="chk_label"><input type="checkbox" id="pt_usable" name="use" value="usable" checked="true"/>Show my name in the pledge list</p>
                             <p class="centered"><a id="pet_link" class="pt_link" role="button">I Support Housing Justice</a></p>
                         </div>
+
+
                         <div class="petition" id="feedback">
                             <h1>Thank you!</h1>
                             <h2 class="standUp">Help Spread the Word</h2>
-                                <div class="stw"><img id="fb_btn" src="images/fbsh.png" width="48" height="48"><img id="tw_btn" src="images/twsh.png" width="48" height="48">
+                                <div class="stw"><img id="fb_btn" src="public/images/fbsh.png" width="48" height="48"><img id="tw_btn" src="public/images/twsh.png" width="48" height="48">
                                 </div>
                             <h2 class="standUp">Write Your Legislators</h2>
                             <p>Contact <a href="http://findyourrep.legislature.ca.gov/" target="_blank">your state representative</a> and ask them to support <a href="http://www.sfbg.com/politics/2014/02/21/ammiano-and-leno-seek-reform-ellis-act-and-slow-sf-evictions" target="_blank">Mark Leno & Tom Ammiano's Ellis Act reform bills</a>
