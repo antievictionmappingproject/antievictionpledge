@@ -36,6 +36,7 @@
 			var password = $("input#password").val();
 			$.ajax({
 				type: "POST",
+				// url: "http://localhost:8888/upload",
 				url: "http://displacementmap-server-prod.us-west-1.elasticbeanstalk.com/upload",
 				data: data,
 				cache: false,

@@ -229,7 +229,7 @@ td, th {
 
 /* line 245, ../sass/ellis.scss */
 .background {
-  background: url("public/images/background.png") no-repeat center center;
+  background: url("../images/background.png") no-repeat center center;
   background-size: cover;
   -moz-backgorund-size: cover;
   -o-background-size: cover;
