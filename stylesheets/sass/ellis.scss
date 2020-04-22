@@ -1,0 +1,853 @@
+// SASS VARIABLES //
+  $color-darkblue: #0D2839;
+  $color-darkestblue: #12212B;
+  $color-lightblue: #588B9B;
+  // $color-offwhite: #f2f0e0;
+  $color-offwhite: #f9faf3;
+  $color-red: #cc0029;
+  $font-display: 'Oswald', sans-serif;
+  $font-h2: 'Lusitana', serif;
+  $font-sans: 'Open Sans', sans-serif;
+  $petition-height: 42em;
+  $map-height: 60em;
+  $max-petition-width: 20em;
+
+// SASS MIXINS //
+  @mixin boxshadow($shadow) {
+     -moz-box-shadow: $shadow;
+     -webkit-box-shadow: $shadow;
+     box-shadow: inset $shadow;
+  }
+
+  @mixin ctabuttonstyle {
+    background: rgb(88, 139, 155);
+    background: rgba(88, 139, 155, .8);
+    color: $color-darkblue;
+    font-family: $font-display;
+    font-weight: 400;
+    letter-spacing: .075em;
+    padding: .8em 2em;
+    text-decoration: none;
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.2);
+  }
+
+  @mixin links($linkcolor, $alinkcolor) {
+    a {
+      color: $linkcolor;
+      text-decoration: none;
+
+      &:hover {
+        border-bottom: 1px dotted #50A9CA;
+        color: $alinkcolor;
+        @include selectanimation(all .2s ease-in);
+      }
+    } 
+  }
+
+  @mixin roundedcorner($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+  }
+
+  @mixin selectanimation($animation) {
+    -webkit-transition: $animation;
+    -moz-transition: $animation;
+    -ms-transition: $animation;
+    -o-transition: $animation;
+  }
+
+  @mixin submitbuttonstyle {
+    background: $color-lightblue;
+    color: $color-darkblue;
+    font-family: $font-display;
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: .075em;
+    padding: .8em 1.8em;
+    text-decoration: none;
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.2);
+  }
+
+// GLOBAL STYLES //
+
+  body {
+    background-color: #0d2839;
+    font-family: $font-sans;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+
+  .centered {
+    text-align: center;
+  }
+
+  div.info_window {
+    width: 42em;
+    //height: 220px;
+  }
+
+  div.info_window_fixed {
+    width: 42em;
+
+    //height: 220px;
+  }
+
+  .fixed {
+    height: 10em;
+  }
+
+  .footer {
+    background: $color-darkblue;
+    border-top: 1px solid $color-darkestblue;
+    clear: both;
+    color: $color-lightblue;
+    font-size: .75em;
+    padding: 1em 0; 
+    text-align: center;
+    width: 100%;
+    @include links($color-offwhite, $color-lightblue);
+  }
+
+  h1 {
+  color: $color-offwhite;
+  font-family: $font-display;
+  font-size: 4em;
+  font-weight: 400;
+  letter-spacing: .05em;
+  margin: 0 0 .2em 0;
+  text-shadow: 4px 4px 0px $color-red;
+  }
+
+  h2 {
+    color: $color-lightblue;
+    font-family: $font-display;
+    font-size: 1.8em;
+    letter-spacing: .05em;
+    line-height: 1;
+    text-shadow: 1px 1px 2px lighten($color-darkblue, 10%);
+  }
+
+  h2.dark {
+    color: $color-darkblue;
+    text-shadow: 1px 1px 2px lighten($color-lightblue, 4%);
+  }
+
+  .hideDesktop {
+    display: none;
+  }
+
+  .hideMobile {
+    display: inline;
+  }
+
+  img {
+    float: left;
+  }
+
+  .main_menu {
+    background: rgb(18, 33, 43); /* The Fallback */
+    background: rgba(18, 33, 43, 0.9);
+    height: 4em;
+    width: 100%;
+    border-bottom: 1px solid #06131c;
+    position: fixed;
+    z-index: 99;
+  }
+
+  // #logoImage {
+  //   padding: 1em 0;
+  // } 
+
+  nav {
+    float: right;
+    @include links($color-offwhite, $color-lightblue);
+
+    ul {
+      list-style: none;
+      margin: 1em 0 2em 0;
+
+      li {
+      float: left;
+      font-family: $font-sans;
+      margin-left: 2em;
+      padding: .3em .1em; 
+      display: block;
+      }
+    }
+  }
+
+  .resources, .aboutus {
+    color: $color-darkestblue;
+    float: left; 
+    width: 50%;
+    @include links($color-offwhite, $color-darkblue);
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin: .4em 0;
+    }
+  }
+
+  .smaller {
+    font-size: smaller;
+    margin-top: 5em;
+  }
+
+  .scrollarea {
+    overflow: scroll;
+  }
+
+  strong {
+    text-transform:uppercase;
+    font-size: .9em;
+  }
+
+  td, th {
+    padding-left: 1em;
+  }
+
+  .wrap {
+    width:66em;
+    margin: auto;
+    padding: 5em 0;
+    overflow: hidden;
+  }
+
+  .wrapNoMargin {
+    margin: auto;
+    overflow: hidden;
+    padding: 0;
+    width:66em;
+  }
+
+  .background {
+    background: url('../images/background.png') no-repeat center center;
+    background-size: cover;
+    -moz-backgorund-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+/* INTRO STYLES */
+  #blurb {
+    p {
+      color: $color-offwhite;
+      font-family: $font-sans;
+      font-size: 1.3em;  
+      font-weight: 300;
+      line-height: 1.7;
+      margin: 0;
+      padding: 1em 0 1em 0;
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+
+  .buttonContainer{
+    margin: 1em 0 3em 0;
+  }
+
+  .CTA {     
+    font-size: .8em;
+    @include ctabuttonstyle;
+    @include roundedcorner(0.7em);
+  }
+
+  .CTA:hover {
+    color: $color-offwhite;
+    background: $color-red;
+    text-shadow: 2px 2px 0px darken($color-red, 8%);
+    @include selectanimation(all 0.30s ease-in-out);
+    }
+
+  .luggageIcon  {
+    float: left;
+    margin-right: 3em;
+    margin-bottom: 6em;
+  }
+
+  #intro {
+    clear: both;
+    // overflow: hidden;
+    // margin-left: 5%;
+    // margin-right: 5%;
+    padding-top: 5em; //make room for menu
+  }
+
+  #intro .wrap {
+    width: 45em;
+  }
+
+
+/* SEARCH AND PLEDGE STYLES */
+  /* PLEDGE STYLES */
+  #feedback {
+    display: none;
+    color: $color-offwhite;
+  }
+
+  #feedback, #petition {
+    margin: 0 0 0 3em;
+    padding: 0;
+    z-index: 8;
+    position: absolute;
+    height: $petition-height;
+    max-width: $max-petition-width;
+    @include links($color-lightblue, $color-offwhite);
+  
+    h1 {
+      font-size: 3em;
+      padding: 0;
+      margin: 0;
+      text-shadow: 3px 3px 0px $color-red;
+    }
+
+    h2 {
+      color: $color-offwhite;
+      font-family: $font-display;
+      font-size: 1.5em;
+      letter-spacing: .001em;
+      line-height: 1;
+      padding-top: 1em;
+      margin-bottom: .5em;
+      text-shadow: none;
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+
+  input[type=text], textarea {
+    font-size: .8em;
+    font-style: italic;
+    border: 1px solid #DDDDDD;
+    margin: 0;
+    padding: .5em;
+    width: 96%;
+  }
+
+  input:focus, textarea:focus {
+    border: 1px solid #fff;
+    outline: none;
+    // @include boxshadow(0 0 5px $color-darkblue);
+    // @include selectanimation(all 0.40s ease-in-out);
+  }
+
+  .link_txt {
+    margin-left: 1em;
+  }
+
+  #pledges {
+    background: $color-darkblue;
+    float: left;
+    width: 100%
+  }
+
+  .pledgeColumn {
+    float: left;
+    width: 28%;
+    padding: 0 5em 0 0;
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      color: $color-offwhite;
+      font-size: 1em;
+      font-weight: 300;
+      margin: .8em;
+    }
+
+    p {
+      margin: 1em 0;
+      padding: 0;
+    }
+    .name {
+      font-weight: bold;
+    }
+  }
+
+  #pledgeColumn_3 {
+    padding: 0;
+  }
+
+  .right_bar {
+    width: 30%;
+    max-width: 25em;
+    height: 100%;
+    float: right;
+    right: 1em;
+
+    #pet_link {   
+      cursor: pointer;
+      @include submitbuttonstyle;
+      @include roundedcorner(0.7em);
+    }
+
+    #pet_link:hover {   
+      color: $color-offwhite;
+      background: $color-darkblue;
+      text-shadow: 2px 2px 0px darken($color-darkblue, 8%);
+      @include selectanimation(all 0.30s ease-in-out);
+    }
+
+    .expl {
+      color: white;
+      font-size: .6em;
+      margin: .6em 0 2em 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .chk_label {
+      color: white;
+      font-size: .6em;
+      margin: .6em 0 5em 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .label {
+      color: $color-offwhite;
+      margin: 1.2em 0px .2em 0px;
+      font-size: .9em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    p.pledgeText {
+      color: $color-offwhite;
+      font-family: $font-display;
+      font-size: 1.5em;
+      margin: .5em 0 1.25em 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    span {
+      font-size: .6em;
+    }
+  }
+
+  .social_btns {
+    padding-bottom: 10px;
+    height: 48px;
+    img {
+      margin: 5px;
+      cursor: pointer;
+
+    }
+  }
+
+  /* MAP and SEARCH STYLES */
+    #address {
+        width: 87%;
+      }
+
+    #find_btn {
+      color: $color-offwhite;
+      font-family: $font-display;
+      letter-spacing: .1em;
+      padding-left: .5em;
+      text-transform:uppercase;
+
+      &:hover {
+        color: $color-darkestblue;
+        @include selectanimation(all 0.30s ease-in-out);
+      }
+    }
+
+    .main {
+      height: $map-height;
+      background: #333;
+      }
+
+      #mapper {
+        height: $map-height;
+        width: 65%;
+        max-width: 61em;
+        //margin: 10%;
+        float: left;
+        z-index: 5;
+        position: absolute;
+        //background: rgba(204, 0, 0, 0.8);
+        //padding: 1em;
+      }
+
+    .search {
+      background: rgb(204, 0, 0); /* The Fallback */
+      background: rgba(204, 0, 0, 0.8); 
+      width: 85%;
+      max-width: 40em;
+      margin: .3em 0px 0px 2em;
+      padding: 1em;
+      cursor: pointer;
+      float: left;
+      position: absolute;
+      left: 2em;
+    }
+    #search {
+      width: 70%;
+      max-width: 46em;
+      z-index: 8;
+      position: absolute;
+    }
+
+    #instructions {
+      background: rgb(24, 24, 24);
+      background: rgba(24, 24, 24, .5);
+      border-radius: .5em;
+      color: $color-offwhite;
+      float: left;
+      font-family: $font-sans;
+      font-weight: 300;
+      letter-spacing: .7;
+      margin: 6em 0em 3em 8em;
+      padding: 2em;
+      position: absolute;
+      width: 28em;
+      z-index: 9;
+      text-align:center;
+    }
+
+  /* SEARCH RESULTS STYLES */
+    .circle_num {
+      border-radius: 50%;
+      color: white;
+      float: left;
+      width: 2.5em;
+      height: 2.5em;
+      line-height: 2.5em;
+      margin: .5em 0 0 0;
+      text-align: center;
+      font-size: 1.5em;
+      }
+
+    .pledger {
+      list-style: none;
+    }
+
+    .ig_text {
+      float: left;
+      font-size: 1.3em;
+      text-align: left;
+      margin: .5em .4em 1.25em .7em;
+    }
+
+    .bluebg {
+      background-color: $color-darkblue;
+    }
+
+    .redbg {
+      background-color: $color-red;
+    }
+
+    .lightbluebg {
+      background-color: $color-lightblue;
+    }
+
+    .total_col {
+      width: 25%;
+      //margin-right: 1%;
+      float: left;
+      .red {
+        color: $color-red;
+      }
+
+      .blue {
+        color: $color-darkblue;
+      }
+
+      .lightblue {
+        color: $color-lightblue;
+      }
+    }
+
+    .ev_date {
+      font-weight: bold;
+      text-align: right;
+      vertical-align: top;
+      a {
+        text-decoration: none;
+        color: $color-darkblue;
+      }
+    }
+
+    .ev_landlords {
+      padding-bottom: .5em;
+      vertical-align: top;
+    }
+
+    .info_address {
+      color: $color-darkblue;
+      font-family: $font-display;
+      font-size: 1.5em;
+      float: left;
+      margin-bottom: 0.6em;
+    }
+    .with_dd {
+      margin-top: .6em;
+    }
+    .without_dd {
+      margin-top: -.3em;
+    }
+
+    .contact_noeviction {
+      position: absolute;
+      bottom: 2.5em;
+      right: 1em;
+      font-family: $font-sans;
+      font-size: 1em;
+       a {
+        font-weight: bold;
+        text-decoration: none;
+        color: $color-darkblue;
+      }
+    }
+
+    .info_table {
+      font-family: $font-sans;
+      font-size: 1em;
+      clear: both;
+    }
+
+    td {
+      padding-bottom: 1.25em;
+    }
+
+    .header_nums {
+      font-family: $font-display;
+      margin-bottom: .8em;
+      clear: both;
+    }
+
+    .dirty_dozen {
+      width: 21em;
+      height: 3.5em;
+      border-radius: 0px 0px .4em .4em;
+      background-color: $color-red;
+      margin-left: 35%;
+      margin-top: -1.25em;
+      margin-bottom: 1.25em;
+      padding: .1em .8em .4em .4em;
+    }
+
+    .dd_hdr {
+      font-family: $font-display;
+      font-size: 1.3em;
+      color: white;
+    }
+
+    #dd_hdr {
+      margin-top: .8em;
+      margin-left: 1.7em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    #dd_lrn {
+      font-family: $font-sans;
+      font-size: .7em;
+      font-weight: 600;
+      color: black;//  !important;
+      margin-left: .5em;
+      text-decoration: none;
+    }
+    .no_evictions {
+      float: left;
+      font-size: 1.5em;
+      text-align: left;
+      margin: .5em 0em .5em 1em;
+      color: $color-lightblue;
+    }
+
+/* SEE WHO PLEDGED STYLES */
+  .page_buttons {
+    clear: both;
+    a {
+      text-decoration: none;
+      color: $color-offwhite;
+      cursor: pointer;
+    }
+  }
+
+  .previous {
+    float: left;
+  }
+
+  .previous, .more {
+    @include links($color-offwhite, $color-lightblue);
+  }
+
+  .more {
+    float: right;
+    position: absolute;
+    right: 10%;
+  }
+
+/* LEARN MORE STYLES */
+  #learnMore {
+    background: $color-lightblue;
+    wrap: left;
+    clear: both;
+  }
+
+/* MEDIA QUERIES. ABANDON ALL HOPE YE WHO ENTER HERE */
+
+/* styles for browsers larger than 20em/320px but smaller than 75em/1200px. EM references font size 16px */
+  @media all and (max-width: 30em) {
+    body {
+      font-size: 11px;
+      line-height: 1.2;
+    }
+
+    h1 {
+        margin: 0 0 .5em 0;
+    }
+
+    .hideMobile {
+      display: none;
+    }
+
+    .hideDesktop {
+      display: inline;
+    }
+
+    i {
+        margin: 0 .5em 0 0;
+    }
+  }
+
+  @media all and (max-width: 800px) {
+
+    body {
+      font-size: 14px;
+    }
+    
+    #blurb p {
+      padding: .5em 0 1em 0;
+    }
+
+    .buttonContainer {
+      margin: 0 0 2.5em 0;
+    }
+
+    .hideMobile {
+      display: none;
+    }
+
+    .hideDesktop {
+      display: block;
+    }
+
+    #address {
+      width: 83%
+    }
+
+    .luggageIcon {
+      display: none;
+    }
+
+    .right_bar {
+      position: inherit;
+      float: none;
+      width: 100%;
+    }
+
+    .mapSearch {
+      postion: inherit;
+      width: 100%;
+      height: $map-height;
+      margin-bottom: -8em;
+    }
+
+    .main {
+      height: $petition-height + 16em;
+    }
+
+    #petition, #feedback {
+      float: none;
+      position: inherit;
+      max-width: 100%;
+      margin: 0;
+      width: 24em;
+      padding: 0;
+    }
+
+    #mapper {
+      float: none;
+    }
+
+    #pledges, .resources, .aboutus {
+      float: none;
+      padding: 1em 0;
+      width: 24em;
+    }
+
+
+    .main_menu {
+      background: rgb(18, 33, 43); /* The Fallback */
+      background: rgba(18, 33, 43, 0.9);
+      height: 4em;
+      width: 100%;
+      border-bottom: 1px solid #06131c;
+      position: fixed;
+      z-index: 99;
+    }
+
+    nav {
+      ul {
+        // margin: 1em 0 2em 0;
+      }
+
+      li {
+        float: left;
+        font-family: $font-sans;
+        margin-left: 2em;
+        padding: .3em .1em;
+        display: block;
+      }
+    }
+
+    .pledgeColumn {
+      width: 99%;
+      padding: 0;
+    }
+
+    #sorryMobile {
+      border-radius: .5em;
+      background: rgb(249, 250, 243);
+      background: rgba(249, 250, 243, .6);
+      margin: 1em 0 2em 0;
+      padding: .5em;
+    }
+
+    .wrap {
+      margin: auto;
+      padding: 1em;
+      width: 25em;
+    }
+
+    .wrapNoMargin {
+      width: 28em;
+    }
+  }
+
+  @media all and (min-width: 801px) and (max-width: 1160px) {
+    body {
+      font-size: 12px;
+    }
+
+    .wrap {
+      width: 100%;
+    }
+
+    #blurb p {
+      padding: .5em 0;
+    }
+
+    #logoImage {
+      width: 127px;
+      height: 40px;
+    }
+
+  }
