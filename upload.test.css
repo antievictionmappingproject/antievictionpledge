@@ -1,0 +1,58 @@
+#sampleFile {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1em;
+}
+
+#upload {
+    width: 200px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#dryRun {
+    margin-bottom: 2em;
+}
+
+#dryRunText {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+}
+
+.w_body {
+    font-family: Consolas,monospace;
+    color: #cc0000;
+    word-wrap: break-word;
+    background-color: #E6E6FA;
+}
+
+.warning {
+    width: 40%;
+    margin: 20px auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+.wlog_header {
+    text-align: center;
+}
+
+#target {
+    width: 200px;
+    margin: 0 auto;
+}
+
+#img {
+  display: none;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+}

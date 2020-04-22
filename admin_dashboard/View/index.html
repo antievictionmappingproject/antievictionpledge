@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>
+       Dashboard
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+          name='viewport'/>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="../assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet"/>
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../assets/demo/demo.css" rel="stylesheet"/>
+</head>
+
+<body class="dark-edition">
+<div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="black" data-image="../assets/img/sidebar-1.jpg">
+        <div class="logo"><a  class="simple-text logo-normal">
+            WELCOME
+
+        </a></div>
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li class="nav-item active ">
+                    <a class="nav-link">
+                        <i class="material-icons">dashboard</i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="nav-item active ">
+                    <a class="nav-link" href="/pledge/admin_dashboard/View/index.html">
+                        <p>Comments</p>
+                    </a>
+                </li>
+                <li class="nav-item active ">
+                    <a class="nav-link" href="/pledge/admin_dashboard/View/update.html">
+                        <p>File Upload</p>
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="main-panel">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+            <div class="container-fluid">
+                <div class="navbar-wrapper">
+                    <a class="navbar-brand" href="javascript:void(0)">Comments</a>
+                </div>
+
+                <div class="collapse navbar-collapse justify-content-end">
+
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <p class="nav-link" id="logout" style="cursor: pointer;text-decoration: underline">
+                              Logout
+                            </p>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+
+        </nav>
+
+
+        <!-- End Navbar -->
+        <div class="content">
+
+            <div style=" margin-left: 24px;">
+                <input type="text" name="search" id="search" style="width: 385px;height: 41px;background: #a2afb9;border: none;padding: 2px;">
+                    <button id="submit_search" style="padding: 7px;background: #a07673;">Search</button>
+               <button id ='clear' style="padding: 7px;background: burlywood;display: none">Clear searching data</button>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div  style="position: fixed;background: #fff;z-index: 55555;left: 0;right: 0;top: 0;bottom: 0;width: 1000px;height: 675px;margin: auto;padding: 23px;display: none" id="up_modal">
+
+                        <div style="text-align: right;padding-right:8px;display: flex;position: relative">
+                            <div style="font-weight: bold;padding-left: 13px;font-size: 19px;">Update Comment</div>
+                            <span style="color: #000;font-size: 20px;font-weight: bold;cursor: pointer;position: absolute;right: 9px" id="cloas_mod">X</span>
+                        </div>
+
+                            <div class="form-group">
+                                <label for="up_name" style="color: #000;font-size: 18px;padding: 16px;">First Name</label><br>
+                                <span id="error_up_name" style="color:red;padding-left: 16px;display: none"></span>
+                                <input type="text"  id="up_name"  placeholder="Enter Name" style="padding: 6px;width: 96%;margin: 6px 16px 0 16px">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="up_lname" style="color: #000;font-size: 18px;padding: 16px;">Last Name</label><br>
+                                <span id="error_up_lname" style="color:red;padding-left: 16px;display: none"></span>
+                                <input type="text"  id="up_lname" placeholder="Enter Last Name" style="padding: 6px;width: 96%;margin: 6px 16px 0 16px">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="up_email" style="color: #000;font-size: 18px;padding: 16px;">Email</label><br>
+                                <span id="error_up_email" style="color:red;padding-left: 16px;display: none"></span>
+                                <input type="text"  id="up_email" placeholder="Enter Email" style="padding: 6px;width: 96%;margin: 6px 16px 0 16px">
+                            </div>
+                            <div class="form-group">
+                                <label for="up_reason" style="color: #000;font-size: 18px;padding: 16px;">Reason</label><br>
+                                <span id="error_up_reason" style="color:red;padding-left: 16px;display: none"></span>
+                                <textarea  id="up_reason" placeholder="Enter Reason" rows="8" style="padding: 6px;width: 96%;margin: 6px 16px 0 16px"></textarea>
+                            </div>
+                            <div style="text-align: right;padding: 18px;">
+                                <button  class="btn btn-primary" id="save_updated" carent_item_id="" style="background: #6c309ac7">Save</button>
+                            </div>
+
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="card card-plain">
+                            <div class="card-header card-header-primary">
+                                <h4 class="card-title mt-0"> Comments</h4>
+                                <p class="card-category"> Here is all Comments</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="" style="color: #fff;">
+                                        <th class="kkk" style="color: #fff;"><b>First Name</b></th>
+                                        <th style="color: #fff;"> <b>Last Name</b></th>
+                                        <th style="color: #fff;"> <b>Email</b></th>
+                                        <th style="color: #fff;"> <b>Reason</b></th>
+                                        <th style="color: #fff;"> <b>Timestamp</b></th>
+                                        <th style="color: #fff;"> <b>Status</b></th>
+                                        <th style="color: #fff;"> <b>Action</b></th>
+
+                                        </thead>
+                                        <tbody id="coment_table">
+
+                                        </tbody>
+                                    </table>
+                                    <div class="page_buttons">
+                                        <div class="previous" style="display: block;">
+                                            <p><a id="back_btn" style="color: #fff;">« Back</a></p>
+                                        </div>
+                                        <div class="more" style="display: block;">
+                                            <p><a id="more_btn" style="color: #fff;">More »</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="copyright float-right" id="date">
+                     <i class="material-icons">favorite</i> by Eridatech
+
+                </div>
+            </div>
+        </footer>
+        <script>
+            const x = new Date().getFullYear();
+            let date = document.getElementById('date');
+            date.innerHTML = '&copy; ' + x + date.innerHTML;
+        </script>
+    </div>
+</div>
+
+
+
+<!--   Core JS Files   -->
+<script src="../assets/js/core/jquery.min.js"></script>
+<script src="../assets/js/core/popper.min.js"></script>
+<script src="../assets/js/core/bootstrap-material-design.min.js"></script>
+<script src="https://unpkg.com/default-passive-events"></script>
+<script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!--  Notifications Plugin    -->
+<script src="../assets/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="../assets/js/material-dashboard.js?v=2.1.0"></script>
+<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+<script src="../assets/demo/demo.js"></script>
+<script src="../jquery.session.js"></script>
+<script src="ellis.js"></script>
+
+
+
+</body>
+
+</html>

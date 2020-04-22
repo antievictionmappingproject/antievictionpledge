@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<title>
+		Dashboard
+	</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+		  name='viewport'/>
+	<!--     Fonts and icons     -->
+	<link rel="stylesheet" type="text/css"
+		  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+	<!-- CSS Files -->
+	<link href="../assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet"/>
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<link href="../assets/demo/demo.css" rel="stylesheet"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body class="dark-edition">
+<div class="wrapper ">
+	<div class="sidebar" data-color="purple" data-background-color="black" data-image="../assets/img/sidebar-1.jpg">
+		<div class="logo"><a  class="simple-text logo-normal">
+			WELCOME
+		</a></div>
+		<div class="sidebar-wrapper">
+			<ul class="nav">
+				<li class="nav-item active ">
+					<a class="nav-link">
+						<i class="material-icons">dashboard</i>
+						<p>Dashboard</p>
+					</a>
+				</li>
+				<li class="nav-item active ">
+					<a class="nav-link" href="/pledge/admin_dashboard/View/index.html">
+						<p>Comments</p>
+					</a>
+				</li>
+				<li class="nav-item active ">
+					<a class="nav-link" href="/pledge/admin_dashboard/View/update.html">
+						<p>File Upload</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="main-panel">
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+			<div class="container-fluid">
+				<div class="navbar-wrapper">
+					<a class="navbar-brand" href="javascript:void(0)"></a>
+				</div>
+				<div class="collapse navbar-collapse justify-content-end">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<p class="nav-link" id="logout" style="cursor: pointer;text-decoration: underline">
+								Logout
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- End Navbar -->
+		<div class="content" style="    margin-top: 20px;">
+			<div class="container-fluid">
+				<div style="color:#fff" >
+		<h2>Update Database with new eviction data</h2>
+<!--			<h2 style="color:#898686 ">Database access credentials:</h2>-->
+		<form ref='uploadForm' name ='uploadForm' id='target' encType="multipart/form-data">
+<!--			<div style="display: flex;margin-top: 20px">-->
+<!--				<p style="margin:0 20px">Username *</p>-->
+<!--				<input type="text" name="user" id="username"><br>-->
+<!--				<p style="margin: 0 20px">Password *</p>-->
+<!--				<input type="password" name="password" id="password" ><br><br>-->
+<!--			</div>-->
+			<h3 style="color: #898686"> File Upload:</h3>
+		<p>	<h4> <i><b>IMPORTANT NOTE:</b></i></h4>Upload the files in the following order and exact names: </p>
+			<ol>
+				<li>Addresses file ( addresses.csv )</li>
+				<li>Evictions data ( evictions.csv )</li>
+				<li>Owners data ( owners.csv )</li>
+			</ol>
+			<p>Template below can be used to create the files </p>
+					<div class="w_body"><div class="warning_red" style="color:red"></div></div>
+					<div class="w_body"><div class="warning_green" style="color:green"></div></div>
+			<div class="input-group">
+				<input type="text" class="readonly_input" placeholder="No file is attached" style="width: 400px; height:47px;margin-top: 5px;" readonly>
+				<label class="">
+                    <span class="btn btn-grey">
+                     <img src="attach.png" alt="">  Attach file  <input id="sampleFile" type="file" name="sampleFile" accept=".csv"  style="display:none;">
+                    </span>
+				</label>
+			</div>
+			  <div style="display:flex;" >
+  				<div id="dryRunText"style="width: 400px;margin-top: 14px;">Dry Run <input id="dryRun" type="checkbox" name="dry run"></div>
+				  <label style="width:158px" class="btn btn-grey">
+					  <img src="upload.png" alt="" style="width: 15px;margin-right: 13px">
+					  Upload
+				<input id="upload" type="submit" class="btn btn-grey" value="Upload" style="display:none;" >
+				  </label>
+					</div>
+					</form>
+					<div style="display: flex">
+					<div style="margin-right: 5px"> <h4> <i><b>IMPORTANT NOTE:</b></i></h4></div>
+					<div>
+					If the file being uploaded is large then the process can take some time. Please do not close the window until the process is completed.
+						<p>The system will give a notification on success and an error log on fa </p>
+						<p>With the "Dry run" mode only the data validation is being executed and updates on database is performed</p>
+					</div>
+					</div>
+					<div style="padding:1px;background: #eee;    margin-top: 10px;"></div>
+					<h3 style="color: #898686;margin-top: 20px"> Data file templates:</h3>
+					<div style="display:flex;">
+						<div style="margin-right: 35px"><a href="addresses.csv" download="addresses.csv"> <h3>Addresses <span style="font-size: 16px"><img src="download.png" alt="" width="20px"> <br> <p style="margin-left:87px;">addresses.csv </p></span></h3>	</a></div>
+						<div style="margin-right: 35px"><a href="evictions.csv" download="evictions.csv"> <h3>Evictions <span style="font-size: 16px"><img src="download.png" alt=""  width="20px"> <br> <p style="margin-left:74px;">evictions.csv </p></span></h3>	</a></div>
+						<div style="margin-right: 35px"><a href="owners.csv" download="owners.csv"> <h3>Owners <span style="font-size: 16px"><img src="download.png" alt=""  width="20px"> <br> <p style="margin-left:63px;">owners.csv </p></span></h3>	</a></div>
+					</div>
+					<div style="display: flex">
+						<div style="margin-right: 5px"> <h4> <i><b>IMPORTANT NOTE:</b></i></h4></div>
+						<div>
+							Do not change file names and their structures when creating new files based on downloaded templates.
+							<p>Efficient amount of data per file is < = 15000 records</p>
+						</div>
+					</div>
+					<div style="padding:1px;background: #eee;    margin-top: 10px;"></div>
+					<h3 style="color: #898686;margin-top: 15px;">Errors and Warnings:</h3>
+
+		<br>
+		<div id = "img" style="display: none">
+			<img src="ajax-loader.gif">
+			<p id = "imgParagraph">This may take a while. Please wait<p>
+		</div>
+		<div class="w_body"><div class="warninglog" style="color: yellow"><p><font color=#E6E6FA>.</font></p></div></div>
+				</div>
+
+		</div>
+		</div>
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="copyright float-right" id="date">
+					<i class="material-icons">favorite</i> by Eridatech
+				</div>
+			</div>
+		</footer>
+		<script>
+			const x = new Date().getFullYear();
+			let date = document.getElementById('date');
+			date.innerHTML = '&copy; ' + x + date.innerHTML;
+		</script>
+	</div>
+</div>
+<script>
+	$(function() {
+		// We can attach the `fileselect` event to all file inputs on the page
+		$(document).on('change', ':file', function() {
+			$('.warning_red').html('')
+			$('.warning_green').html('')
+			var input = $(this),
+					numFiles = input.get(0).files ? input.get(0).files.length : 1,
+					label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+			input.trigger('fileselect', [numFiles, label]);
+		});
+		// We can watch for our custom `fileselect` event like this
+		$(document).ready( function() {
+			$(':file').on('fileselect', function(event, numFiles, label) {
+				var input = $('.readonly_input')
+						log = numFiles > 1 ? numFiles + ' files selected' : label;
+				if( input.length ) {
+					input.val(log);
+				} else {
+					if( log ) alert(log);
+				}
+			});
+		});
+	});
+</script>
+<script type="text/javascript">
+	$('#target').unbind('submit').bind('submit',function(event) {
+		event.preventDefault();
+		// $("input").prop('disabled', true);
+		var data = new FormData();
+		var file = $("#sampleFile")[0].files[0];
+		var isDry = $( "#dryRun" ).is(":checked")
+		data.append('sampleFile', file);
+		data.append('dryRun', isDry);
+		let bool =true
+		// var username = $("input#username").val();
+		// var password = $("input#password").val();
+		let extension = file.name.split('.').pop();
+		let filename=file.name.split('.')[0];
+	if(filename == 'addresses' ||filename=='evictions' || filename=="owners"){
+		bool=true
+	}else{
+		$('.warning_red').html('ERROR: Wrong file name.')
+		bool =false
+	}
+	if(extension.toLowerCase()!="csv"){
+		bool=false
+		$('.warning_red').html('ERROR: Unknown file type.')
+	}
+	if(bool) {
+		$("input").prop('disabled', true);
+		$("#sampleFile").prop('disabled', true);
+		$.ajax({
+			type: "POST",
+			url: "http://displacementmap-server-prod.us-west-1.elasticbeanstalk.com/upload",
+			data: data,
+			cache: false,
+			contentType: false,
+			processData: false,
+			xhrFields: {
+				withCredentials: true
+			},
+			timeout: 0,
+			beforeSend: function (xhr) {
+				// xhr.setRequestHeader ("Authorization", "Basic " + btoa(username + ":" + password));
+				$("#img").css("display", "block");
+			},
+			success: function (data) {
+				$('.warning_green').text(data);
+			},
+			error: function (data) {
+				if (data.status == 401)
+					alert("Username or password is incorrect");
+				else {
+					if (IsJson(data.responseText)) {
+						var errors = JSON.parse(data.responseText);
+						$('.warninglog').html("");
+						for (var line in errors) {
+							var warningMessage = '<ul><li>Row ' + line;
+							warningMessage += '<ul>';
+							var array = errors[line];
+							if (Object.prototype.toString.call(array) === '[object Array]') {
+								for (var i in array) {
+									warningMessage += '<li>' + array[i].message + '</li>';
+								}
+							} else {
+								warningMessage += array;
+							}
+							warningMessage += '</ul></li></ul>';
+							$('.warninglog').append(warningMessage);
+						}
+					} else {
+						if (data.responseText) {
+							$('.warning_red').text(data.responseText);
+						}
+					}
+				}
+			},
+			complete: function () {
+				$('#img').hide();
+				$("input").prop('disabled', false);
+			},
+		});
+	}
+
+	});
+	function IsJson(str) {
+		try {
+			JSON.parse(str);
+		} catch (e) {
+			return false;
+		}
+		return true;
+	}
+</script>
+<script>
+	$(function () {
+		if ($.session.get("myLoginKey") !== 'fdb5dfb15fdb85fd5bdf845b5fdb8fd5bfd84b5dfb854fbdf8b52dfb8df45b') {
+			window.location.href = window.location.origin + "/pledge/admin_dashboard/";
+		}
+	});
+
+	$('#logout').click(function () {
+		$(function () {
+			$.session.set("myLoginKey", "0");
+			window.location.href = window.location.origin + "/pledge/admin_dashboard/";
+		});
+
+	})
+</script>
+
+<!--   Core JS Files   -->
+<script src="../assets/js/core/jquery.min.js"></script>
+<script src="../assets/js/core/popper.min.js"></script>
+<script src="../assets/js/core/bootstrap-material-design.min.js"></script>
+<script src="https://unpkg.com/default-passive-events"></script>
+<script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<!--  Notifications Plugin    -->
+<script src="../assets/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="../assets/js/material-dashboard.js?v=2.1.0"></script>
+<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+<script src="../assets/demo/demo.js"></script>
+<script src="../jquery.session.js"></script>
+</body>
+</html>
